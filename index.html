@@ -1,0 +1,1224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Greece & Italy 2026 — Master Trip Document2</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #f5f5f0; color: #333; }
+#header { background: #2c3e50; color: white; padding: 20px 28px; }
+#header h1 { font-size: 22px; font-weight: 700; margin-bottom: 4px; }
+#header p { font-size: 13px; opacity: 0.7; }
+.tabs { display: flex; background: #34495e; padding: 0 16px; overflow-x: auto; flex-shrink: 0; }
+.tab { padding: 12px 16px; font-size: 13px; color: rgba(255,255,255,0.6); cursor: pointer; border-bottom: 3px solid transparent; white-space: nowrap; }
+.tab:hover { color: white; }
+.tab.active { color: white; border-bottom-color: #3498db; }
+.panel { display: none; max-width: 960px; margin: 20px auto; padding: 0 16px 60px; }
+.panel.active { display: block; }
+.section { background: white; border-radius: 10px; margin-bottom: 14px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.08); }
+.sh { background: #2c3e50; color: white; padding: 11px 16px; font-size: 13px; font-weight: 600; cursor:pointer; display:flex; justify-content:space-between; align-items:center; user-select:none; }
+.sh:hover { background:#34495e; }
+.sh-static { background: #2c3e50; color: white; padding: 11px 16px; font-size: 13px; font-weight: 600; }
+.sh2 { background: #4a6278; color: white; padding: 9px 16px; font-size: 12px; font-weight: 600; }
+.sh-chevron { font-size:14px; transition:transform 0.2s; }
+.sh-chevron.open { transform:rotate(180deg); }
+.sc { padding: 0; }
+.sb { padding: 14px 16px; }
+table { width: 100%; border-collapse: collapse; font-size: 13px; }
+th { text-align: left; padding: 7px 9px; font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.04em; color: #888; border-bottom: 2px solid #eee; }
+td { padding: 9px; border-bottom: 1px solid #f0f0f0; vertical-align: top; line-height: 1.5; font-size: 13px; }
+tr:last-child td { border-bottom: none; }
+.badge { display: inline-block; font-size: 11px; padding: 2px 8px; border-radius: 12px; font-weight: 500; }
+.bg { background:#e8f7f1;color:#0a6b50; }
+.by { background:#fff8e1;color:#b8840f; }
+.br { background:#fdecea;color:#c0392b; }
+.bb { background:#e8f2fc;color:#0c447c; }
+.bgr { background:#f0f0f0;color:#666; }
+.ig { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+@media(max-width:600px){.ig{grid-template-columns:1fr;}}
+.ib { background:#f8f8f8; border-radius:8px; padding:12px; }
+.ib h4 { font-size:11px; font-weight:600; text-transform:uppercase; letter-spacing:0.04em; color:#888; margin-bottom:7px; }
+.ib p,.ib li { font-size:13px; line-height:1.7; color:#444; }
+.ib ul { padding-left:15px; }
+.al { padding:11px 13px; border-radius:8px; font-size:13px; line-height:1.6; margin-bottom:10px; }
+.aly { background:#fffbf0; border-left:3px solid #e6a817; color:#666; }
+.alr { background:#fdecea; border-left:3px solid #e74c3c; color:#666; }
+.alg { background:#e8f7f1; border-left:3px solid #1D9E75; color:#666; }
+.alb { background:#e8f2fc; border-left:3px solid #378ADD; color:#666; }
+.al strong { color:#333; }
+.bi { display:flex; align-items:flex-start; gap:11px; padding:9px 0; border-bottom:1px solid #f0f0f0; }
+.bi:last-child { border-bottom:none; }
+.bic { font-size:19px; flex-shrink:0; width:26px; text-align:center; }
+.bid h4 { font-size:13px; font-weight:600; margin-bottom:2px; }
+.bid p { font-size:12px; color:#888; line-height:1.6; }
+.bid a { color:#3498db; text-decoration:none; }
+.ph { color:#e74c3c; font-weight:600; }
+.pm { color:#e67e22; font-weight:600; }
+.pl { color:#27ae60; font-weight:600; }
+h3 { font-size:14px; font-weight:600; margin:14px 0 7px; color:#333; }
+h3:first-child { margin-top:0; }
+p { font-size:13px; line-height:1.7; color:#444; margin-bottom:7px; }
+.dv { height:1px; background:#eee; margin:12px 0; }
+#itin-toolbar { background:white; padding:10px 14px; display:flex; flex-wrap:wrap; gap:7px; align-items:center; margin-bottom:14px; border-radius:10px; box-shadow:0 1px 3px rgba(0,0,0,0.08); }
+.cb { font-size:12px; padding:4px 11px; border-radius:20px; border:1px solid #bbb; background:#f8f8f8; cursor:pointer; color:#444; }
+.cb:hover { background:#e8e8e8; }
+.fb { font-size:12px; padding:4px 11px; border-radius:20px; border:1px solid #bbb; background:#f8f8f8; cursor:pointer; color:#444; }
+.fb.active { background:#2c3e50; color:white; border-color:transparent; }
+.leg { display:flex; flex-wrap:wrap; gap:12px; margin-bottom:12px; font-size:12px; color:#555; }
+.li { display:flex; align-items:center; gap:4px; }
+.ld { width:9px; height:9px; border-radius:50%; }
+.dc { background:white; border-radius:10px; margin-bottom:8px; overflow:hidden; box-shadow:0 1px 3px rgba(0,0,0,0.08); }
+.dh { display:flex; align-items:center; gap:12px; padding:12px 16px; cursor:pointer; user-select:none; }
+.dh:hover { background:#fafafa; }
+.dn { width:36px; height:36px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:600; flex-shrink:0; }
+.dm { flex:1; }
+.dt { font-size:14px; font-weight:600; color:#222; margin-bottom:2px; }
+.ds { font-size:12px; color:#888; }
+.ch { font-size:16px; color:#aaa; transition:transform 0.2s; line-height:1; }
+.ch.open { transform:rotate(180deg); }
+.db { padding:0 16px 14px; border-top:1px solid #f0f0f0; display:none; }
+.tb { display:flex; gap:12px; margin-top:10px; }
+.tl { font-size:11px; color:#999; width:70px; flex-shrink:0; padding-top:2px; font-weight:600; text-transform:uppercase; letter-spacing:0.03em; }
+.tc2 { font-size:13px; color:#333; line-height:1.6; flex:1; }
+.tip { margin-top:10px; padding:9px 11px; background:#fffbf0; border-radius:8px; border-left:3px solid #e6a817; font-size:12px; color:#666; line-height:1.6; }
+.tip strong { color:#b8840f; }
+.scitip { margin-top:8px; padding:9px 11px; background:#eef4fe; border-radius:8px; border-left:3px solid #378ADD; font-size:12px; color:#1a4a8a; line-height:1.6; }
+.hilttip { margin-top:8px; padding:9px 11px; background:#eeedfe; border-radius:8px; border-left:3px solid #7F77DD; font-size:12px; color:#3c3489; line-height:1.6; }
+.logtip { margin-top:8px; padding:9px 11px; background:#e8f7f1; border-radius:8px; border-left:3px solid #1D9E75; font-size:12px; color:#0a5c3e; line-height:1.6; }
+#map-wrap{display:flex;gap:12px;align-items:flex-start;}
+#map-sidebar{width:155px;flex-shrink:0;background:white;border-radius:10px;padding:12px 14px;box-shadow:0 1px 3px rgba(0,0,0,.08);}
+#map-main{flex:1;min-width:0;}
+#map{width:100%;height:540px;border-radius:10px;border:1px solid #ddd;}
+.ml{display:flex;flex-wrap:wrap;gap:10px;margin-top:8px;font-size:11px;color:#666;}
+@media(max-width:680px){#map-wrap{flex-direction:column;}#map-sidebar{width:100%;}#map{height:380px;}}
+.exc-grid { display:grid; grid-template-columns:1fr 1fr; gap:6px; }
+@media(max-width:600px){.exc-grid{grid-template-columns:1fr;}}
+.exc-item { font-size:12px; padding:6px 9px; border-radius:6px; background:#f8f8f8; }
+.exc-item.included { background:#e8f7f1; border-left:2px solid #1D9E75; }
+.exc-name { font-weight:600; color:#333; }
+.exc-detail { color:#888; font-size:11px; margin-top:2px; }
+
+/* === PHONE LINKS === */
+.phlink{color:inherit;text-decoration:none;border-bottom:1px dotted currentColor;}
+.phlink:hover{border-bottom-style:solid;}
+
+/* === COPY VALUES === */
+.cpv{cursor:pointer;border-bottom:1px dashed #bbb;border-radius:2px;padding:0 1px;transition:background 0.15s;}
+.cpv:hover{background:#fffbf0;border-color:#e6a817;}
+.cpv.copied{background:#e8f7f1!important;border-color:#1D9E75!important;border-style:solid!important;}
+
+/* === TODAY BANNER (itinerary) === */
+.today-pill{background:#3498db;color:white;font-size:10px;font-weight:700;padding:2px 8px;border-radius:10px;letter-spacing:.05em;margin-right:8px;vertical-align:middle;}
+
+/* === QUICK REF === */
+.qr-section{background:white;border-radius:10px;margin-bottom:12px;overflow:hidden;box-shadow:0 1px 3px rgba(0,0,0,.08);}
+.qr-head{background:#2c3e50;color:white;padding:10px 16px;font-size:13px;font-weight:600;}
+.qr-body{padding:12px 16px;}
+.qr-row{display:flex;align-items:flex-start;gap:10px;padding:6px 0;border-bottom:1px solid #f0f0f0;font-size:13px;}
+.qr-row:last-child{border-bottom:none;}
+.qr-icon{font-size:17px;width:24px;flex-shrink:0;text-align:center;}
+.qr-text{flex:1;line-height:1.6;color:#444;}
+.qr-text strong{color:#222;}
+.qr-warn{background:#fdecea;border-left:3px solid #e74c3c;padding:8px 11px;border-radius:5px;font-size:12px;color:#555;margin:3px 0;line-height:1.5;}
+.qr-ok  {background:#e8f7f1;border-left:3px solid #1D9E75;padding:8px 11px;border-radius:5px;font-size:12px;color:#555;margin:3px 0;line-height:1.5;}
+.qr-info{background:#e8f2fc;border-left:3px solid #3498db;padding:8px 11px;border-radius:5px;font-size:12px;color:#555;margin:3px 0;line-height:1.5;}
+.qr-call{display:inline-flex;align-items:center;gap:4px;font-size:12px;padding:3px 10px;border:1px solid #27ae60;border-radius:12px;background:#e8f7f1;color:#0a6b50;text-decoration:none;margin-top:2px;}
+.qr-call:hover{background:#d0f0e0;}
+.dchip{display:inline-block;font-size:11px;padding:1px 7px;border-radius:10px;font-weight:600;margin-left:5px;vertical-align:middle;}
+
+/* === PRINT === */
+@media print{
+  #header{-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+  .tabs,#itin-toolbar,.cb,.fb,.sh-chevron,.ch,#mcc{display:none!important;}
+  .panel{display:block!important;}
+  #tab-it,#tab-mp,#tab-ex,#tab-qr,#tab-pk{display:none!important;}
+  .sc,.db{display:block!important;}
+  .section{box-shadow:none;border:1px solid #ddd;margin-bottom:8px;page-break-inside:avoid;}
+  body{background:white;}
+  .sh,.sh-static,.sh2{-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+}
+
+</style>
+</head>
+<body>
+<div id="header">
+  <h1>✈️ Greece &amp; Italy 2026 — Master Trip Document</h1>
+  <p>Joe &amp; Teresa Limber · Lorene Guernsey &amp; Carla Santi · July 9 – August 1, 2026 · Last updated: June 7, 2026</p>
+</div>
+<div class="tabs">
+  <div class="tab active" onclick="showTab('ov',this)">Overview</div>
+  <div class="tab" onclick="showTab('bk',this)">Must-Book Now</div>
+  <div class="tab" onclick="showTab('it',this)">Full Itinerary</div>
+  <div class="tab" onclick="showTab('mp',this)">Interactive Map</div>
+  <div class="tab" onclick="showTab('ht',this)">Hotels</div>
+  <div class="tab" onclick="showTab('ex',this)">Cruise Excursions</div>
+  <div class="tab" onclick="showTab('tr',this)">Transportation</div>
+  <div class="tab" onclick="showTab('pk',this)">Tips &amp; Packing</div>
+  <div class="tab" onclick="showTab('qr',this)">⚡ Quick Ref</div>
+</div>
+
+<!-- OVERVIEW -->
+<div id="tab-ov" class="panel active">
+<div class="al alr"><strong>🚨 Still needed:</strong> Vatican Scavi (only 250/day — book today), Galileo Museum, Medici Chapel, Pantheon. See Must-Book Now. Also: Villa San Filippo cancel deadline <strong>Jul 10</strong>.</div>
+<div class="al aly"><strong>⚠️ Car pickup changed:</strong> Hertz is at <strong>Venice Marco Polo Airport</strong> (not Piazzale Roma). Allow 30–45 min to get there from Venice by water taxi or ACTV bus on Wed Jul 22 morning.</div>
+<div class="section"><div class="sh-static">📅 Full Trip Timeline</div><div class="sb"><table>
+<tr><th>Date</th><th>Day</th><th>Location</th><th>Notes</th></tr>
+<tr><td>Jul 9</td><td>Thu</td><td>Depart IAD</td><td>Fly to Athens overnight</td></tr>
+<tr><td>Jul 10</td><td>Fri</td><td><span class="badge bb">Athens</span></td><td>Arrive. <strong>Anise Aluma Athens</strong> (Tapestry/Hilton). Conf. #3471385009. Check-in 3 PM.</td></tr>
+<tr><td>Jul 11</td><td>Sat</td><td><span class="badge bb">Athens → Cruise</span></td><td>7:50 AM Acropolis (Tour Guy #1118765, meet Porinou 5). 9 PM Open Air Theatre (Tripadvisor #1778633837). Board Viking OST, Piraeus.</td></tr>
+<tr><td>Jul 12</td><td>Sun</td><td><span class="badge bg">Cruise — Athens</span></td><td>Panoramic Athens &amp; Archaeological Museum (incl.) 8:15 AM. Ship departs 6 PM.</td></tr>
+<tr><td>Jul 13</td><td>Mon</td><td><span class="badge bg">Cruise — Santorini</span></td><td>Ancient &amp; Modern Island Life ($149/pp) 8:45 AM</td></tr>
+<tr><td>Jul 14</td><td>Tue</td><td><span class="badge bg">Cruise — Olympia</span></td><td>Ancient Olympia (incl.) 9:45 AM</td></tr>
+<tr><td>Jul 15</td><td>Wed</td><td><span class="badge bg">Cruise — Corfu</span></td><td>Panoramic Corfu &amp; Old Town (incl.) 9:15 AM</td></tr>
+<tr><td>Jul 16</td><td>Thu</td><td><span class="badge bg">Cruise — Kotor</span></td><td>Kotor on Foot (incl.) 9:30 AM</td></tr>
+<tr><td>Jul 17</td><td>Fri</td><td><span class="badge bg">Cruise — Dubrovnik</span></td><td>Dubrovnik on Foot (incl.) 8:45 AM</td></tr>
+<tr><td>Jul 18</td><td>Sat</td><td><span class="badge bg">Cruise — Zadar</span></td><td>Walking Tour of Zadar (incl.) 10:30 AM</td></tr>
+<tr><td>Jul 19</td><td>Sun</td><td><span class="badge bg">Cruise — Koper</span></td><td>Postojna Cave &amp; Predjama Castle ($199/pp) 9:15 AM</td></tr>
+<tr><td>Jul 20</td><td>Mon</td><td><span class="badge by">Venice</span></td><td>Disembark Chioggia. Bus #80 to Venice. <strong>B&amp;B Ca' Bonvicini</strong>, Santa Croce. Conf. #5062824483. Check-in 9 AM–noon. Rest day.</td></tr>
+<tr><td>Jul 21</td><td>Tue</td><td><span class="badge by">Venice</span></td><td>Tour Guy #1118847 · 9 AM St. Mark's + Doge's + Gondola · 1:30 PM Murano &amp; Burano.</td></tr>
+<tr><td>Jul 22</td><td>Wed</td><td><span class="badge by">Ferrara</span></td><td>Check out Venice 9–10 AM. ⚠️ Water taxi/ACTV to Marco Polo Airport. Pick up Hertz BMW X1 (#L60845394F2), 9 AM. Drive to Ferrara ~1.5 hrs. 1 night TBD hotel.</td></tr>
+<tr><td>Jul 23</td><td>Thu</td><td><span class="badge by">Florence</span></td><td>Drive ~1.5 hrs. Galileo Museum (AM) + Medici Chapel (PM). <strong>Loft Il Giobertino</strong>, Conf. #5024697136. Check-in 3–10 PM.</td></tr>
+<tr><td>Jul 24</td><td>Fri</td><td><span class="badge by">Florence → Chianti</span></td><td>Check out 6–10 AM. 9:30 AM: Da Vinci National Science Museum. Depart noon SR222 Chianti Wine Road. <strong>Villa San Filippo</strong>, Conf. #72074703683732. Check-in 2 PM. ⚠️ Cancel by Jul 10.</td></tr>
+<tr><td>Jul 25</td><td>Sat</td><td><span class="badge by">Chianti → Montalcino</span></td><td>Radda · Castello di Brolio. <strong>Idolina Guest House</strong>, Conf. #72074700792366. Check-in from 1:30 PM. Contact property 24 hrs before.</td></tr>
+<tr><td>Jul 26</td><td>Sun</td><td><span class="badge by">→ Assisi</span></td><td>Pienza + Sant'Antimo → Assisi. <strong>Hotel Bellavista</strong>, Conf. #6920407207. Check-in 3–8 PM. <strong>5 PM Italian Mass + Vespers</strong> at Basilica of St. Francis.</td></tr>
+<tr><td>Jul 27</td><td>Mon</td><td><span class="badge by">Assisi</span></td><td>Santa Chiara · Rocca Maggiore · Eremo delle Carceri. Full exploration day.</td></tr>
+<tr><td>Jul 28</td><td>Tue</td><td><span class="badge by">→ Spello → Orvieto</span></td><td>Check out 8–11 AM. Optional Moment of Prayer. Spello. <strong>Hotel Duomo</strong>, Orvieto. Conf. #72074704255117. Check-in 2–10 PM.</td></tr>
+<tr><td>Jul 29</td><td>Wed</td><td><span class="badge by">→ Rome</span></td><td>Drive ~90 min. Park car. Afternoon Vatican Scavi (BOOK NOW). 5 PM: Pasta Class (Viator #1395367603). 3 nights.</td></tr>
+<tr><td>Jul 30</td><td>Thu</td><td><span class="badge by">Rome — Vatican</span></td><td>Tour Guy #1123725 · Arrive 7:15 AM · Vatican Museums + Sistine + St. Peter's via Scala Regia.</td></tr>
+<tr><td>Jul 31</td><td>Fri</td><td><span class="badge by">Rome — Ancient Rome</span></td><td>Tour Guy #1117159 · 9 AM Private Colosseum + Arena Floor. Pay Jul 3. Farewell dinner.</td></tr>
+<tr><td>Aug 1</td><td>Sat</td><td><span class="badge bb">Depart FCO</span></td><td>Drive rental car to FCO (7:30 AM drop). Fly home IAD.</td></tr>
+</table></div></div>
+
+<div class="section"><div class="sh-static">🏨 Hotels At a Glance</div><div class="sb"><table>
+<tr><th>Location</th><th>Hotel</th><th>Dates</th><th>Conf #</th><th>Cancel By</th><th>Status</th></tr>
+<tr><td>Athens</td><td>Anise Aluma Athens, Tapestry/Hilton</td><td>Jul 10</td><td>3471385009</td><td>Jul 9</td><td><span class="badge bg">✅ Booked</span></td></tr>
+<tr><td>Venice</td><td>B&amp;B Ca' Bonvicini</td><td>Jul 20–22</td><td>5062824483</td><td style="color:#e74c3c;font-weight:600">Non-refundable</td><td><span class="badge bg">✅ Booked</span></td></tr>
+<tr><td>Ferrara</td><td>TBD</td><td>Jul 22</td><td>—</td><td>—</td><td><span class="badge br">TBD</span></td></tr>
+<tr><td>Florence</td><td>Loft Il Giobertino (apartment)</td><td>Jul 23–24</td><td>5024697136</td><td>Jul 17</td><td><span class="badge bg">✅ Booked</span></td></tr>
+<tr><td>Chianti</td><td>Villa San Filippo</td><td>Jul 24–25</td><td>72074703683732</td><td style="color:#e74c3c;font-weight:600">Jul 10 ⚠️</td><td><span class="badge bg">✅ Booked</span></td></tr>
+<tr><td>Montalcino</td><td>Idolina Guest House</td><td>Jul 25–26</td><td>72074700792366</td><td>Jul 22</td><td><span class="badge bg">✅ Booked</span></td></tr>
+<tr><td>Assisi</td><td>Hotel Bellavista</td><td>Jul 26–28</td><td>6920407207</td><td>Jul 20</td><td><span class="badge bg">✅ Booked</span></td></tr>
+<tr><td>Orvieto</td><td>Hotel Duomo</td><td>Jul 28–29</td><td>72074704255117</td><td>Jul 26</td><td><span class="badge bg">✅ Booked</span></td></tr>
+<tr><td>Rome</td><td>TBD</td><td>Jul 29–31</td><td>—</td><td>—</td><td><span class="badge br">TBD</span></td></tr>
+</table></div></div>
+
+<div class="section"><div class="sh-static">💳 Tour Guy &amp; Other Bookings</div><div class="sb">
+<table>
+<tr><th>Pay Date</th><th>Booking</th><th>#</th><th>Amount</th><th>Status</th></tr>
+<tr><td><strong>Jun 12</strong></td><td>Athens Acropolis — Jul 11, 7:50 AM</td><td>1118765</td><td>$331.84</td><td><span class="badge bg">Confirmed</span></td></tr>
+<tr><td><strong>Jun 29</strong></td><td>Venice Full Day — Jul 21</td><td>1118847</td><td>$824.72</td><td><span class="badge bg">Confirmed</span></td></tr>
+<tr><td><strong>Jul 3</strong></td><td>Private Colosseum + Arena Floor — Jul 31, 9 AM ← EARLIEST</td><td>1117159</td><td>$1,018.70</td><td><span class="badge bg">Confirmed</span></td></tr>
+<tr><td><strong>Jul 8</strong></td><td>Semi-Private Vatican + Sistine + St. Peter's — Jul 30, 7:30 AM</td><td>1123725</td><td>$721.16</td><td><span class="badge bg">Confirmed</span></td></tr>
+<tr><td></td><td><em>Vatican refund (original Dome Climb #1117150)</em></td><td>1117150</td><td style="color:#27ae60">+$249.96 pending</td><td><span class="badge by">Refund pending</span></td></tr>
+<tr><td>Jul 9 charge</td><td>Athens Open Air Theatre — Jul 11, 9 PM</td><td>1778633837</td><td>$143.76</td><td><span class="badge bg">Confirmed</span></td></tr>
+<tr><td>On file</td><td>Gluten-Free Pasta Class, Rome — Jul 29, 5 PM</td><td>1395367603</td><td>TBD</td><td><span class="badge bg">Confirmed</span></td></tr>
+</table>
+</div></div>
+
+<div class="section"><div class="sh-static">👥 Travelers</div><div class="sb"><div class="ig">
+<div class="ib"><h4>Couple 1 — Limbers</h4><ul><li>Joe Limber · Teresa (Teri) Limber · Upper 50s</li><li>Joe: science, physics, math, history</li><li>Viking #8663390 · Stateroom 4071</li><li>Marriott Bonvoy Gold · ~270,000 points</li><li>Hertz member #56844202</li></ul></div>
+<div class="ib"><h4>Sisters — Guernsey/Santi</h4><ul><li>Lorene Guernsey (upper 60s) · Carla Santi (early 60s)</li><li>Viking #8663394 · Stateroom 4073</li><li>Hilton Honors Diamond · ~50,156 pts remaining</li><li>Booked: Athens hotel + 4 Tour Guy tours + Chianti + Orvieto hotels</li></ul></div>
+</div></div></div>
+</div>
+
+<!-- MUST-BOOK NOW -->
+<div id="tab-bk" class="panel">
+<div class="al alr"><strong>⚠️ Villa San Filippo cancel deadline: Jul 10.</strong> B&amp;B Ca' Bonvicini Venice is non-refundable — no changes possible.</div>
+<div class="section"><div class="sh-static">✅ All Confirmed Bookings</div><div class="sb">
+<div class="bi"><div class="bic">🏨</div><div class="bid"><h4>Athens: Anise Aluma Athens, Tapestry/Hilton · Fri Jul 10 <span class="pl">✅ BOOKED</span></h4><p>Evripidou 82 · Conf. #3471385009 · Twin (Lorene &amp; Carla) + Queen (Joe &amp; Teresa) · 100k Hilton pts · Cancel by Jul 9</p></div></div>
+<div class="bi"><div class="bic">🏛️</div><div class="bid"><h4>Acropolis Tour · Sat Jul 11, 7:50 AM <span class="pl">✅ BOOKED</span></h4><p>Tour Guy #1118765 · $331.84 (pay Jun 12) · Meet at Porinou 5 (outside Acropolis gates — NOT metro station)</p></div></div>
+<div class="bi"><div class="bic">🎭</div><div class="bid"><h4>Athens Open Air Theatre · Sat Jul 11, 9 PM <span class="pl">✅ BOOKED</span></h4><p>Tripadvisor #1778633837 · $143.76 (charged Jul 9) · No barcode — operator looks up by name · Cancel free before 9 PM EEST Jul 10</p></div></div>
+<div class="bi"><div class="bic">🏨</div><div class="bid"><h4>Venice: B&amp;B Ca' Bonvicini · Mon–Wed Jul 20–22 <span class="pl">✅ BOOKED</span></h4><p>Santa Croce 2160, Calle Ca' Bonvicini · <a href="tel:+390412750106" class="phlink">+39 041 275 0106</a> · Booking.com Conf. #5062824483, PIN: 0103 · Booked by Joe<br>2 Double Rooms · Check-in Mon Jul 20, 9 AM–noon · Check-out Wed Jul 22, 9–10 AM (VERY EARLY — must leave by 10 AM to reach airport for 9 AM car pickup) · No breakfast · City tax €3/pp/night at property · <strong style="color:#e74c3c">NON-REFUNDABLE — no cancellation or modification possible</strong><br>⚠️ Upper floors accessible by stairs only (no elevator) · Canal view requested</p></div></div>
+<div class="bi"><div class="bic">🚗</div><div class="bid"><h4>Hertz Rental Car: BMW X1 · Wed Jul 22 → Sat Aug 1 <span class="pl">✅ BOOKED</span></h4><p>Conf. #L60845394F2 · Member: Joseph Limber (#56844202) · $855.85 total<br>⚠️ Pickup: <strong>Hertz Autonoleggio — Venezia Aeroporto</strong> (Marco Polo Airport, Via Broglio 6, Tessera) · Jul 22, 9:00 AM · Hours: 8 AM–midnight<br>Drop-off: Rome Fiumicino Airport · Aug 1, 7:30 AM<br>Allow 30–45 min from Venice to airport by water taxi or ACTV Bus 5</p></div></div>
+<div class="bi"><div class="bic">🚣</div><div class="bid"><h4>Venice Full Day (Murano &amp; Burano) · Tue Jul 21 <span class="pl">✅ BOOKED</span></h4><p>Tour Guy #1118847 · $824.72 (pay Jun 29) · 9 AM: Meet between San Marco/San Teodoro columns · St. Mark's + Doge's + Gondola, then 1:30 PM Murano &amp; Burano</p></div></div>
+<div class="bi"><div class="bic">🏨</div><div class="bid"><h4>Florence: Loft Il Giobertino · Thu Jul 23–Fri Jul 24 <span class="pl">✅ BOOKED</span></h4><p>Via Vincenzo Gioberti 95, 2nd floor, Florence · <a href="tel:+393338347050" class="phlink">+39 333 834 7050</a> · Booking.com Conf. #5024697136, PIN: 0746 · Booked by Joe<br><strong>1 Two-Bedroom Apartment for all 4 adults</strong> · 1 night · Check-in Thu Jul 23, 3–10 PM · Check-out Fri Jul 24, 6–10 AM (VERY EARLY — must leave for Da Vinci Museum by 9 AM) · No breakfast · Kitchen/balcony included · €239.95 charged · Public parking nearby (not reserved — ask property for closest lot) · Cancel free until Jul 17; after that €175.95 fee</p></div></div>
+<div class="bi"><div class="bic">🏨</div><div class="bid"><h4>Chianti: Villa San Filippo · Fri Jul 24–Sat Jul 25 <span class="pl">✅ BOOKED</span></h4><p>Strada delle Ginestre 6, Barberino Tavarnelle · Hotels.com Conf. #72074703683732 · $372.12 · Check-in 2 PM · <strong style="color:#e74c3c">⚠️ CANCEL FREE UNTIL JUL 10 ONLY — 100% penalty after</strong></p></div></div>
+<div class="bi"><div class="bic">🏨</div><div class="bid"><h4>Montalcino: Idolina Guest House · Sat Jul 25–Sun Jul 26 <span class="pl">✅ BOOKED</span></h4><p>Via Mazzini 65/67 · Hotels.com Conf. #72074700792366 · €262.62 at property · Check-in 1:30–7:30 PM · NO FRONT DESK — contact property 24 hrs before · Cancel free until Jul 22</p></div></div>
+<div class="bi"><div class="bic">🏨</div><div class="bid"><h4>Assisi: Hotel Bellavista · Sun–Tue Jul 26–28 <span class="pl">✅ BOOKED</span></h4><p>Viale Patrono d'Italia 100 · Conf. #6920407207 (PIN: 4429) · €410.24 auto-charged Jul 19 (card ••••6773) · Check-in 3–8 PM (after 8 PM: €30 supplement) · Check-out 8–11 AM (late check-out €50) · Breakfast 8–9:30 AM · Lunch 12–2:30 PM · Dinner 7–8 PM · <strong>Restaurant/lunch/dinner closed Thursdays</strong> · Payment and check-out at the restaurant · Swimming pool open daily 9 AM–7 PM · City tax €3/pp/night cash at property · Cancel free until Jul 20</p></div></div>
+<div class="bi"><div class="bic">🏨</div><div class="bid"><h4>Orvieto: Hotel Duomo · Tue–Wed Jul 28–29 <span class="pl">✅ BOOKED</span></h4><p>Vicolo di Maurizio 7 · Hotels.com Conf. #72074704255117 · $407.72 · Check-in 2–10 PM · Front desk 8 AM–10 PM · Cancel free until Jul 26</p></div></div>
+<div class="bi"><div class="bic">🕍</div><div class="bid"><h4>Vatican Museums + Sistine + St. Peter's · Thu Jul 30, 7:30 AM <span class="pl">✅ BOOKED</span></h4><p>Tour Guy #1123725 · $721.16 (pay Jul 8) · Arrive 7:15 AM under Michelangelo/Raphael statues · Walks Inside Rome · Max 10</p></div></div>
+<div class="bi"><div class="bic">🍝</div><div class="bid"><h4>Gluten-Free Pasta Class, Rome · Wed Jul 29, 5 PM <span class="pl">✅ BOOKED</span></h4><p>Viator #1395367603 · 4 adults · 2.5 hours (ends ~7:30 PM) · ⚠️ Scavi must finish by ~4 PM</p></div></div>
+<div class="bi"><div class="bic">🏟️</div><div class="bid"><h4>Private Colosseum + Arena Floor · Fri Jul 31, 9 AM <span class="pl">✅ BOOKED</span></h4><p>Tour Guy #1117159 · $1,018.70 (pay Jul 3 — EARLIEST DUE) · Meet outside Colosseum metro stop</p></div></div>
+</div></div>
+
+<div class="section"><div class="sh-static">🚨 Still Needs Booking</div><div class="sb">
+<div class="bi"><div class="bic">⛏️</div><div class="bid"><h4>Vatican Scavi / Necropolis · Wed Jul 29 afternoon <span class="ph">BOOK TODAY</span></h4><p>Only 250 people/day. Must finish by ~4 PM for 5 PM cooking class.<br><strong>Option A (~€13/pp):</strong> <a href="https://visite.basilicasanpietro.va/en/booking/necropolivaticana" target="_blank">visite.basilicasanpietro.va</a><br><strong>Option B (~€75/pp):</strong> Viator bundle (instant booking). Closed Sundays.</p></div></div>
+<div class="bi"><div class="bic">⛪</div><div class="bid"><h4>Mass at Basilica of St. Francis · Sun Jul 26, 5 PM <span class="ph">BOOK NOW</span></h4><p>Select "Participation" at <a href="https://sanfrancescoassisi.org/en/reservations/liturgical-celebrations" target="_blank">sanfrancescoassisi.org</a>. Free. Also consider "Moment of Prayer" for Tue Jul 28 AM.</p></div></div>
+<div class="bi"><div class="bic">🔭</div><div class="bid"><h4>Galileo Museum — Florence · Thu Jul 23 AM <span class="ph">URGENT</span></h4><p>Book at <a href="https://www.museogalileo.it" target="_blank">museogalileo.it</a>. ~€10/pp. Plan 2 hours.</p></div></div>
+<div class="bi"><div class="bic">👑</div><div class="bid"><h4>Medici Chapel — Florence · Thu Jul 23 PM <span class="ph">URGENT</span></h4><p>Book at <a href="https://www.uffizi.it" target="_blank">uffizi.it</a>. ~€9/pp.</p></div></div>
+<div class="bi"><div class="bic">🏛️</div><div class="bid"><h4>Pantheon — Rome · Wed Jul 29 evening <span class="pm">HIGH</span></h4><p>Book at <a href="https://www.pantheonroma.com" target="_blank">pantheonroma.com</a>. ~€5/pp.</p></div></div>
+<div class="bi"><div class="bic">⛏️</div><div class="bid"><h4>Orvieto Underground · Tue Jul 28 <span class="pm">RECOMMENDED</span></h4><p>Book at <a href="https://www.orvietounderground.it" target="_blank">orvietounderground.it</a>. ~€6/pp.</p></div></div>
+<div class="bi"><div class="bic">🏨</div><div class="bid"><h4>Ferrara Hotel · Wed Jul 22 <span class="ph">URGENT</span></h4><p>1 night near historic center, outside ZTL. No Hilton/Bonvoy properties in Ferrara.</p></div></div>
+<div class="bi"><div class="bic">🏨</div><div class="bid"><h4>Rome Hotel · Jul 29–31 <span class="ph">URGENT</span></h4><p>3 nights. Must confirm parking ~€25–35/night. Bonvoy: The Regency Rome. Hilton: Aleph Rome Hotel Curio (★4.6) or DoubleTree Rome Monti (★4.6).</p></div></div>
+</div></div>
+</div>
+
+<!-- FULL ITINERARY -->
+<div id="tab-it" class="panel">
+<div class="al alb" style="margin-bottom:10px"><strong>⚛ Science/History</strong> in blue · <strong>💜 Hilton</strong> in purple · <strong>🟢 Logistics</strong> in green</div>
+<div id="itin-toolbar">
+<button class="cb" onclick="toggleAllDays(true)">Expand All</button>
+<button class="cb" onclick="toggleAllDays(false)">Collapse All</button>
+<span style="font-size:12px;color:#aaa;margin:0 4px">Filter:</span>
+<button class="fb active" onclick="filterDays('all',this)">All</button>
+<button class="fb" onclick="filterDays('athens',this)">Athens</button>
+<button class="fb" onclick="filterDays('cruise',this)">Cruise</button>
+<button class="fb" onclick="filterDays('venice',this)">Venice</button>
+<button class="fb" onclick="filterDays('ferrara',this)">Ferrara</button>
+<button class="fb" onclick="filterDays('florence',this)">Florence</button>
+<button class="fb" onclick="filterDays('tuscany',this)">Tuscany</button>
+<button class="fb" onclick="filterDays('umbria',this)">Umbria</button>
+<button class="fb" onclick="filterDays('rome',this)">Rome</button>
+</div>
+<div class="leg">
+<span class="li"><span class="ld" style="background:#378ADD"></span>Athens</span>
+<span class="li"><span class="ld" style="background:#1D9E75"></span>Cruise/Venice</span>
+<span class="li"><span class="ld" style="background:#378ADD"></span>Ferrara</span>
+<span class="li"><span class="ld" style="background:#D4537E"></span>Florence</span>
+<span class="li"><span class="ld" style="background:#BA7517"></span>Tuscany</span>
+<span class="li"><span class="ld" style="background:#7F77DD"></span>Umbria</span>
+<span class="li"><span class="ld" style="background:#D85A30"></span>Rome</span>
+</div>
+<div id="itin-days"></div>
+</div>
+
+<!-- MAP -->
+<div id="tab-mp" class="panel">
+<div id="map-wrap">
+  <div id="map-sidebar">
+    <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:#888;margin-bottom:6px">Region</div>
+    <div id="region-checks"></div>
+    <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:#888;margin:12px 0 6px">Type</div>
+    <div id="type-checks"></div>
+    <div style="margin-top:10px;display:flex;gap:5px">
+      <button class="cb" onclick="mapSelectAll(true)"  style="flex:1;padding:4px 6px">All</button>
+      <button class="cb" onclick="mapSelectAll(false)" style="flex:1;padding:4px 6px">None</button>
+    </div>
+  </div>
+  <div id="map-main">
+    <div id="map"></div>
+    <div class="ml">
+      <span class="li"><span class="ld" style="background:#7F77DD"></span>Hotel (booked)</span>
+      <span class="li"><span class="ld" style="background:#b3afed"></span>Hotel (TBD)</span>
+      <span class="li"><span class="ld" style="background:#e74c3c"></span>Tour (booked)</span>
+      <span class="li"><span class="ld" style="background:#f5a0a0"></span>Stop / Sight</span>
+      <span class="li"><span class="ld" style="background:#fca5a5"></span>Alternate</span>
+      <span class="li"><span class="ld" style="background:#1D9E75"></span>Cruise port</span>
+      <span class="li"><span class="ld" style="background:#e67e22"></span>Transport</span>
+      <span class="li" style="margin-left:auto;color:#aaa">Click any pin for details</span>
+    </div>
+  </div>
+</div>
+</div>
+<!-- HOTELS -->
+<div id="tab-ht" class="panel">
+<div class="section">
+<div class="sh" onclick="toggleSection('hotel-tracker')">🏨 Hotel Tracker <span class="sh-chevron open" id="chev-hotel-tracker">▾</span></div>
+<div id="hotel-tracker" class="sc"><div class="sb">
+<table>
+<tr><th>Location</th><th>Dates</th><th>Property / Key Details</th><th>Status</th></tr>
+<tr><td><strong>Athens</strong><br>Jul 10</td><td>1 night</td><td><strong>Anise Aluma Athens, Tapestry/Hilton</strong><br>Evripidou 82 · Conf. #3471385009 · 2 rooms · 100k Hilton pts · Cancel by Jul 9 · Check-in 3 PM, out 11 AM</td><td><span class="badge bg">✅ Booked</span></td></tr>
+<tr><td><strong>Venice</strong><br>Jul 20–22</td><td>2 nights</td><td><strong>B&amp;B Ca' Bonvicini</strong><br>Santa Croce 2160 · Conf. #5062824483 (PIN: 0103) · Booked by Joe · 2 Double Rooms · Check-in 9 AM–noon · Check-out 9–10 AM (very early!) · No breakfast · No elevator · No parking · City tax €3/pp/night · <strong style="color:#e74c3c">NON-REFUNDABLE</strong> · Canal view requested · <a href="tel:+390412750106" class="phlink">+39 041 275 0106</a></td><td><span class="badge bg">✅ Booked</span></td></tr>
+<tr><td><strong>Ferrara</strong><br>Jul 22</td><td>1 night</td><td>TBD — near historic center, outside ZTL. No Hilton/Bonvoy.</td><td><span class="badge br">TBD</span></td></tr>
+<tr><td><strong>Florence</strong><br>Jul 23–24</td><td>1 night</td><td><strong>Loft Il Giobertino</strong><br>Via Vincenzo Gioberti 95, 2nd floor · Conf. #5024697136 (PIN: 0746) · Booked by Joe · 1 two-bedroom apartment, all 4 guests · Check-in 3–10 PM · Check-out 6–10 AM (very early!) · No breakfast · Kitchen, balcony, city view · Public parking nearby · €239.95 charged · Cancel free until Jul 17 · <a href="tel:+393338347050" class="phlink">+39 333 834 7050</a></td><td><span class="badge bg">✅ Booked</span></td></tr>
+<tr><td><strong>Chianti</strong><br>Jul 24–25</td><td>1 night</td><td><strong>Villa San Filippo</strong><br>Strada delle Ginestre 6, Barberino Tavarnelle · Hotels.com Conf. #72074703683732 · $372.12 · Check-in 2 PM–midnight · Check-out 11 AM · City tax €3/pp/night · <strong style="color:#e74c3c">⚠️ Cancel free until Jul 10 only — 100% penalty after</strong></td><td><span class="badge bg">✅ Booked</span></td></tr>
+<tr><td><strong>Montalcino</strong><br>Jul 25–26</td><td>1 night</td><td><strong>Idolina Guest House</strong><br>Via Mazzini 65/67 · Hotels.com Conf. #72074700792366 · €262.62 + city tax €4/pp/night at property · Check-in 1:30–7:30 PM · Check-out 11 AM · NO FRONT DESK — contact 24 hrs before · Cancel free until Jul 22</td><td><span class="badge bg">✅ Booked</span></td></tr>
+<tr><td><strong>Assisi</strong><br>Jul 26–28</td><td>2 nights</td><td><strong>Hotel Bellavista</strong><br>Viale Patrono d'Italia 100 · Conf. #6920407207 (PIN: 4429) · 2 Deluxe Double Rooms · 1st floor, no elevator · Breakfast 8–9:30 AM · Lunch 12–2:30 PM · Dinner 7–8 PM · <strong>Closed Thursdays</strong> · Check-in 3–8 PM (€30 after 8 PM) · Check-out 8–11 AM · Payment at restaurant · Swimming pool daily 9 AM–7 PM · €410.24 auto-charged Jul 19 (card ••••6773) · City tax €3/pp/night cash · Cancel free until Jul 20</td><td><span class="badge bg">✅ Booked</span></td></tr>
+<tr><td><strong>Orvieto</strong><br>Jul 28–29</td><td>1 night</td><td><strong>Hotel Duomo</strong><br>Vicolo di Maurizio 7 · Hotels.com Conf. #72074704255117 · $407.72 · Check-in 2–10 PM · Check-out 11 AM · Front desk 8 AM–10 PM · City tax €2.30/pp/night · Steps from Duomo · Cancel free until Jul 26</td><td><span class="badge bg">✅ Booked</span></td></tr>
+<tr><td><strong>Rome</strong><br>Jul 29–31</td><td>3 nights</td><td>TBD — must confirm parking ~€25–35/night. Bonvoy: The Regency Rome (45–65k pts/night) · Hilton: Aleph Rome Hotel Curio (★4.6, ~70k pts) or DoubleTree Rome Monti (★4.6, near Colosseum)</td><td><span class="badge br">TBD</span></td></tr>
+</table>
+</div></div></div>
+
+<div class="section">
+<div class="sh" onclick="toggleSection('bonvoy')">⭐ Marriott Bonvoy — Joe &amp; Teresa · Gold Elite · ~270,000 Points <span class="sh-chevron" id="chev-bonvoy">▾</span></div>
+<div id="bonvoy" class="sc" style="display:none"><div class="sb">
+<div class="al alg"><strong>Best use:</strong> W Florence points option is now moot (Loft Il Giobertino booked). Save points for Rome — The Regency Rome (45,000–65,000 pts/night × 3 nights).</div>
+<div class="al aly"><strong>Alternative:</strong> Pay cash for Rome and earn Gold 25% bonus points back for future use.</div>
+</div></div></div>
+
+<div class="section">
+<div class="sh" onclick="toggleSection('hilton')">💜 Hilton Honors — Lorene · Diamond · ~50,156 Points Remaining <span class="sh-chevron" id="chev-hilton">▾</span></div>
+<div id="hilton" class="sc" style="display:none"><div class="sb">
+<div class="al alg"><strong>Athens — ✅ USED:</strong> Anise Aluma Athens (100,000 pts). ~50,156 pts remaining.</div>
+<p><strong>Rome best use:</strong> Aleph Rome Hotel Curio (★4.6, near Trevi, ~70k pts/night) — slightly over remaining balance, may need small cash co-pay. OR DoubleTree Rome Monti (★4.6, near Colosseum, ~50k pts/night) — most achievable with remaining balance.</p>
+<p style="margin-top:8px;font-size:12px;color:#aaa">No Hilton in Ferrara, Montalcino, Assisi, or Orvieto. All Italy hotels now booked except Ferrara and Rome.</p>
+</div></div></div>
+</div>
+
+<!-- CRUISE EXCURSIONS -->
+<div id="tab-ex" class="panel">
+<div class="al alb"><strong>ℹ️ Reference only.</strong> Selected excursions in green.</div>
+<div id="excursion-list"></div>
+</div>
+
+<!-- TRANSPORTATION -->
+<div id="tab-tr" class="panel">
+<div class="section">
+<div class="sh" onclick="toggleSection('flights')">✈️ Flights <span class="sh-chevron open" id="chev-flights">▾</span></div>
+<div id="flights" class="sc"><div class="sb"><table>
+<tr><th>Direction</th><th>Date</th><th>Route</th><th>Status</th></tr>
+<tr><td>Outbound</td><td>Thu Jul 9</td><td>IAD → Athens (ATH)</td><td><span class="badge bg">Booked</span></td></tr>
+<tr><td>Return</td><td>Sat Aug 1</td><td>Rome FCO → IAD</td><td><span class="badge bg">Booked</span></td></tr>
+</table></div></div></div>
+
+<div class="section">
+<div class="sh" onclick="toggleSection('cruise-info')">🚢 Viking Cruise — OST <span class="sh-chevron open" id="chev-cruise-info">▾</span></div>
+<div id="cruise-info" class="sc"><div class="sb">
+<div class="al aly"><strong>⚠️ Verify with Viking:</strong> Some voyages shifted disembarkation from Chioggia to Fusina. Confirm before sailing.</div>
+<div class="ig" style="margin-bottom:12px">
+<div class="ib"><h4>Limbers</h4><p>Booking #8663390 · Stateroom 4071</p></div>
+<div class="ib"><h4>Guernsey/Santi</h4><p>Booking #8663394 · Stateroom 4073</p></div>
+</div>
+<table>
+<tr><th>Date</th><th>Day</th><th>Port</th><th>Excursion</th><th>Time</th><th>Cost</th></tr>
+<tr><td>Jul 11</td><td>Sat</td><td>Piraeus</td><td>Embarkation. Ship overnights.</td><td>—</td><td>—</td></tr>
+<tr><td>Jul 12</td><td>Sun</td><td>Athens/Piraeus</td><td>Panoramic Athens &amp; Archaeological Museum</td><td>8:15 AM · 4 hrs</td><td>Included</td></tr>
+<tr><td>Jul 13</td><td>Mon</td><td>Santorini</td><td>Ancient &amp; Modern Island Life</td><td>8:45 AM · 4.5 hrs</td><td>$149/pp</td></tr>
+<tr><td>Jul 14</td><td>Tue</td><td>Katakolon</td><td>Ancient Olympia</td><td>9:45 AM · 4 hrs</td><td>Included</td></tr>
+<tr><td>Jul 15</td><td>Wed</td><td>Corfu</td><td>Panoramic Corfu &amp; Old Town Walking Tour</td><td>9:15 AM · 3.3 hrs</td><td>Included</td></tr>
+<tr><td>Jul 16</td><td>Thu</td><td>Kotor</td><td>Kotor on Foot</td><td>9:30 AM · 1.5 hrs</td><td>Included</td></tr>
+<tr><td>Jul 17</td><td>Fri</td><td>Dubrovnik</td><td>Dubrovnik on Foot</td><td>8:45 AM · 3 hrs</td><td>Included</td></tr>
+<tr><td>Jul 18</td><td>Sat</td><td>Zadar</td><td>Walking Tour of Zadar</td><td>10:30 AM · 2 hrs</td><td>Included</td></tr>
+<tr><td>Jul 19</td><td>Sun</td><td>Koper, Slovenia</td><td>Postojna Cave &amp; Predjama Castle</td><td>9:15 AM · 7.5 hrs</td><td>$199/pp</td></tr>
+<tr><td>Jul 20</td><td>Mon</td><td>Chioggia</td><td>Disembark. Bus #80 to Venice Piazzale Roma.</td><td>Morning</td><td>—</td></tr>
+</table>
+</div></div></div>
+
+<div class="section">
+<div class="sh" onclick="toggleSection('rental-car')">🚗 Rental Car — Hertz BMW X1 · Venice Marco Polo Airport → Rome FCO <span class="sh-chevron open" id="chev-rental-car">▾</span></div>
+<div id="rental-car" class="sc"><div class="sb">
+<div class="al alg"><strong>✅ BOOKED</strong> · Hertz Conf. #L60845394F2 · $855.85 · BMW X1 or similar · Joseph Limber (#56844202)</div>
+<div class="al alr"><strong>⚠️ Pickup is at Venice Marco Polo Airport</strong> — not Piazzale Roma as originally planned. Hertz Autonoleggio — Venezia Aeroporto, Via Broglio 6, Tessera. Open 8 AM–midnight. Pickup: Wed Jul 22, 9:00 AM. Allow 30–45 min from Venice by water taxi (~€15, 20 min) or ACTV Bus 5 (~€8, 20 min). Must check out of Ca' Bonvicini by 10 AM — tight but workable.</div>
+<table>
+<tr><th>Segment</th><th>Date</th><th>Day</th><th>Route</th><th>Time</th><th>Notes</th></tr>
+<tr><td>Marco Polo Airport → Ferrara</td><td>Jul 22</td><td>Wed</td><td>A4 → A13</td><td>~1.5 hrs</td><td>Exit airport, head south toward Mestre then Ferrara.</td></tr>
+<tr><td>Ferrara → Florence</td><td>Jul 23</td><td>Thu</td><td>A13 → A1</td><td>~1.5 hrs</td><td>Park outside ZTL. Ask Loft Il Giobertino for nearest lot.</td></tr>
+<tr><td>Florence → Chianti</td><td>Jul 24</td><td>Fri</td><td>SR222 Via Chiantigiana</td><td>~1 hr to Greve</td><td>Take it slow — wine road, not autostrada.</td></tr>
+<tr><td>Chianti → Montalcino</td><td>Jul 25</td><td>Sat</td><td>Radda → Brolio → south</td><td>~1.5–2 hrs</td><td>Check into Idolina by 7:30 PM.</td></tr>
+<tr><td>Montalcino → Assisi</td><td>Jul 26</td><td>Sun</td><td>SS146 → E45 north</td><td>~2 hrs</td><td>Pienza + Sant'Antimo stops en route.</td></tr>
+<tr><td>Assisi → Spello</td><td>Jul 28</td><td>Tue</td><td>SS75</td><td>~15 min</td><td>Morning stop before Orvieto.</td></tr>
+<tr><td>Spello → Orvieto</td><td>Jul 28</td><td>Tue</td><td>E45 → A1</td><td>~1 hr</td><td>Park lower town, funicular up.</td></tr>
+<tr><td>Orvieto → Rome</td><td>Jul 29</td><td>Wed</td><td>A1</td><td>~90 min</td><td>Park at hotel — don't move until Aug 1.</td></tr>
+<tr><td>Rome → FCO Airport</td><td>Aug 1</td><td>Sat</td><td>A91/GRA</td><td>~35–45 min</td><td>Drop-off 7:30 AM. Allow extra for traffic.</td></tr>
+</table>
+<div class="al alr" style="margin-top:12px"><strong>ZTL Warning:</strong> Never drive into Florence, Rome, Siena, Assisi upper town, or Orvieto upper town. Camera-enforced — fines €80–150 by mail.</div>
+</div></div></div>
+</div>
+
+<!-- TIPS & PACKING -->
+<div id="tab-pk" class="panel">
+<div class="section"><div class="sh-static">☀️ July Travel — Key Tips</div><div class="sb"><div class="ig">
+<div class="ib"><h4>Early Checkouts</h4><ul><li><strong>Venice Ca' Bonvicini:</strong> Check-out 9–10 AM. Need to reach Marco Polo Airport by 9 AM for car. Leave hotel by 8:15 AM latest.</li><li><strong>Florence Loft Il Giobertino:</strong> Check-out 6–10 AM. Da Vinci Museum opens 9:30 AM — leave bags at property or find luggage storage.</li><li>Both are earlier than typical — plan arrivals and morning schedules carefully.</li></ul></div>
+<div class="ib"><h4>Car Pickup Logistics</h4><ul><li>Wed Jul 22: Check out Venice by 9 AM</li><li>Water taxi Venice → Marco Polo: ~20 min, ~€15</li><li>ACTV Bus 5 Venice → Marco Polo: ~20 min, ~€8</li><li>Hertz opens 8 AM — pickup at 9 AM</li><li>Hertz Conf. #L60845394F2</li></ul></div>
+<div class="ib"><h4>Heat Management</h4><ul><li>July temps: 90–100°F in Rome/Florence</li><li>Start major sights before 9 AM</li><li>Build in 2–3 PM hotel rest every day</li><li>Hill towns 5–10°F cooler</li></ul></div>
+<div class="ib"><h4>Church Etiquette</h4><ul><li>Covered shoulders required everywhere</li><li>Knees must be covered (women and men)</li><li>Scarves/shawls in bag at all times</li><li>No flash photography in most churches</li></ul></div>
+<div class="ib"><h4>Assisi Details</h4><ul><li>Hotel Bellavista: payment/check-out at restaurant (not reception)</li><li>Restaurant closed Thursdays — plan meals accordingly</li><li>Swimming pool 9 AM–7 PM, reserved area for guests</li><li>Check-in after 8 PM incurs €30 surcharge</li></ul></div>
+<div class="ib"><h4>Florence Apartment</h4><ul><li>Loft Il Giobertino: one apartment for all 4 (2 bedrooms)</li><li>Kitchen included — good for an early breakfast before Da Vinci Museum</li><li>No dedicated parking — ask property for nearest public lot upon arrival</li><li>Cancel free until Jul 17</li></ul></div>
+</div></div></div>
+</div>
+
+<script>
+function toggleSection(id){const el=document.getElementById(id);const chev=document.getElementById('chev-'+id);if(!el)return;const hidden=el.style.display==='none';el.style.display=hidden?'':'none';if(chev)chev.classList.toggle('open',hidden);}
+
+const allDays=[
+{id:'A1',date:'Fri Jul 10',title:'Arrive Athens',region:'athens',color:'#378ADD',bg:'#e8f2fc',tc:'#0c447c',
+sub:'1 night · Anise Aluma Athens, Tapestry/Hilton · Conf. #3471385009',
+blocks:[{t:'Arrive',c:'Anise Aluma Athens, Tapestry/Hilton (Evripidou 82). Joe &amp; Teresa: Queen Room (Honors ID 213729341). Lorene &amp; Carla: Twin Room (Honors ID 213729340). Check-in 3 PM.'},{t:'Evening',c:'Stroll the Plaka. Dinner near the hotel. Early night — 7:50 AM tour tomorrow.'}],
+log:'Check-out tomorrow 11 AM. Acropolis tour meeting at Porinou 5 (outside gates — NOT the metro station). 100k Hilton pts used. Cancel by Jul 9.'},
+
+{id:'A2',date:'Sat Jul 11',title:'Acropolis → Evening Theatre → Board Viking',region:'athens',color:'#378ADD',bg:'#e8f2fc',tc:'#0c447c',
+sub:'7:50 AM Acropolis Tour (#1118765) · Board ship · 9 PM Open Air Ancient Greek Theatre (#1778633837)',
+blocks:[{t:'6:30 AM',c:'Wake up. Light breakfast. Check out.'},{t:'7:35 AM',c:'Meet Tour Guy at <strong>Porinou 5</strong> (outside Acropolis gates — NOT the metro station). Arrive 15 min early. Booking #1118765, 4 adults.'},{t:'7:50 AM',c:'🏛️ 2-Hour Highlights Tour — Propylaea, Parthenon, Temple of Athena Nike, Theater of Dionysus, Odeon of Herodes Atticus.'},{t:'Afternoon',c:'Lunch in Plaka. Transfer to Piraeus (~30–45 min). Board Viking OST — staterooms 4071 (Limbers) &amp; 4073 (Lorene &amp; Carla). Dinner onboard.'},{t:'9:00 PM',c:'🎭 <strong>Open Air Ancient Greek Theatre</strong> — Tripadvisor #1778633837. $143.76. No barcode — operator looks up by name. Arrange return transport to Piraeus after. Ship doesn\'t sail until 6 PM tomorrow.'}],
+log:'$331.84 auto-charged Jun 12. Theatre: no barcode, look up by name. Cancel theatre free before 9 PM EEST Jul 10.',
+sci:'The Odeon of Herodes Atticus still hosts concerts today. The Theater of Dionysus at the base of the Acropolis is the birthplace of Western drama — 500 BC.'},
+
+{id:'C1',date:'Sun Jul 12',title:'Athens/Piraeus — Panoramic Tour + Sail Away',region:'cruise',color:'#1D9E75',bg:'#e8f7f1',tc:'#0a6b50',
+sub:'Shore Excursion: Panoramic Athens & Archaeological Museum · 8:15 AM · Included · Ship departs 6 PM',
+blocks:[{t:'8:15 AM',c:'Viking excursion: Panoramic Athens &amp; Archaeological Museum. 4 hours. Included.'},{t:'6 PM',c:'Ship departs Piraeus. Next stop: Santorini.'}],
+sci:'The National Archaeological Museum contains the Antikythera Mechanism — the world\'s oldest analog computer (c. 100 BC). An ancient Greek bronze device predicting astronomical events with interlocking gears. Do not miss it.'},
+
+{id:'C2',date:'Mon Jul 13',title:'Santorini',region:'cruise',color:'#1D9E75',bg:'#e8f7f1',tc:'#0a6b50',
+sub:'Shore Excursion: Ancient & Modern Island Life · 8:45 AM · $149/pp',
+blocks:[{t:'8:45 AM',c:'Viking excursion: Ancient &amp; Modern Island Life. 4.5 hours. $149/pp paid.'}]},
+
+{id:'C3',date:'Tue Jul 14',title:'Katakolon — Ancient Olympia',region:'cruise',color:'#1D9E75',bg:'#e8f7f1',tc:'#0a6b50',
+sub:'Shore Excursion: Ancient Olympia · 9:45 AM · Included',
+blocks:[{t:'9:45 AM',c:'Viking excursion: Ancient Olympia. 4 hours. Included.'}]},
+
+{id:'C4',date:'Wed Jul 15',title:'Corfu',region:'cruise',color:'#1D9E75',bg:'#e8f7f1',tc:'#0a6b50',
+sub:'Shore Excursion: Panoramic Corfu & Old Town · 9:15 AM · Included',
+blocks:[{t:'9:15 AM',c:'Viking excursion: Panoramic Corfu &amp; Old Town Walking Tour. 3.3 hours. Included.'}]},
+
+{id:'C5',date:'Thu Jul 16',title:'Kotor, Montenegro',region:'cruise',color:'#1D9E75',bg:'#e8f7f1',tc:'#0a6b50',
+sub:'Shore Excursion: Kotor on Foot · 9:30 AM · Included',
+blocks:[{t:'9:30 AM',c:'Viking excursion: Kotor on Foot. 1.5 hours. Included.'}]},
+
+{id:'C6',date:'Fri Jul 17',title:'Dubrovnik, Croatia',region:'cruise',color:'#1D9E75',bg:'#e8f7f1',tc:'#0a6b50',
+sub:'Shore Excursion: Dubrovnik on Foot · 8:45 AM · Included',
+blocks:[{t:'8:45 AM',c:'Viking excursion: Dubrovnik on Foot. 3 hours. Included.'}]},
+
+{id:'C7',date:'Sat Jul 18',title:'Zadar, Croatia',region:'cruise',color:'#1D9E75',bg:'#e8f7f1',tc:'#0a6b50',
+sub:'Shore Excursion: Walking Tour of Zadar · 10:30 AM · Included',
+blocks:[{t:'10:30 AM',c:'Viking excursion: Walking Tour of Zadar. 2 hours. Sea Organ and Sun Salutation installation after.'}],
+sci:'The Sea Organ uses wave pressure to pump air through 35 pipes built into the waterfront steps — the Adriatic literally plays music.'},
+
+{id:'C8',date:'Sun Jul 19',title:'Koper, Slovenia — Postojna Cave',region:'cruise',color:'#1D9E75',bg:'#e8f7f1',tc:'#0a6b50',
+sub:'Shore Excursion: Postojna Cave & Predjama Castle · 9:15 AM · $199/pp',
+blocks:[{t:'9:15 AM',c:'Viking excursion: Postojna Cave &amp; Predjama Castle. 7.5 hours. $199/pp.'},{t:'Evening',c:'Farewell dinner onboard. Ship arrives Chioggia at 1:30 AM.'}],
+tip:'Cave is 50°F year-round — bring a light layer.'},
+
+{id:'I1',date:'Mon Jul 20',title:'Disembark → Venice',region:'venice',color:'#1D9E75',bg:'#e8f7f1',tc:'#0a6b50',
+sub:'Arrive from Chioggia · B&B Ca\' Bonvicini, Santa Croce · Conf. #5062824483 · Rest day',
+blocks:[
+{t:'7–9 AM',c:'Leisurely last breakfast onboard.'},
+{t:'9–10 AM',c:'Disembark. Bus #80 (Arriva Veneto) Chioggia → Piazzale Roma. ~65 min, ~€8/pp.'},
+{t:'~10–11 AM',c:'Arrive Venice. Head to <strong>B&amp;B Ca\' Bonvicini</strong>, Santa Croce 2160. Check-in window 9 AM–noon. Booked by Joe. Canal view requested. Note: upper floors accessible by stairs only (no elevator). Phone: <a href="tel:+390412750106" class="phlink">+39 041 275 0106</a>.'},
+{t:'Day',c:'Rest. Dorsoduro walk, Zattere waterfront, long lunch. Early night — 8:45 AM Tour Guy meeting tomorrow.'}
+],
+log:'⚠️ Ca\' Bonvicini is NON-REFUNDABLE — no cancellation or modification possible. Check-out Wed Jul 22 by 9–10 AM (very early — must reach Marco Polo Airport for 9 AM car pickup). City tax €3/pp/night cash at property.',
+tip:'The hotel is a 5-min walk from Piazzale Roma and the vaporetto. Canal view rooms overlook a small canal — specifically requested.'},
+
+{id:'I2',date:'Tue Jul 21',title:'Venice — Ultimate Venice in a Day',region:'venice',color:'#1D9E75',bg:'#e8f7f1',tc:'#0a6b50',
+sub:'Tour Guy #1118847 · $824.72 · Pay Jun 29 · 9 AM St. Mark\'s + Doge\'s + Gondola · 1:30 PM Murano & Burano',
+blocks:[
+{t:'8:45 AM',c:'Head to meeting point: between the columns of San Marco and San Teodoro, south side of St. Mark\'s Square, near the canal. Look for Tour Guy sign. Arrive 15 min early.'},
+{t:'9:00 AM',c:'⛵ PART 1: St. Mark\'s Basilica (~20 min) + Doge\'s Palace + Gondola ride (shared, up to 5/boat). ID required; name must match ticket; knees and shoulders covered.'},
+{t:'~1 PM',c:'Lunch break near Doge\'s Palace (about 2 blocks from boat departure for afternoon tour).'},
+{t:'1:30 PM',c:'🚢 PART 2: Murano &amp; Burano Half-Day Boat Tour. Glass-blowing on Murano, lacemaking on Burano, free time. Returns to Venice near St. Mark\'s ~5:30 PM.'}
+],
+sci:'Murano glass-blowing: controlling 1,700°F molten silica with iron tools. The island has been Venice\'s dedicated glass center since 1291.',
+log:'$824.72 auto-charged Jun 29. Two different guides (Basilica/Doge\'s vs islands). Tour may run in reverse. No large backpacks.',
+tip:'Be aware of group meeting times on each island — the private boat departs on schedule. Ferry back to Venice available if you want to stay longer.'},
+
+{id:'I3',date:'Wed Jul 22',title:'Venice → Ferrara (via Marco Polo Airport)',region:'ferrara',color:'#378ADD',bg:'#e8f2fc',tc:'#0c447c',
+sub:'Check out by 10 AM · Water taxi/ACTV to Marco Polo Airport · Pick up Hertz BMW X1 (Conf. #L60845394F2) · Drive to Ferrara',
+blocks:[
+{t:'8:00 AM',c:'Check out of Ca\' Bonvicini (check-out window 9–10 AM — aim for early end of this window).'},
+{t:'8:15 AM',c:'Head to Marco Polo Airport by <strong>water taxi</strong> (~20 min, ~€15) or <strong>ACTV Bus 5</strong> from Piazzale Roma (~20 min, ~€8). Aim to arrive at airport by 8:45–9 AM.'},
+{t:'9:00 AM',c:'Pick up <strong>Hertz BMW X1</strong> at Hertz Autonoleggio — Venezia Aeroporto (Via Broglio 6, Tessera). Conf. #L60845394F2. Joseph Limber, Hertz #56844202. Open 8 AM–midnight.'},
+{t:'~10:30 AM',c:'Drive to Ferrara via A4 → A13. ~1.5 hours. Park outside historic center walls (ZTL).'},
+{t:'Afternoon',c:'Castello Estense, Cathedral, Jewish Ghetto. Flat city — rent bikes if energy allows.'},
+{t:'Evening',c:'Dinner in Ferrara. Try cappellacci di zucca (pumpkin pasta).'}
+],
+sci:'Ferrara was a center of Renaissance mathematics — Copernicus studied medicine here briefly.',
+log:'⚠️ Tight morning: check-out by 10 AM, airport transfer ~20 min, car pickup 9 AM. Go in order: wake early, check out, go directly to airport. The car pickup is at the AIRPORT not Piazzale Roma.',
+tip:'UNESCO World Heritage city almost unknown to Americans — pure Rick Steves back-door Italy.'},
+
+{id:'I4',date:'Thu Jul 23',title:'Ferrara → Florence: Science & History Day',region:'florence',color:'#D4537E',bg:'#fbeaf0',tc:'#72243e',
+sub:'~1.5 hrs drive · Galileo Museum (AM) + Medici Chapel (PM) · Loft Il Giobertino apartment · Conf. #5024697136',
+blocks:[
+{t:'9–10:30 AM',c:'Drive to Florence via A13/A1. Park outside ZTL — ask Loft Il Giobertino for nearest public lot.'},
+{t:'10:30 AM–12:30 PM',c:'🔭 GALILEO MUSEUM — book at museogalileo.it. ~€10/pp. 2 hours. Galileo\'s actual telescopes (discovered Jupiter\'s moons 1610), geometric compass, orreries.'},
+{t:'12:30–1:30 PM',c:'Lunch near Ponte Vecchio.'},
+{t:'1:30–3 PM',c:'Midday rest.'},
+{t:'3–5 PM',c:'👑 MEDICI CHAPEL — book at uffizi.it. ~€9/pp. Michelangelo\'s New Sacristy: Night, Day, Dawn, Dusk.'},
+{t:'3 PM+',c:'Check in at <strong>Loft Il Giobertino</strong>, Via Vincenzo Gioberti 95, 2nd floor. Check-in 3–10 PM. Conf. #5024697136, PIN: 0746. <strong>1 two-bedroom apartment for all 4 adults.</strong> Kitchen, balcony, city view. No breakfast included but kitchen available.'},
+{t:'Evening',c:'Dinner in Oltrarno. Early night — checkout by 10 AM and Da Vinci Museum at 9:30 AM tomorrow.'}
+],
+sci:'The Galileo Museum holds his actual working telescopes — through which he first saw Jupiter\'s moons (1610), the phases of Venus (proving heliocentrism), and resolved the Milky Way into individual stars.',
+log:'Loft Il Giobertino: check-in 3–10 PM, check-out Fri Jul 24 at 6–10 AM (very early). No dedicated parking — ask property for nearest lot. Cancel free until Jul 17.',
+tip:'All 4 guests share one apartment (2 bedrooms). Kitchen available for an early breakfast Friday before the Da Vinci Museum.'},
+
+{id:'I5',date:'Fri Jul 24',title:'Florence: Da Vinci Museum → Chianti Wine Road',region:'tuscany',color:'#BA7517',bg:'#faeeda',tc:'#633806',
+sub:'Check out 6–10 AM · 9:30 AM Da Vinci National Science Museum · Noon: SR222 Chianti Wine Road · Villa San Filippo overnight',
+blocks:[
+{t:'6–8 AM',c:'Breakfast in apartment (kitchen). Pack up. Arrange luggage to car.'},
+{t:'8–9 AM',c:'Check out of Loft Il Giobertino (window 6–10 AM). Load car.'},
+{t:'9:30 AM',c:'🔬 <strong>Museo Nazionale della Scienza e Tecnologia Leonardo da Vinci</strong> — book at museoscienza.org. Italy\'s most important science museum. World\'s largest permanent exhibition on Leonardo as engineer and scientist: 170 models, flying machines, hydraulics, anatomy, war engines. Also: Toti submarine, Moon fragment, spacecraft. Plan 2+ hours.'},
+{t:'~Noon',c:'Depart Florence. Head south on <strong>SR222 Via Chiantigiana</strong> — the Chianti Wine Road. No fixed agenda.'},
+{t:'Possible stops',c:'• <strong>Greve in Chianti</strong> (~45 min): Piazza Matteotti, Cantine Mirabilis walk-in wine tasting (€1–2/pour, no reservation)<br>• <strong>Badia a Passignano</strong> (near Greve): 11th-century Vallombrosan monastery. Afternoon session 3–5 PM. Closed Tuesdays.<br>• <strong>Panzano</strong>: Dario Cecchini\'s legendary butcher shop, free salumi tastings'},
+{t:'2 PM+',c:'Check in at <strong>Villa San Filippo</strong>, Strada delle Ginestre 6, Barberino Tavarnelle. Check-in 2 PM–midnight. Pool, panoramic views, breakfast included.'},
+{t:'Evening',c:'Pool, Chianti views, dinner in Panzano village or at the hotel\'s recommendation.'}
+],
+sci:'The Da Vinci National Science Museum is the most science-aligned museum of the entire trip — broader and deeper than even the Galileo Museum for a group with Joe\'s interests.',
+log:'⚠️ Villa San Filippo cancel deadline is Jul 10 — before you leave home. After that, 100% penalty. City tax €3/pp/night at property.',
+tip:'No fixed agenda for the Chianti drive — that\'s the point. Drive slowly, stop when something looks inviting.'},
+
+{id:'I6',date:'Sat Jul 25',title:'Chianti Road South → Montalcino',region:'tuscany',color:'#BA7517',bg:'#faeeda',tc:'#633806',
+sub:'Check out Villa San Filippo 11 AM · Radda · Castello di Brolio · Val d\'Orcia · Idolina Guest House, Montalcino',
+blocks:[
+{t:'Morning',c:'Check out Villa San Filippo (11 AM). Continue south on the Chianti road.'},
+{t:'Possible stops',c:'• <strong>Radda in Chianti</strong>: Most "locals" of the Chianti villages. Enoteca Bottega del Chianti Classico (walk-in tasting).<br>• <strong>Castellina in Chianti</strong>: Medieval fortress, underground Via delle Volte, good lunch trattorias.'},
+{t:'Early afternoon',c:'🏰 <strong>Castello di Brolio</strong> — €5 walk-in entry. Ramparts with 360° views over Chianti and Val d\'Orcia. Enoteca inside. Ricasoli family since 1141. Open daily 10 AM–6 PM. Leave by 4:30 PM.'},
+{t:'~5:30 PM',c:'Arrive Montalcino. Fortezza di Montalcino ramparts (~€4) for Val d\'Orcia views at golden hour. First glass of Brunello at the fortress enoteca.'},
+{t:'1:30–7:30 PM',c:'Check in at <strong>Idolina Guest House</strong>, Via Mazzini 65/67. Conf. #72074700792366. NO FRONT DESK — contact property 24 hours before arrival. Host will meet you.'},
+{t:'Dinner',c:'<strong>Osteria di Porta al Cassero</strong> (★4.4, locals\' fave, pinci + wild boar + house Brunello) — <strong>closed Wednesdays</strong>. OR Boccon Divino (★4.5, Michelin, farmhouse views) — <strong>closed Tuesdays</strong>. Saturday: both are open.'}
+],
+tip:'Leave Castello di Brolio by 4:30 PM. Arrive Montalcino in golden light — the fortress view at dusk is the reward.'},
+
+{id:'I7',date:'Sun Jul 26',title:'Montalcino → Assisi · 5 PM Mass + Vespers',region:'tuscany',color:'#BA7517',bg:'#faeeda',tc:'#633806',
+sub:'Check out Idolina 11 AM · Pienza + Sant\'Antimo → Assisi · Hotel Bellavista · 5 PM Italian Mass + Vespers',
+blocks:[
+{t:'Morning',c:'Check out Idolina (11 AM). Final coffee in Montalcino.'},
+{t:'Optional stops',c:'• <strong>Pienza</strong> (30 min): Ideal Renaissance city, famous pecorino cheese<br>• <strong>Abbazia di Sant\'Antimo</strong> (20 min): 12th-century Romanesque abbey, Gregorian chants at certain hours'},
+{t:'Drive',c:'Head northeast to Assisi via SS146 then north. ~2 hours.'},
+{t:'3:00 PM',c:'Arrive Assisi. Park lower town. Escalator/elevator up to historic center. Check in at <strong>Hotel Bellavista</strong>, Viale Patrono d\'Italia 100 (Conf. #6920407207, PIN 4429). Check-in window 3–8 PM. Breakfast 8–9:30 AM.'},
+{t:'4:30 PM',c:'Orientation visit to the Basilica of St. Francis. Lower church, crypt. Get oriented before Mass.'},
+{t:'4:45 PM',c:'Return to Basilica. Arrive 15 min early. Find seats.'},
+{t:'5:00 PM',c:'⛪ <strong>5 PM ITALIAN MASS</strong> at the Basilica of St. Francis. Book "Participation" at sanfrancescoassisi.org. Free. 2026 = 800th anniversary of St. Francis\'s death.'},
+{t:'~6:00 PM',c:'🎶 <strong>VESPERS</strong> follows immediately. Franciscan friars chant in Latin and Italian. Remain in your seats.'},
+{t:'~6:45 PM',c:'Evening in Assisi. Town is beautifully quiet after the day-trippers leave.'},
+{t:'8 PM+',c:'Dinner. Note: hotel restaurant closed Thursdays — not an issue tonight (Sunday).'}
+],
+log:'Hotel Bellavista: check-in 3–8 PM (€30 surcharge after 8 PM). Payment/check-out at the restaurant (not reception). Lunch 12–2:30 PM, dinner 7–8 PM. Closed Thursdays. €410.24 auto-charged Jul 19. City tax €3/pp/night cash. Cancel free until Jul 20.'},
+
+{id:'I8',date:'Mon Jul 27',title:'Assisi — Full Exploration Day',region:'umbria',color:'#7F77DD',bg:'#eeedfe',tc:'#3c3489',
+sub:'Santa Chiara · Rocca Maggiore · Eremo delle Carceri · 800th anniversary year',
+blocks:[
+{t:'Morning',c:'Basilica of Santa Chiara — the crucifix that spoke to St. Francis. Simple, moving, less crowded.'},
+{t:'11 AM',c:'Rocca Maggiore — medieval fortress. 360° views over the Umbrian plain.'},
+{t:'1–3 PM',c:'Long lunch. Most relaxed midday of the trip.'},
+{t:'3–5 PM',c:'Eremo delle Carceri — St. Francis\'s hermitage 4 km above town. Drive or taxi. Free. Deeply quiet.'},
+{t:'Evening',c:'Passeggiata in Piazza del Comune. Dinner (hotel restaurant open tonight — Monday).'}
+],
+tip:'2026 is the 800th anniversary of St. Francis\'s death. The town empties beautifully after 6 PM.'},
+
+{id:'I9',date:'Tue Jul 28',title:'Assisi → Spello → Orvieto',region:'umbria',color:'#7F77DD',bg:'#eeedfe',tc:'#3c3489',
+sub:'Optional 7:30 AM Moment of Prayer · Check out 8–11 AM · Spello · Hotel Duomo, Orvieto',
+blocks:[
+{t:'7:30 AM',c:'Optional: "Moment of Prayer" at the tomb of St. Francis — book at sanfrancescoassisi.org.'},
+{t:'8–11 AM',c:'Check out of Hotel Bellavista. Payment at restaurant. City tax cash. Drive 15 min south to Spello.'},
+{t:'9–11 AM',c:'Spello — Pinturicchio frescoes in Santa Maria Maggiore. Almost always empty. Roman hill town draped in flowers.'},
+{t:'11 AM–12 PM',c:'Drive to Orvieto via E45/A1 (~1 hour). Park lower town. Funicular up.'},
+{t:'2:00 PM',c:'Check in at <strong>Hotel Duomo</strong>, Vicolo di Maurizio 7 (Conf. #72074704255117). Steps from the Duomo. Elevator on site.'},
+{t:'4–6 PM',c:'Orvieto Cathedral + Orvieto Underground (~€6/pp, book at orvietounderground.it).'},
+{t:'7:30 PM+',c:'Dinner — Orvieto Classico white wine with wild boar pasta.'}
+],
+sci:'The Pozzo di San Patrizio (1527): a double-helix well with 248 steps on two separate staircases so descending donkeys never met ascending ones. Hydraulic engineering in stone.',
+log:'Hotel Duomo check-in 2–10 PM. $397.04 paid + $10.68 at property. City tax €2.30/pp/night. Cancel free until Jul 26.'},
+
+{id:'I10',date:'Wed Jul 29',title:'Orvieto → Rome · Vatican Scavi · Cooking Class',region:'rome',color:'#D85A30',bg:'#faece7',tc:'#4a1b0c',
+sub:'~90 min drive · Park car · Afternoon Vatican Scavi · 5 PM Gluten-Free Pasta Class (Viator #1395367603)',
+blocks:[
+{t:'10–11:30 AM',c:'Drive to Rome via A1 (~90 min). Park at hotel. LEAVE THE CAR until Aug 1.'},
+{t:'12–1 PM',c:'Check in. Freshen up. Light lunch.'},
+{t:'~1:30–2 PM',c:'🕯️ VATICAN SCAVI / NECROPOLIS — 90-min small group tour through 1st-century burial ground. Culminates at St. Peter\'s tomb. No photography. Book NOW — only 250/day. Must finish by ~4 PM.'},
+{t:'~3:30 PM',c:'Emerge from Scavi. Walk across St. Peter\'s Square. Brief moment of reflection.'},
+{t:'5:00 PM',c:'🍝 <strong>GLUTEN-FREE PASTA COOKING CLASS</strong> (Viator #1395367603) — 3 types of pasta, gluten-free. 2.5 hours (ends ~7:30 PM). English. Booked by Teresa.'},
+{t:'7:30 PM+',c:'You\'ll have eaten! Pantheon area, Piazza Navona, Trevi Fountain for an evening walk.'}
+],
+sci:'The Pantheon\'s dome (43.3 m — still the world\'s largest unreinforced concrete dome) uses Roman concrete that chemically strengthens with age — an active materials science research area.',
+log:'⚠️ Scavi must finish by ~4 PM for 5 PM cooking class. Book Scavi for 1:30–2 PM start.'},
+
+{id:'I11',date:'Thu Jul 30',title:'Rome — Vatican Day',region:'rome',color:'#D85A30',bg:'#faece7',tc:'#4a1b0c',
+sub:'Tour Guy #1123725 · $721.16 · Pay Jul 8 · Arrive 7:15 AM · Semi-Private Vatican (max 10) · Scala Regia',
+blocks:[
+{t:'7:15 AM',c:'Vatican Museums entrance. Meet under the statues of Michelangelo and Raphael. Tour starts 7:30 AM. Walks Inside Rome (<a href="tel:+393347243374" class="phlink">+39 334 724 33 74</a>).'},
+{t:'7:30 AM',c:'🎨 Route: Museums → Pio-Clementino → Gallery of Maps → Raphael Rooms → Sistine Chapel (silence inside) → Scala Regia (exclusive to guided groups) → St. Peter\'s Basilica free time.'},
+{t:'1–3 PM',c:'Lunch in Prati. Via Cola di Rienzo.'},
+{t:'4:30–6 PM',c:'Optional: Castel Sant\'Angelo.'},
+{t:'6–8 PM',c:'Sunset from Ponte Sant\'Angelo.'},
+{t:'8 PM+',c:'Dinner in Prati or Trastevere.'}
+],
+log:'$721.16 auto-charged Jul 8. Dress: knees + shoulders covered; no hats; no large backpacks. No speaking in Sistine Chapel.'},
+
+{id:'I12',date:'Fri Jul 31',title:'Rome — Ancient Rome · Farewell Dinner',region:'rome',color:'#D85A30',bg:'#faece7',tc:'#4a1b0c',
+sub:'Tour Guy #1117159 · $1,018.70 · Pay Jul 3 · 9:00 AM Private Colosseum + Arena Floor',
+blocks:[
+{t:'8:45 AM',c:'Meet outside Colosseum metro stop at street level. 15 min early. Government-issued ID required. No large backpacks.'},
+{t:'9:00 AM',c:'🏟️ Private Colosseum Tour with Arena Floor. Route: Gladiator\'s Gate → Arena Floor → tiers → Arch of Constantine → Roman Forum → Palatine Hill. May run in reverse.'},
+{t:'~12 PM',c:'Tour concludes. Continue exploring independently.'},
+{t:'1–3 PM',c:'Long farewell lunch near the Forum. Splurge.'},
+{t:'5–7 PM',c:'Spanish Steps or wander. Gelato at Giolitti or Fatamorgana.'},
+{t:'9 PM+',c:'Farewell dinner — book ahead. Best meal of the trip.'}
+],
+log:'⚠️ $1,018.70 due Jul 3 — EARLIEST upcoming payment. Pack tonight.'},
+
+{id:'I13',date:'Sat Aug 1',title:'Rome → FCO → Home',region:'rome',color:'#D85A30',bg:'#faece7',tc:'#4a1b0c',
+sub:'Departure day · Hertz drop-off 7:30 AM · Fly home FCO → IAD',
+blocks:[
+{t:'5–6 AM',c:'Wake, final pack, checkout.'},
+{t:'6–7 AM',c:'Drive rental car to Fiumicino Airport (FCO) — ~35–45 min. Return car at Hertz desk (Conf. #L60845394F2). Drop-off: 7:30 AM.'},
+{t:'7:30 AM+',c:'Check in for IAD flight. Allow 3 hours before departure. Arrivederci!'}
+]}
+];
+
+const excursionData=[
+{port:'Athens/Piraeus — Sun Jul 12',items:[{name:'Panoramic Athens & Archaeological Museum',time:'8:15 AM',dur:'4 hrs',price:'Included',selected:true},{name:'Acropolis & Plaka District by Foot',time:'8:15 AM',dur:'5 hrs',price:'$179/pp'},{name:'Delphi & the Oracle',time:'7:00 AM',dur:'9.5 hrs',price:'$269/pp'}]},
+{port:'Santorini — Mon Jul 13',items:[{name:'Ancient & Modern Island Life',time:'8:45 AM',dur:'4.5 hrs',price:'$149/pp',selected:true},{name:'The Best of Santorini',time:'8:30 AM',dur:'7.5 hrs',price:'$259/pp'}]},
+{port:'Katakolon/Olympia — Tue Jul 14',items:[{name:'Ancient Olympia',time:'9:30–10:15 AM',dur:'4 hrs',price:'Included',selected:true},{name:'Elis & the Ancient Olympic Games',time:'10:00 AM',dur:'5 hrs',price:'$199/pp'}]},
+{port:'Corfu — Wed Jul 15',items:[{name:'Panoramic Corfu & Old Town Walking Tour',time:'8:30/9:15/10:00/12:30',dur:'3 hrs',price:'Included',selected:true},{name:'Corfu by Mountain Bike',time:'8:30 AM',dur:'4.5 hrs',price:'$139/pp'}]},
+{port:'Kotor, Montenegro — Thu Jul 16',items:[{name:'Kotor on Foot',time:'9:30/10:00/10:30/2:00/2:30',dur:'1.5 hrs',price:'Included',selected:true},{name:'Best of Montenegro',time:'8:30 AM',dur:'6 hrs',price:'$349/pp'}]},
+{port:'Dubrovnik, Croatia — Fri Jul 17',items:[{name:'Dubrovnik on Foot',time:'8:45–10:45 AM',dur:'3 hrs',price:'Included',selected:true},{name:'Elafiti Islands Exploration',time:'8:30 AM',dur:'7 hrs',price:'$219/pp'}]},
+{port:'Zadar, Croatia — Sat Jul 18',items:[{name:'Walking Tour of Zadar',time:'10:00–11:30 AM/2:00 PM',dur:'2.5 hrs',price:'Included',selected:true},{name:'Krka National Park',time:'9:30 AM',dur:'6.5 hrs',price:'$229/pp'}]},
+{port:'Koper, Slovenia — Sun Jul 19',items:[{name:'Old Koper Walking Tour',time:'9:15/9:30/10:00/1:00 PM',dur:'2.5 hrs',price:'Included'},{name:'Postojna Cave & Predjama Castle',time:'9:15/10:00 AM',dur:'7.5 hrs',price:'$199/pp',selected:true},{name:'Lake Bled & Bled Castle',time:'8:30/8:45 AM',dur:'8.5 hrs',price:'$259/pp'}]}
+];
+
+const excList=document.getElementById('excursion-list');
+excursionData.forEach(day=>{const sec=document.createElement('div');sec.className='section';sec.innerHTML=`<div class="sh-static">${day.port}</div><div class="sb"><div class="exc-grid">${day.items.map(i=>`<div class="exc-item${i.selected?' included':''}"><div class="exc-name">${i.selected?'✅ ':''}${i.name}</div><div class="exc-detail">${i.time} · ${i.dur} · ${i.price}</div></div>`).join('')}</div></div>`;excList.appendChild(sec);});
+
+function toggleAllDays(open){document.querySelectorAll('.db').forEach(b=>b.style.display=open?'block':'none');document.querySelectorAll('.dc .ch').forEach(c=>c.classList.toggle('open',open));}
+function filterDays(region,btn){document.querySelectorAll('.fb').forEach(b=>b.classList.remove('active'));btn.classList.add('active');document.querySelectorAll('.dc').forEach(card=>{card.style.display=(region==='all'||card.dataset.region===region)?'':'none';});}
+function toggleDay(header){const body=header.nextElementSibling;const ch=header.querySelector('.ch');const open=body.style.display==='block';body.style.display=open?'none':'block';ch.classList.toggle('open',!open);}
+const itinContainer=document.getElementById('itin-days');
+allDays.forEach(d=>{const card=document.createElement('div');card.className='dc';card.dataset.region=d.region;
+let sciHtml=d.sci?`<div class="scitip"><strong>⚛ Science/History:</strong> ${d.sci}</div>`:'';
+let hiltHtml=d.hilt?`<div class="hilttip"><strong>💜 Hilton Honors (Lorene):</strong> ${d.hilt}</div>`:'';
+let logHtml=d.log?`<div class="logtip"><strong>🟢 Logistics:</strong> ${d.log}</div>`:'';
+card.innerHTML=`<div class="dh" onclick="toggleDay(this)"><div class="dn" style="background:${d.bg};color:${d.tc}">${d.id}</div><div class="dm"><div class="dt">${d.date} — ${d.title}</div><div class="ds">${d.sub}</div></div><span class="ch">▾</span></div><div class="db">${d.blocks.map(b=>`<div class="tb"><span class="tl">${b.t}</span><span class="tc2">${b.c}</span></div>`).join('')}${sciHtml}${hiltHtml}${logHtml}${d.tip?`<div class="tip"><strong>💡 Tip:</strong> ${d.tip}</div>`:''}</div>`;
+itinContainer.appendChild(card);});
+
+const stops=[
+{grp:'Athens Hotel',cat:'hotel-booked',region:'athens',lat:37.9805,lng:23.7237,title:'🏨 Anise Aluma Athens (Tapestry/Hilton)',sub:'Fri Jul 10 · Conf. #3471385009',note:'Evripidou 82. 2 rooms. 100k Hilton pts. Cancel by Jul 9.',photo:'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Athina_collage.jpg/800px-Athina_collage.jpg'},
+{grp:'Acropolis',cat:'tour-booked',region:'athens',lat:37.9714,lng:23.7234,title:'🏛️ Acropolis Tour — Porinou 5',sub:'Sat Jul 11 · 7:50 AM · Tour Guy #1118765',note:'Meet at Porinou 5 (outside gates). $331.84, pay Jun 12.',photo:'https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/The_Parthenon_in_Athens.jpg/800px-The_Parthenon_in_Athens.jpg'},
+{grp:'Theatre',cat:'tour-booked',region:'athens',lat:37.9693,lng:23.7244,title:'🎭 Open Air Ancient Greek Theatre',sub:'Sat Jul 11 · 9 PM · Tripadvisor #1778633837',note:'$143.76 charged Jul 9. No barcode — operator looks up by name.',photo:'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/Odeon_of_Herodes_Atticus.jpg/800px-Odeon_of_Herodes_Atticus.jpg'},
+{grp:'Piraeus',cat:'cruise',region:'athens',lat:37.9381,lng:23.6359,title:'🚢 Piraeus Cruise Terminal',sub:'Sat Jul 11 · Board Viking OST',note:'Limbers: #8663390 Stateroom 4071. Guernsey/Santi: #8663394 Stateroom 4073.',photo:'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Port_of_Piraeus.jpg/800px-Port_of_Piraeus.jpg'},
+{grp:'Santorini',cat:'cruise',region:'cruise',lat:36.3932,lng:25.4615,title:'🚢 Santorini',sub:'Mon Jul 13 · $149/pp',note:'Ancient & Modern Island Life. 4.5 hours.',photo:'https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/Oia_Santorini_Thira_Greece_Cyclades.jpg/800px-Oia_Santorini_Thira_Greece_Cyclades.jpg'},
+{grp:'Olympia',cat:'cruise',region:'cruise',lat:37.6383,lng:21.6317,title:'🏟️ Katakolon / Olympia',sub:'Tue Jul 14 · Included',note:'Ancient Olympia. 4 hours.',photo:'https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/Ancient_Olympia_view3.jpg/800px-Ancient_Olympia_view3.jpg'},
+{grp:'Corfu',cat:'cruise',region:'cruise',lat:39.6243,lng:19.9217,title:'🏰 Corfu',sub:'Wed Jul 15 · Included',note:'Panoramic Corfu & Old Town.',photo:'https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/Corfu_Old_Town_1.jpg/800px-Corfu_Old_Town_1.jpg'},
+{grp:'Kotor',cat:'cruise',region:'cruise',lat:42.4247,lng:18.7712,title:'🏰 Kotor, Montenegro',sub:'Thu Jul 16 · Included',note:'Kotor on Foot. 1.5 hours.',photo:'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Kotor_stari_grad.jpg/800px-Kotor_stari_grad.jpg'},
+{grp:'Dubrovnik',cat:'cruise',region:'cruise',lat:42.6507,lng:18.0944,title:'🏰 Dubrovnik, Croatia',sub:'Fri Jul 17 · Included',note:'Dubrovnik on Foot. 3 hours.',photo:'https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/Dubrovnik_stari_grad.jpg/800px-Dubrovnik_stari_grad.jpg'},
+{grp:'Zadar',cat:'cruise',region:'cruise',lat:44.1172,lng:15.2199,title:'🎵 Zadar — Sea Organ',sub:'Sat Jul 18 · Included',note:'Walking Tour. Sea Organ + Sun Salutation.',photo:'https://upload.wikimedia.org/wikipedia/commons/thumb/2/26/Zadar_forum.jpg/800px-Zadar_forum.jpg'},
+{grp:'Postojna',cat:'cruise',region:'cruise',lat:45.7830,lng:14.2038,title:'🦎 Postojna Cave, Slovenia',sub:'Sun Jul 19 · $199/pp',note:'Postojna Cave & Predjama Castle. 7.5 hours. 50°F inside.',photo:'https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Postojnska_jama_01.JPG/800px-Postojnska_jama_01.JPG'},
+{grp:'Venice Hotel',cat:'hotel-booked',region:'venice',lat:45.4377,lng:12.3218,title:'🏨 B&B Ca\' Bonvicini — Venice',sub:'Mon–Wed Jul 20–22 · Conf. #5062824483',note:'Santa Croce 2160. NON-REFUNDABLE. Check-in 9 AM–noon. Check-out 9–10 AM (very early!). No elevator. Canal view requested. <a href="tel:+390412750106" class="phlink">+39 041 275 0106</a>.',photo:'https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Venice_Grand_Canal.jpg/800px-Venice_Grand_Canal.jpg'},
+{grp:'Transport',cat:'transport',region:'venice',lat:45.5054,lng:12.3519,title:'🚗 Hertz — Venice Marco Polo Airport',sub:'Wed Jul 22 · 9:00 AM · Conf. #L60845394F2',note:'BMW X1 or similar. $855.85. Water taxi or ACTV Bus 5 from Venice (~20 min). Drop-off Rome FCO Aug 1, 7:30 AM.',photo:''},
+{grp:'St Marks',cat:'tour-booked',region:'venice',lat:45.4341,lng:12.3387,title:'⛵ Tour Guy Meeting — San Marco Columns',sub:'Tue Jul 21 · 8:45 AM · Tour Guy #1118847',note:'Between columns of San Marco and San Teodoro. $824.72, pay Jun 29.',photo:'https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Piazza_San_Marco_in_winter.jpg/800px-Piazza_San_Marco_in_winter.jpg'},
+{grp:'Murano',cat:'stop',region:'venice',lat:45.4590,lng:12.3523,title:'🔥 Murano — Glass-blowing',sub:'Tue Jul 21 · Afternoon · On tour',note:'Live glass-blowing demonstration. 1,700°F molten silica.',photo:'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Murano_island.jpg/800px-Murano_island.jpg'},
+{grp:'Burano',cat:'stop',region:'venice',lat:45.4854,lng:12.4167,title:'🌈 Burano — Lacemaking',sub:'Tue Jul 21 · Afternoon · On tour',note:'Colorful fishing village. Lacemaking demonstration + free time.',photo:'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Burano_2011.jpg/800px-Burano_2011.jpg'},
+{grp:'Ferrara',cat:'hotel-tbd',region:'ferrara',lat:44.8381,lng:11.6197,title:'🏨 Ferrara Hotel (TBD)',sub:'Wed Jul 22 · 1 night',note:'Near historic center, outside ZTL. UNESCO city — center of Renaissance mathematics.',photo:'https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Ferrara-Piazza_municipale-2.jpg/800px-Ferrara-Piazza_municipale-2.jpg'},
+{grp:'Florence Hotel',cat:'hotel-booked',region:'florence',lat:43.7736,lng:11.2697,title:'🏨 Loft Il Giobertino — Florence',sub:'Thu Jul 23–Fri Jul 24 · Conf. #5024697136',note:'Via Vincenzo Gioberti 95, 2nd floor. 1 two-bedroom apartment, all 4 guests. Check-in 3–10 PM. Check-out 6–10 AM. Kitchen + balcony. Cancel free until Jul 17.',photo:'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Firenze_piazzale_michelangelo_2.jpg/800px-Firenze_piazzale_michelangelo_2.jpg'},
+{grp:'Galileo',cat:'tour-booked',region:'florence',lat:43.7677,lng:11.2559,title:'🔭 Galileo Museum',sub:'Thu Jul 23 · AM · museogalileo.it',note:'~€10/pp. Galileo\'s actual telescopes (discovered Jupiter\'s moons 1610), compass, orreries. 2 hours.',photo:'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/Museo_Galileo-Firenze.jpg/800px-Museo_Galileo-Firenze.jpg'},
+{grp:'Medici',cat:'tour-booked',region:'florence',lat:43.7751,lng:11.2534,title:'👑 Medici Chapel',sub:'Thu Jul 23 · PM · uffizi.it',note:'~€9/pp. Michelangelo\'s New Sacristy: Night, Day, Dawn, Dusk.',photo:'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Cappelle_medicee_esterno.jpg/800px-Cappelle_medicee_esterno.jpg'},
+{grp:'Da Vinci',cat:'tour-booked',region:'florence',lat:43.7638,lng:11.2463,title:'🔬 Da Vinci National Science Museum',sub:'Fri Jul 24 · 9:30 AM · museoscienza.org',note:'Italy\'s most important science museum. 170 Leonardo models + submarine + Moon fragment + spacecraft. 2+ hours.',photo:'https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Leonardo_da_Vinci_-_Self-Portrait_-_WGA12798.jpg/800px-Leonardo_da_Vinci_-_Self-Portrait_-_WGA12798.jpg'},
+{grp:'Villa San Filippo',cat:'hotel-booked',region:'tuscany',lat:43.5256,lng:11.1673,title:'🏨 Villa San Filippo — Chianti',sub:'Fri Jul 24–Sat Jul 25 · Conf. #72074703683732',note:'Strada delle Ginestre 6, Barberino Tavarnelle. $372.12. Check-in 2 PM. Pool, panoramic views, breakfast. ⚠️ CANCEL DEADLINE: JUL 10!',photo:'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Chianti_hills_Tuscany.jpg/800px-Chianti_hills_Tuscany.jpg'},
+{grp:'Badia',cat:'stop',region:'tuscany',lat:43.5773,lng:11.2471,title:'⛪ Badia a Passignano — Monastery',sub:'Possible stop · Fri Jul 24',note:'11th-century Vallombrosan monastery. CLOSED TUESDAYS. Afternoon 3–5 PM.',photo:''},
+{grp:'Greve',cat:'stop',region:'tuscany',lat:43.5825,lng:11.3169,title:'🍷 Greve in Chianti',sub:'Possible stop · Fri Jul 24',note:'Piazza Matteotti. Cantine Mirabilis walk-in wine tasting ~€1/pour.',photo:'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Greve_in_Chianti_piazza.jpg/800px-Greve_in_Chianti_piazza.jpg'},
+{grp:'Cecchini',cat:'stop',region:'tuscany',lat:43.5445,lng:11.3164,title:'🥩 Antica Macelleria Cecchini — Panzano',sub:'Possible stop',note:'Dario Cecchini\'s legendary butcher. Free salumi tastings. Open daily 9 AM–4 PM.',photo:''},
+{grp:'Radda',cat:'stop',region:'tuscany',lat:43.4872,lng:11.3747,title:'🏘️ Radda in Chianti',sub:'Possible stop · Sat Jul 25',note:'Most "locals" of Chianti villages. Enoteca Bottega del Chianti Classico.',photo:''},
+{grp:'Castellina',cat:'stop',region:'tuscany',lat:43.4691,lng:11.2870,title:'🏰 Castellina in Chianti',sub:'Possible stop',note:'Medieval fortress. Underground Via delle Volte. Good lunch trattorias.',photo:''},
+{grp:'Brolio',cat:'stop',region:'tuscany',lat:43.4133,lng:11.4635,title:'🏰 Castello di Brolio',sub:'Sat Jul 25 · Crown jewel of route',note:'€5 walk-in. Ramparts + gardens + enoteca. Ricasoli family since 1141. Open 10 AM–6 PM. Leave by 4:30 PM.',photo:'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Castello_di_Brolio.jpg/800px-Castello_di_Brolio.jpg'},
+{grp:'Idolina',cat:'hotel-booked',region:'tuscany',lat:43.0602,lng:11.4898,title:'🏨 Idolina Guest House — Montalcino',sub:'Sat Jul 25–Sun Jul 26 · Conf. #72074700792366',note:'Via Mazzini 65/67. €262.62 at property. Check-in 1:30–7:30 PM. NO FRONT DESK — contact 24 hrs before.',photo:'https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Montalcino_Veduta.jpg/800px-Montalcino_Veduta.jpg'},
+{grp:'Fortezza',cat:'stop',region:'tuscany',lat:43.0551,lng:11.4891,title:'🏰 Fortezza di Montalcino',sub:'Sat Jul 25 · Evening arrival ritual',note:'€4 ramparts. Val d\'Orcia views at golden hour. Brunello by the glass inside.',photo:'https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Montalcino_Fortezza.jpg/800px-Montalcino_Fortezza.jpg'},
+{grp:'Pienza',cat:'stop',region:'tuscany',lat:43.0763,lng:11.6784,title:'🏛️ Pienza',sub:'Sun Jul 26 · Optional',note:'30-min detour. Renaissance city. Famous pecorino cheese.',photo:'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Pienza_Piazza_Pio_II.jpg/800px-Pienza_Piazza_Pio_II.jpg'},
+{grp:"Sant'Antimo",cat:'stop',region:'tuscany',lat:42.9892,lng:11.4760,title:"⛪ Sant'Antimo Abbey",sub:'Sun Jul 26 · En route',note:'12th-century Romanesque abbey. Gregorian chants.',photo:'https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/SantAntimo_abbey2.jpg/800px-SantAntimo_abbey2.jpg'},
+{grp:'Hotel Bellavista',cat:'hotel-booked',region:'umbria',lat:43.0650,lng:12.5934,title:'🏨 Hotel Bellavista — Assisi',sub:'Sun–Tue Jul 26–28 · Conf. #6920407207',note:'Viale Patrono d\'Italia 100. PIN 4429. 1st floor, no elevator. Breakfast 8–9:30 AM. Restaurant closed Thursdays. Payment at restaurant. Pool 9 AM–7 PM. €410.24 auto-charged Jul 19.',photo:'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Assisi_Panorama.jpg/800px-Assisi_Panorama.jpg'},
+{grp:'Basilica Assisi',cat:'tour-booked',region:'umbria',lat:43.0750,lng:12.6054,title:'⛪ Basilica of St. Francis — Mass + Vespers',sub:'Sun Jul 26 · 5 PM Italian Mass + Vespers',note:'800th anniversary year. Book "Participation" at sanfrancescoassisi.org.',photo:'https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Assisi_Basilica_di_San_Francesco_BW_2.JPG/800px-Assisi_Basilica_di_San_Francesco_BW_2.JPG'},
+{grp:'Eremo',cat:'stop',region:'umbria',lat:43.0631,lng:12.6519,title:'🌲 Eremo delle Carceri',sub:'Mon Jul 27 · Afternoon',note:'St. Francis\'s hermitage 4 km above Assisi. Free. Deeply quiet.',photo:''},
+{grp:'Spello',cat:'stop',region:'umbria',lat:42.9898,lng:12.6719,title:'🎨 Santa Maria Maggiore — Spello',sub:'Tue Jul 28 · Morning',note:'Pinturicchio frescoes. Almost always empty. 15 min from Assisi.',photo:'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/Spello_Santa_Maria_Maggiore.jpg/800px-Spello_Santa_Maria_Maggiore.jpg'},
+{grp:'Hotel Duomo',cat:'hotel-booked',region:'umbria',lat:42.7176,lng:12.1130,title:'🏨 Hotel Duomo — Orvieto',sub:'Tue–Wed Jul 28–29 · Conf. #72074704255117',note:'Vicolo di Maurizio 7. Steps from Duomo. $407.72. Check-in 2–10 PM. Cancel free until Jul 26.',photo:'https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Orvieto_Duomo_Front.jpg/800px-Orvieto_Duomo_Front.jpg'},
+{grp:'Orvieto',cat:'stop',region:'umbria',lat:42.7171,lng:12.1133,title:'⛪ Orvieto Cathedral + Underground',sub:'Tue Jul 28 · Afternoon',note:'Gothic facade. Signorelli frescoes. Orvieto Underground (~€6/pp, orvietounderground.it).',photo:'https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Orvieto_Duomo_Front.jpg/800px-Orvieto_Duomo_Front.jpg'},
+{grp:'Rome Hotel',cat:'hotel-tbd',region:'rome',lat:41.9028,lng:12.4964,title:'🏨 Rome Hotel (TBD)',sub:'Wed–Fri Jul 29–31 · 3 nights',note:'Must confirm parking ~€25–35/night. Bonvoy: The Regency Rome. Hilton: Aleph Rome Hotel Curio (★4.6) or DoubleTree Rome Monti.',photo:'https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Skyline_roma.jpg/800px-Skyline_roma.jpg'},
+{grp:'Scavi',cat:'tour-booked',region:'rome',lat:41.9016,lng:12.4539,title:'🕯️ Vatican Scavi / Necropolis',sub:'Wed Jul 29 · Afternoon · BOOK NOW',note:'Only 250/day. 90-min small group. St. Peter\'s tomb. Must finish by ~4 PM for cooking class.',photo:'https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/San_Pietro_in_Vaticano.jpg/800px-San_Pietro_in_Vaticano.jpg'},
+{grp:'Pantheon',cat:'stop',region:'rome',lat:41.8986,lng:12.4769,title:'🏛️ Pantheon',sub:'Book pantheonroma.com · ~€5/pp',note:'World\'s largest unreinforced concrete dome. Book in advance.',photo:'https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Pantheon_Rome_2.jpg/800px-Pantheon_Rome_2.jpg'},
+{grp:'Vatican',cat:'tour-booked',region:'rome',lat:41.9065,lng:12.4536,title:'🕍 Vatican Museums — Meeting Point',sub:'Thu Jul 30 · 7:15 AM · Tour Guy #1123725',note:'Under Michelangelo and Raphael statues. $721.16, pay Jul 8. Walks Inside Rome. Max 10.',photo:'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/Saint_Peter%27s_Square%2C_Vatican_City_-_April_2007.jpg/800px-Saint_Peter%27s_Square%2C_Vatican_City_-_April_2007.jpg'},
+{grp:'St Peters',cat:'tour-booked',region:'rome',lat:41.9022,lng:12.4539,title:"⛪ St. Peter's Basilica",sub:'Thu Jul 30 · Via Scala Regia',note:"Scala Regia exclusive to guided groups. Free time: Pietà, baldachin, Vatican Grottoes.",photo:'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/Saint_Peter%27s_Square%2C_Vatican_City_-_April_2007.jpg/800px-Saint_Peter%27s_Square%2C_Vatican_City_-_April_2007.jpg'},
+{grp:'Colosseum',cat:'tour-booked',region:'rome',lat:41.8902,lng:12.4922,title:'🏟️ Colosseum — Metro Stop',sub:'Fri Jul 31 · 8:45 AM · Tour Guy #1117159',note:'$1,018.70, pay Jul 3 (EARLIEST). Private tour with Arena Floor. No large backpacks. ID required.',photo:'https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/Colosseo_2020.jpg/800px-Colosseo_2020.jpg'},
+{grp:'Forum',cat:'stop',region:'rome',lat:41.8921,lng:12.4864,title:'🏛️ Roman Forum + Palatine Hill',sub:'Fri Jul 31 · On Colosseum tour',note:'Included. 2,500 years of history in one walk.',photo:'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Forum_Romanum_Rom.jpg/800px-Forum_Romanum_Rom.jpg'},
+{grp:'San Clemente',cat:'alternate',region:'rome',lat:41.8895,lng:12.4966,title:'⛪ Basilica of San Clemente (Alternate)',sub:'Teresa researched · Near Colosseum',note:'Three underground layers: 12th-century basilica → 4th-century church → 1st-century Mithraic temple. Most extraordinary Catholic site most tourists miss.',photo:''},
+{grp:'Scala Sancta',cat:'alternate',region:'rome',lat:41.8858,lng:12.5089,title:'⛪ Scala Sancta (Alternate)',sub:'Teresa researched',note:'The Holy Stairs. Pilgrims ascend on knees. Next to San Giovanni Laterano.',photo:''},
+{grp:'San Giovanni',cat:'alternate',region:'rome',lat:41.8859,lng:12.5054,title:'⛪ San Giovanni Laterano (Alternate)',sub:'Teresa researched',note:"Rome's actual cathedral — outranks St. Peter's ecclesiastically. Far fewer tourists.",photo:''},
+{grp:'Minerva',cat:'alternate',region:'rome',lat:41.8983,lng:12.4772,title:'⛪ Santa Maria sopra Minerva (Alternate)',sub:'Teresa researched · 2 min from Pantheon',note:"St. Catherine of Siena's tomb. Rome's only Gothic church. Almost no queue.",photo:''},
+{grp:'Catacombs Priscilla',cat:'alternate',region:'rome',lat:41.9302,lng:12.5115,title:'⛪ Catacombs of Priscilla (Alternate)',sub:'Teresa researched · Closed Mondays',note:'"Queen of the Catacombs." 7+ miles of tunnels. Oldest image of the Virgin Mary (~3rd century). Book at catacombepriscilla.com.',photo:''},
+{grp:'Capuchin',cat:'alternate',region:'rome',lat:41.9059,lng:12.4883,title:'⛪ Capuchin Crypt (Alternate)',sub:'Teresa researched',note:'Bones of 4,000 Capuchin friars arranged as art. Powerful memento mori. 45 min.',photo:''},
+{grp:'FCO',cat:'transport',region:'rome',lat:41.8034,lng:12.2519,title:'✈️ Fiumicino Airport (FCO)',sub:'Sat Aug 1 · Hertz drop-off 7:30 AM · Fly home IAD',note:'~35–45 min drive from central Rome. Return Hertz BMW X1 (Conf. #L60845394F2). Allow 3 hours before departure.',photo:''}
+];
+
+const catStyles={'hotel-booked':{color:'#7F77DD',size:14},'hotel-tbd':{color:'#b3afed',size:12},'tour-booked':{color:'#e74c3c',size:14},'stop':{color:'#f5a0a0',size:11},'alternate':{color:'#fca5a5',size:10},'cruise':{color:'#1D9E75',size:11},'transport':{color:'#e67e22',size:12}};
+const cityRoute=[[37.9755,23.7348],[36.3932,25.4615],[37.6383,21.6317],[39.6243,19.9217],[42.4247,18.7712],[42.6507,18.0944],[44.1194,15.2314],[45.7830,14.2038],[45.4308,12.3254],[44.8381,11.6197],[43.7696,11.2558],[43.5256,11.1673],[43.0551,11.4891],[43.0707,12.6197],[42.7171,12.1133],[41.9028,12.4964],[41.8034,12.2519]];
+// ── Google Maps ────────────────────────────────────────────────────────────
+let gmap=null,gmInfoWindow=null,_gmLoaded=false,_gmWanted=false;
+const gmMarkers=[];
+
+// Called by Google Maps API script (callback=initGoogleMap)
+function initGoogleMap(){_gmLoaded=true;if(_gmWanted){_gmWanted=false;_doInitMap();}}
+
+function _doInitMap(){
+  const el=document.getElementById('map');
+  if(!el||gmap)return;
+  gmap=new google.maps.Map(el,{
+    center:{lat:41.5,lng:15.5},zoom:5,
+    mapTypeControl:true,
+    mapTypeControlOptions:{style:google.maps.MapTypeControlStyle.HORIZONTAL_BAR,position:google.maps.ControlPosition.TOP_RIGHT},
+    streetViewControl:true,fullscreenControl:true,gestureHandling:'cooperative'
+  });
+  new google.maps.Polyline({
+    path:cityRoute.map(([a,b])=>({lat:a,lng:b})),
+    strokeColor:'#888',strokeOpacity:0.55,strokeWeight:2,map:gmap
+  });
+  gmInfoWindow=new google.maps.InfoWindow({maxWidth:320});
+  stops.forEach(s=>{
+    const m=new google.maps.Marker({position:{lat:s.lat,lng:s.lng},map:gmap,title:s.title,icon:_gmIcon(s.cat)});
+    m.addListener('click',()=>{gmInfoWindow.setContent(_gmCard(s));gmInfoWindow.open(gmap,m);});
+    gmMarkers.push({marker:m,stop:s});
+  });
+  _buildFilters();
+}
+
+function _gmIcon(cat){
+  const s=catStyles[cat]||{color:'#888',size:12};
+  return{path:google.maps.SymbolPath.CIRCLE,fillColor:s.color,fillOpacity:1,strokeColor:'#fff',strokeWeight:2,scale:s.size/2+1};
+}
+
+function _gmCard(s){
+  const nav='https://www.google.com/maps/dir/?api=1&destination='+encodeURIComponent(s.lat+','+s.lng);
+  const ph=(s.note||'').match(/href="(tel:[^"]+)"/);
+  const img=s.photo?'<img src="'+s.photo+'" onerror="this.remove()" style="width:100%;height:130px;object-fit:cover;border-radius:6px 6px 0 0;display:block">':'';
+  const clean=(s.note||'').replace(/<a[^>]*>(.*?)<\/a>/g,'$1').replace(/<[^>]+>/g,'');
+  let btns='<a href="'+nav+'" target="_blank" rel="noopener" style="flex:1;text-align:center;background:#4285f4;color:#fff;padding:6px 8px;border-radius:6px;font-size:11px;text-decoration:none;font-weight:600">📍 Navigate</a>';
+  if(ph)btns+='&nbsp;<a href="'+ph[1]+'" style="background:#e8f7f1;color:#0a6b50;padding:6px 10px;border-radius:6px;font-size:11px;text-decoration:none;font-weight:600;border:1px solid #c3e6d8">📞 Call</a>';
+  return '<div style="width:275px;font-family:-apple-system,sans-serif;margin:-10px -12px">'+img+'<div style="padding:10px 12px"><div style="font-size:13px;font-weight:700;color:#222;margin-bottom:2px">'+s.title+'</div><div style="font-size:11px;color:#888;margin-bottom:7px">'+s.sub+'</div><div style="font-size:12px;color:#555;line-height:1.55;border-top:1px solid #eee;padding-top:6px;margin-bottom:9px">'+clean+'</div><div style="display:flex;gap:6px;align-items:center">'+btns+'</div></div></div>';
+}
+
+const _regions=[
+  {key:'athens', label:'Athens',  color:'#378ADD'},
+  {key:'cruise', label:'Cruise',  color:'#1D9E75'},
+  {key:'venice', label:'Venice',  color:'#27ae60'},
+  {key:'ferrara',label:'Ferrara', color:'#7da1bf'},
+  {key:'florence',label:'Florence',color:'#D4537E'},
+  {key:'tuscany',label:'Tuscany', color:'#BA7517'},
+  {key:'umbria', label:'Umbria',  color:'#7F77DD'},
+  {key:'rome',   label:'Rome',    color:'#D85A30'}
+];
+const _types=[
+  {key:'hotel-booked',label:'Hotels (Booked)',  color:'#7F77DD'},
+  {key:'hotel-tbd',   label:'Hotels (TBD)',     color:'#b3afed'},
+  {key:'tour-booked', label:'Tours & Activities',color:'#e74c3c'},
+  {key:'cruise',      label:'Cruise Ports',     color:'#1D9E75'},
+  {key:'stop',        label:'Stops & Sights',   color:'#f5a0a0'},
+  {key:'alternate',   label:'Alternates',       color:'#fca5a5'},
+  {key:'transport',   label:'Transport',        color:'#e67e22'}
+];
+
+function _buildFilters(){
+  const rc=document.getElementById('region-checks');
+  const tc=document.getElementById('type-checks');
+  if(!rc||!tc)return;
+  _regions.forEach(r=>{
+    rc.innerHTML+='<label style="display:flex;align-items:center;gap:5px;padding:2px 0;cursor:pointer;font-size:12px;color:#444"><input type="checkbox" checked data-region="'+r.key+'" onchange="gmFilter()" style="width:13px;height:13px;accent-color:'+r.color+';cursor:pointer"><span style="width:8px;height:8px;border-radius:50%;background:'+r.color+';flex-shrink:0;display:inline-block"></span>'+r.label+'</label>';
+  });
+  _types.forEach(t=>{
+    tc.innerHTML+='<label style="display:flex;align-items:center;gap:5px;padding:2px 0;cursor:pointer;font-size:12px;color:#444"><input type="checkbox" checked data-type="'+t.key+'" onchange="gmFilter()" style="width:13px;height:13px;accent-color:'+t.color+';cursor:pointer"><span style="width:8px;height:8px;border-radius:50%;background:'+t.color+';flex-shrink:0;display:inline-block"></span>'+t.label+'</label>';
+  });
+}
+
+function gmFilter(){
+  const ar=new Set([...document.querySelectorAll('[data-region]:checked')].map(e=>e.dataset.region));
+  const at=new Set([...document.querySelectorAll('[data-type]:checked')].map(e=>e.dataset.type));
+  gmMarkers.forEach(({marker,stop})=>marker.setVisible(ar.has(stop.region)&&at.has(stop.cat)));
+}
+
+function mapSelectAll(on){
+  document.querySelectorAll('[data-region],[data-type]').forEach(cb=>cb.checked=on);
+  gmFilter();
+}
+
+function showTab(id,el){
+  document.querySelectorAll('.panel').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
+  document.getElementById('tab-'+id).classList.add('active');
+  if(el)el.classList.add('active');
+  if(id==='mp'){
+    if(_gmLoaded&&!gmap){setTimeout(_doInitMap,100);}
+    else if(gmap){setTimeout(()=>google.maps.event.trigger(gmap,'resize'),100);}
+    else{_gmWanted=true;}
+  }
+}
+
+/* ============================================
+   UTILITY: days from today to a date string
+   ============================================ */
+function daysFrom(iso){
+  var now=new Date();now.setHours(0,0,0,0);
+  var t=new Date(iso);t.setHours(0,0,0,0);
+  return Math.round((t-now)/86400000);
+}
+function dChip(d,crit,warn){
+  crit=crit||7;warn=warn||21;
+  if(d<0) return '<span class="dchip" style="background:#f0f0f0;color:#999">past</span>';
+  if(d===0) return '<span class="dchip" style="background:#c0392b;color:white">TODAY</span>';
+  if(d<=crit) return '<span class="dchip" style="background:#fdecea;color:#c0392b">'+d+'d</span>';
+  if(d<=warn) return '<span class="dchip" style="background:#fff8e1;color:#b8840f">'+d+'d</span>';
+  return '<span class="dchip" style="background:#e8f7f1;color:#0a6b50">'+d+'d</span>';
+}
+
+/* ============================================
+   COPY TO CLIPBOARD
+   ============================================ */
+function cpClick(el,val){
+  var fn=function(){
+    el.classList.add('copied');
+    var prev=el.title;el.title='Copied!';
+    setTimeout(function(){el.classList.remove('copied');el.title=prev;},1400);
+  };
+  if(navigator.clipboard&&navigator.clipboard.writeText){
+    navigator.clipboard.writeText(val).then(fn).catch(function(){fbCopy(val);fn();});
+  } else { fbCopy(val);fn(); }
+}
+function fbCopy(val){
+  var ta=document.createElement('textarea');ta.value=val;ta.style.position='fixed';ta.style.opacity='0';
+  document.body.appendChild(ta);ta.focus();ta.select();
+  try{document.execCommand('copy');}catch(e){}
+  document.body.removeChild(ta);
+}
+var _cpDone=false;
+function initCopyable(){
+  if(_cpDone)return;_cpDone=true;
+  var pat=/(?:Conf\. #|Booking #|PIN: )([A-Z0-9]+)/g;
+  function walk(node){
+    if(node.nodeType===3){
+      pat.lastIndex=0;
+      if(pat.test(node.textContent)){
+        pat.lastIndex=0;
+        var s=document.createElement('span');
+        s.innerHTML=node.textContent.replace(/(?:Conf\. #|Booking #|PIN: )([A-Z0-9]+)/g,function(m,v){
+          return '<span class="cpv" onclick="cpClick(this,\''+v+'\')" title="Tap to copy">'+m+'</span>';
+        });
+        node.parentNode.replaceChild(s,node);
+      }
+    } else if(node.nodeType===1){
+      var tag=node.tagName;
+      if(tag==='SCRIPT'||tag==='STYLE'||node.classList.contains('cpv'))return;
+      Array.from(node.childNodes).forEach(walk);
+    }
+  }
+  walk(document.body);
+}
+
+/* ============================================
+   TODAY HIGHLIGHT IN ITINERARY
+   ============================================ */
+var _todayDone=false;
+function initTodayHighlight(){
+  if(_todayDone)return;_todayDone=true;
+  var MONTHS={Jan:0,Feb:1,Mar:2,Apr:3,May:4,Jun:5,Jul:6,Aug:7,Sep:8,Oct:9,Nov:10,Dec:11};
+  var today=new Date();today.setHours(0,0,0,0);
+  var found=false;
+  document.querySelectorAll('.dc').forEach(function(card){
+    var dt=card.querySelector('.dt');if(!dt)return;
+    var parts=dt.textContent.split(' — ')[0].trim().split(' ');
+    if(parts.length<3)return;
+    var mon=MONTHS[parts[1]],day=parseInt(parts[2]);
+    if(isNaN(day)||mon===undefined)return;
+    var cd=new Date(2026,mon,day);
+    if(cd.getTime()===today.getTime()){
+      var body=card.querySelector('.db'),ch=card.querySelector('.ch');
+      if(body)body.style.display='block';
+      if(ch)ch.classList.add('open');
+      var pill=document.createElement('span');
+      pill.className='today-pill';pill.textContent='TODAY';
+      dt.insertBefore(pill,dt.firstChild);
+      found=true;
+    }
+  });
+  if(!found){
+    var dep=new Date(2026,6,9);var now2=new Date();now2.setHours(0,0,0,0);
+    if(now2<dep){
+      var d=daysFrom('2026-07-09');
+      var banner=document.createElement('div');
+      banner.className='al alb';banner.style.marginBottom='10px';
+      banner.innerHTML='<strong>✈️ Departure in '+d+' days</strong> — Thu Jul 9, 2026 · IAD → Athens overnight';
+      var c=document.getElementById('itin-days');
+      if(c&&c.children.length)c.insertBefore(banner,c.firstChild);
+    }
+  }
+}
+
+/* ============================================
+   QUICK REF DATA
+   ============================================ */
+var qrPre={
+  payments:[
+    {date:'2026-06-12',desc:'Acropolis Tour — Tour Guy',amt:'$331.84',ref:'#1118765'},
+    {date:'2026-06-29',desc:'Venice Full Day — Tour Guy',amt:'$824.72',ref:'#1118847'},
+    {date:'2026-07-03',desc:'Private Colosseum — Tour Guy',amt:'$1,018.70',ref:'#1117159'},
+    {date:'2026-07-08',desc:'Vatican Museums — Tour Guy',amt:'$721.16',ref:'#1123725'},
+    {date:'2026-07-09',desc:'Athens Theatre (auto-charge)',amt:'$143.76',ref:'Tripadvisor #1778633837'},
+    {date:'2026-07-19',desc:'Hotel Bellavista (auto-charge)',amt:'€410.24',ref:'card ••••6773'}
+  ],
+  cancels:[
+    {date:'2026-07-09',desc:'Athens Open Air Theatre',lv:'med'},
+    {date:'2026-07-10',desc:'Villa San Filippo — 100% penalty after!',lv:'crit'},
+    {date:'2026-07-17',desc:'Loft Il Giobertino Florence',lv:'med'},
+    {date:'2026-07-20',desc:'Hotel Bellavista Assisi',lv:'med'},
+    {date:'2026-07-22',desc:'Idolina Guest House Montalcino',lv:'low'},
+    {date:'2026-07-26',desc:'Hotel Duomo Orvieto',lv:'low'}
+  ],
+  book:[
+    {text:'Vatican Scavi — only 250/day',u:true,url:'https://visite.basilicasanpietro.va/en/booking/necropolivaticana'},
+    {text:'Ferrara hotel (Jul 22, 1 night, outside ZTL)',u:true},
+    {text:'Rome hotel (Jul 29–31, 3 nights, parking required)',u:true},
+    {text:'Galileo Museum Florence',url:'https://www.museogalileo.it'},
+    {text:'Medici Chapel Florence',url:'https://www.uffizi.it'},
+    {text:'Pantheon Rome',url:'https://www.pantheonroma.com'},
+    {text:'Assisi Mass reservation',url:'https://sanfrancescoassisi.org/en/reservations/liturgical-celebrations'},
+    {text:'Orvieto Underground',url:'https://www.orvietounderground.it'}
+  ]
+};
+
+var qrDays={
+  '2026-07-10':{loc:'Athens',title:'Arrive Athens',
+    hotel:'Anise Aluma Athens, Tapestry/Hilton',ph:'+302144091800',phd:'+30 21 4409 1800',
+    conf:'3471385009',ci:'3 PM',co:'Jul 11, 11 AM',
+    warn:[],notes:['Stroll Plaka tonight — early night, 7:50 AM tour tomorrow']},
+  '2026-07-11':{loc:'Athens → Cruise',title:'Acropolis + Board Viking OST',
+    hotel:'Viking OST · Stateroom 4071 (Limbers) / 4073 (Guernsey/Santi)',
+    warn:['7:35 AM: Tour Guy at <strong>Porinou 5</strong> — outside Acropolis gates, NOT the metro station',
+          '9 PM Open Air Theatre: no barcode — operator looks up by name'],
+    notes:['Board Viking at Piraeus this afternoon','Ship stays overnight, departs Jul 12 at 6 PM']},
+  '2026-07-12':{loc:'Cruise — Athens/Piraeus',title:'Panoramic Tour + Sail Away',hotel:'Viking OST',
+    warn:['8:15 AM Viking excursion (included, 4 hrs)'],notes:['Ship departs 6 PM → Santorini']},
+  '2026-07-13':{loc:'Cruise — Santorini',title:'Santorini',hotel:'Viking OST',
+    warn:['8:45 AM Viking excursion ($149/pp — already paid)'],notes:[]},
+  '2026-07-14':{loc:'Cruise — Olympia',title:'Katakolon / Ancient Olympia',hotel:'Viking OST',
+    warn:['9:45 AM Viking excursion (included, 4 hrs)'],notes:[]},
+  '2026-07-15':{loc:'Cruise — Corfu',title:'Corfu',hotel:'Viking OST',
+    warn:['9:15 AM Viking excursion (included)'],notes:[]},
+  '2026-07-16':{loc:'Cruise — Kotor',title:'Kotor, Montenegro',hotel:'Viking OST',
+    warn:['9:30 AM Viking excursion (included, 1.5 hrs)'],notes:[]},
+  '2026-07-17':{loc:'Cruise — Dubrovnik',title:'Dubrovnik, Croatia',hotel:'Viking OST',
+    warn:['8:45 AM Viking excursion (included, 3 hrs)'],notes:[]},
+  '2026-07-18':{loc:'Cruise — Zadar',title:'Zadar, Croatia',hotel:'Viking OST',
+    warn:['10:30 AM Viking excursion (included)'],notes:[]},
+  '2026-07-19':{loc:'Cruise — Koper',title:'Postojna Cave & Predjama Castle',hotel:'Viking OST',
+    warn:['9:15 AM Viking excursion ($199/pp — already paid, 7.5 hrs)',
+          '🧥 Cave is 50°F (10°C) year-round — bring a light layer!'],
+    notes:['Farewell dinner onboard tonight','Ship arrives Chioggia 1:30 AM']},
+  '2026-07-20':{loc:'Venice',title:'Disembark → Venice',
+    hotel:"B&B Ca' Bonvicini, Santa Croce 2160",ph:'+390412750106',phd:'+39 041 275 0106',
+    conf:'5062824483',pin:'0103',ci:'9 AM–noon',co:'Jul 22, 9–10 AM ⚠️ VERY EARLY',
+    warn:['NON-REFUNDABLE — no cancellation or modification possible',
+          'No elevator — upper floors via stairs only',
+          'City tax €3/pp/night cash at property',
+          'Check-out in 2 days: Jul 22, 9–10 AM (must reach Marco Polo Airport)'],
+    notes:['Bus #80 Chioggia → Piazzale Roma ~65 min ~€8/pp','Rest day — Dorsoduro, Zattere waterfront']},
+  '2026-07-21':{loc:'Venice',title:'Ultimate Venice Day',
+    hotel:"B&B Ca' Bonvicini",ph:'+390412750106',phd:'+39 041 275 0106',
+    conf:'5062824483',pin:'0103',ci:'(staying)',co:'TOMORROW Jul 22, 9–10 AM ⚠️',
+    warn:['⚠️ CHECK OUT TOMORROW by 10 AM — water taxi to Marco Polo Airport for 9 AM car pickup',
+          '8:45 AM: Tour Guy between San Marco & San Teodoro columns (St. Mark\'s Square)',
+          'No large backpacks; ID required for Doge\'s Palace'],
+    notes:['9 AM: St. Mark\'s Basilica + Doge\'s Palace + Gondola','1:30 PM: Murano & Burano boat tour']},
+  '2026-07-22':{loc:'Venice → Ferrara',title:'Car Pickup + Ferrara',
+    hotel:'TBD Ferrara Hotel (near historic center, outside ZTL)',
+    warn:['⚠️ CHECK OUT by 9–10 AM',
+          'Water taxi or ACTV Bus 5 → Marco Polo Airport (~20 min, ~€8–15)',
+          '⚠️ Car pickup at AIRPORT (Via Broglio 6, Tessera) — NOT Piazzale Roma!',
+          'ZTL: Never drive into Ferrara historic center'],
+    notes:['Hertz BMW X1 · Conf. L60845394F2 · Hertz #56844202','Drive Ferrara via A4 → A13 (~1.5 hrs)']},
+  '2026-07-23':{loc:'Florence',title:'Galileo Museum + Medici Chapel',
+    hotel:'Loft Il Giobertino (1 apt, all 4 adults)',ph:'+393338347050',phd:'+39 333 834 7050',
+    conf:'5024697136',pin:'0746',ci:'3–10 PM',co:'Jul 24, 6–10 AM ⚠️ VERY EARLY',
+    warn:['ZTL: Do NOT drive into Florence center — park outside',
+          'Check-out tomorrow 6–10 AM — very early!',
+          'No dedicated parking — ask property on arrival for nearest lot'],
+    notes:['Galileo Museum AM ~€10/pp (actual 1610 telescopes)',
+           'Medici Chapel PM ~€9/pp',
+           'Kitchen in apartment — use it for early breakfast tomorrow']},
+  '2026-07-24':{loc:'Florence → Chianti',title:'Da Vinci Museum + Chianti Wine Road',
+    hotel:'Villa San Filippo, Barberino Tavarnelle',
+    conf:'72074703683732',ci:'2 PM',co:'Jul 25, 11 AM',
+    warn:['⚠️ CHECK OUT 6–10 AM — target the early end',
+          '9:30 AM: Da Vinci National Science Museum — leave Florence by noon',
+          'City tax €3/pp/night cash at Villa San Filippo'],
+    notes:['Italy\'s most important science museum: 170 Leonardo models, Toti submarine, Moon fragment',
+           'SR222 Chianti Wine Road — no fixed agenda',
+           'Greve, Badia a Passignano, Panzano (Cecchini free salumi) possible stops']},
+  '2026-07-25':{loc:'Chianti → Montalcino',title:'Chianti South → Montalcino',
+    hotel:'Idolina Guest House, Via Mazzini 65/67',
+    conf:'72074700792366',ci:'1:30–7:30 PM',co:'Jul 26, 11 AM',
+    warn:['⚠️ NO FRONT DESK at Idolina — call 24 hrs before to arrange key handoff',
+          'Check-in closes 7:30 PM sharp — leave Castello di Brolio by 4:30 PM!',
+          'Contact: +39 342 852 2080',
+          '€262.62 + city tax €4/pp/night — all paid at property'],
+    notes:['Radda → Castellina → Castello di Brolio (leave by 4:30 PM!)','Fortezza di Montalcino at golden hour — first Brunello']},
+  '2026-07-26':{loc:'→ Assisi',title:'Montalcino → Assisi + 5 PM Mass & Vespers',
+    hotel:'Hotel Bellavista, Assisi',ph:'+390758042492',phd:'+39 075 804 2492',
+    conf:'6920407207',pin:'4429',ci:'3–8 PM (€30 after 8 PM!)',co:'Jul 28, 8–11 AM',
+    warn:['⚠️ Check-in 3–8 PM — €30 surcharge if after 8 PM!',
+          'Payment & check-out at RESTAURANT (not reception)',
+          'Restaurant CLOSED THURSDAYS — check-out day is Tuesday ✓',
+          'City tax €3/pp/night cash at property'],
+    notes:['Optional stops: Pienza + Sant\'Antimo Abbey',
+           '5 PM Italian Mass at Basilica of St. Francis (book at sanfrancescoassisi.org)',
+           '~6 PM Vespers follows immediately — stay in seats',
+           '2026 = 800th anniversary of St. Francis\'s death']},
+  '2026-07-27':{loc:'Assisi',title:'Full Assisi Day',
+    hotel:'Hotel Bellavista',ph:'+390758042492',phd:'+39 075 804 2492',
+    conf:'6920407207',pin:'4429',ci:'(staying)',co:'TOMORROW Jul 28, 8–11 AM',
+    warn:['⚠️ Check-out TOMORROW 8–11 AM — payment at restaurant!',
+          'Restaurant open today (Monday) ✓','Pool open 9 AM–7 PM'],
+    notes:['Santa Chiara · Rocca Maggiore · Eremo delle Carceri (4 km above, drive or taxi)',
+           'Most relaxed day of the Italy road trip']},
+  '2026-07-28':{loc:'→ Spello → Orvieto',title:'Assisi → Spello → Orvieto',
+    hotel:'Hotel Duomo, Orvieto',ph:'+390763341887',phd:'+39 0763 341887',
+    conf:'72074704255117',ci:'2–10 PM',co:'Jul 29, 11 AM',
+    warn:['Check-out today 8–11 AM — payment at Bellavista restaurant',
+          'ZTL: Park lower Orvieto, take funicular up to historic center',
+          'City tax €2.30/pp/night at Hotel Duomo','Front desk 8 AM–10 PM'],
+    notes:['Spello: Pinturicchio frescoes at Santa Maria Maggiore — almost always empty',
+           'Orvieto Cathedral + Underground ~€6/pp',
+           'Hotel Duomo: elevator on site ✓ steps from the Cathedral']},
+  '2026-07-29':{loc:'→ Rome',title:'Orvieto → Rome · Scavi · Pasta Class',
+    hotel:'TBD Rome Hotel (must have parking ~€25–35/night)',
+    warn:['⚠️ Park at hotel on arrival — DO NOT MOVE car until Aug 1',
+          '⚠️ Scavi must finish by ~4 PM for 5 PM pasta class',
+          'ZTL: Never drive into Rome center (€80–150 camera fines)'],
+    notes:['A1 from Orvieto ~90 min','~1:30 PM Vatican Scavi (visite.basilicasanpietro.va)',
+           '5 PM Gluten-Free Pasta Class — Viator #1395367603']},
+  '2026-07-30':{loc:'Rome — Vatican',title:'Vatican Museums + Sistine + St. Peter\'s',
+    hotel:'TBD Rome Hotel',
+    warn:['7:15 AM: Arrive Vatican entrance (under Michelangelo & Raphael statues)',
+          'Dress: covered knees + shoulders, no hat, no large backpack',
+          'SILENCE in Sistine Chapel'],
+    notes:['Tour Guy #1123725 · Walks Inside Rome: +39 334 724 33 74',
+           'Scala Regia access — exclusive to guided groups','Prati for lunch after']},
+  '2026-07-31':{loc:'Rome — Ancient Rome',title:'Private Colosseum + Farewell Dinner',
+    hotel:'TBD Rome Hotel',
+    warn:['8:45 AM: Meet outside Colosseum metro stop (street level, NOT inside)',
+          'Government ID required; no large backpacks',
+          '⚠️ PACK tonight for 5 AM departure tomorrow'],
+    notes:['Tour Guy #1117159 · Private Colosseum + Arena Floor',
+           'Gladiator\'s Gate → Arena Floor → Roman Forum → Palatine Hill',
+           'Farewell dinner tonight — splurge!']},
+  '2026-08-01':{loc:'Departure',title:'Rome → FCO → Home',hotel:'—',
+    warn:['5–6 AM: Wake, final pack, checkout',
+          'Drive to FCO ~35–45 min via A91/GRA — leave by 6:15 AM',
+          'Hertz drop-off 7:30 AM · Conf. L60845394F2',
+          'Allow 3 hours before departure for check-in/security'],
+    notes:['Arrivederci! 🇮🇹']}
+};
+
+/* ============================================
+   RENDER QUICK REF
+   ============================================ */
+function renderQuickRef(){
+  var el=document.getElementById('qr-content');if(!el)return;
+  var today=new Date();today.setHours(0,0,0,0);
+  var dep=new Date(2026,6,9);var ret=new Date(2026,7,2);
+  var iso=today.getFullYear()+'-'+String(today.getMonth()+1).padStart(2,'0')+'-'+String(today.getDate()).padStart(2,'0');
+  var h='';
+
+  if(today<dep){
+    // PRE-TRIP
+    var dDep=daysFrom('2026-07-09');
+    h+='<div class="al alb" style="margin-bottom:12px"><strong>✈️ Departure in '+dDep+' days</strong> — Thu Jul 9 · IAD → Athens overnight</div>';
+
+    // Payments
+    var fp=qrPre.payments.filter(function(p){return daysFrom(p.date)>=0;});
+    if(fp.length){
+      h+='<div class="qr-section"><div class="qr-head">💳 Upcoming Payments</div><div class="qr-body">';
+      fp.forEach(function(p){
+        var d=daysFrom(p.date);
+        var clr=d<=3?'#c0392b':d<=14?'#e67e22':'#27ae60';
+        h+='<div class="qr-row"><span class="qr-icon">💳</span><span class="qr-text">';
+        h+='<strong style="color:'+clr+'">'+p.date.slice(5).replace('-','/')+'</strong>'+dChip(d,3,14);
+        h+=' — '+p.desc+' <strong>'+p.amt+'</strong> <span style="color:#999;font-size:11px">'+p.ref+'</span>';
+        h+='</span></div>';
+      });
+      h+='</div></div>';
+    }
+
+    // Cancellation deadlines
+    var fc=qrPre.cancels.filter(function(c){return daysFrom(c.date)>=0;});
+    if(fc.length){
+      h+='<div class="qr-section"><div class="qr-head">⚠️ Cancellation Deadlines</div><div class="qr-body">';
+      fc.forEach(function(c){
+        var d=daysFrom(c.date);
+        var bg=c.lv==='crit'?'#fdecea':c.lv==='med'?'#fffbf0':'#f5f5f5';
+        var br=c.lv==='crit'?'#e74c3c':c.lv==='med'?'#e6a817':'#ccc';
+        h+='<div style="background:'+bg+';border-left:3px solid '+br+';padding:7px 12px;border-radius:5px;margin:4px 0;font-size:13px;line-height:1.5;">';
+        h+='<strong>'+c.date+'</strong>'+dChip(d,5,21)+' — '+c.desc+'</div>';
+      });
+      h+='</div></div>';
+    }
+
+    // Still to book
+    h+='<div class="qr-section"><div class="qr-head">🚨 Still to Book</div><div class="qr-body">';
+    qrPre.book.forEach(function(b){
+      h+='<div class="qr-row"><span class="qr-icon">'+(b.u?'🔴':'🟡')+'</span><span class="qr-text">';
+      h+=b.url?'<a href="'+b.url+'" target="_blank" style="color:#3498db">'+b.text+'</a>':b.text;
+      h+='</span></div>';
+    });
+    h+='</div></div>';
+
+  } else if(today>=ret){
+    h='<div class="al alg"><strong>🎉 Trip complete!</strong> What a journey.</div>';
+
+  } else {
+    // DURING TRIP
+    var day=qrDays[iso];
+    if(!day){h='<div class="al aly">No quick-ref entry for today. Check the Full Itinerary tab.</div>';}
+    else{
+      h+='<div style="background:#2c3e50;color:white;padding:12px 16px;border-radius:10px;margin-bottom:12px;font-size:14px;">';
+      h+='<div style="font-weight:700;font-size:16px;margin-bottom:3px">📍 '+day.loc+'</div>';
+      h+='<div style="opacity:.75">'+day.title+'</div></div>';
+
+      // Hotel
+      h+='<div class="qr-section"><div class="qr-head">🏨 Tonight</div><div class="qr-body">';
+      h+='<div class="qr-row"><span class="qr-icon">🏨</span><span class="qr-text"><strong>'+day.hotel+'</strong></span></div>';
+      if(day.ph){
+        h+='<div class="qr-row"><span class="qr-icon">📞</span><span class="qr-text">';
+        h+='<a href="tel:'+day.ph+'" class="qr-call">📞 Call '+day.phd+'</a></span></div>';
+      }
+      if(day.conf){
+        h+='<div class="qr-row"><span class="qr-icon">📋</span><span class="qr-text">';
+        h+='Conf. #<span class="cpv" onclick="cpClick(this,\''+day.conf+'\')" title="Tap to copy"><strong>'+day.conf+'</strong></span>';
+        if(day.pin) h+=' &nbsp; PIN: <span class="cpv" onclick="cpClick(this,\''+day.pin+'\')" title="Tap to copy"><strong>'+day.pin+'</strong></span>';
+        h+='</span></div>';
+      }
+      if(day.ci||day.co){
+        h+='<div class="qr-row"><span class="qr-icon">🔑</span><span class="qr-text">';
+        if(day.ci) h+='Check-in: <strong>'+day.ci+'</strong>';
+        if(day.ci&&day.co) h+=' &nbsp;·&nbsp; ';
+        if(day.co) h+='Check-out: <strong>'+day.co+'</strong>';
+        h+='</span></div>';
+      }
+      h+='</div></div>';
+
+      if(day.warn&&day.warn.length){
+        h+='<div class="qr-section"><div class="qr-head">⚠️ Key Warnings</div><div class="qr-body">';
+        day.warn.forEach(function(w){h+='<div class="qr-warn">'+w+'</div>';});
+        h+='</div></div>';
+      }
+      if(day.notes&&day.notes.length){
+        h+='<div class="qr-section"><div class="qr-head">📌 Notes</div><div class="qr-body">';
+        day.notes.forEach(function(n){h+='<div class="qr-ok">'+n+'</div>';});
+        h+='</div></div>';
+      }
+
+      // Tomorrow
+      var tom=new Date(today);tom.setDate(tom.getDate()+1);
+      var tomIso=tom.getFullYear()+'-'+String(tom.getMonth()+1).padStart(2,'0')+'-'+String(tom.getDate()).padStart(2,'0');
+      var td=qrDays[tomIso];
+      if(td){
+        h+='<div class="qr-section"><div class="qr-head">🗓️ Tomorrow</div><div class="qr-body">';
+        h+='<div class="qr-info"><strong>'+td.loc+'</strong> — '+td.title;
+        if(td.hotel&&td.hotel!=='—') h+='<br>'+td.hotel;
+        if(td.ci&&td.ci!=='(staying)') h+=' · Check-in: <strong>'+td.ci+'</strong>';
+        h+='</div></div></div>';
+      }
+    }
+  }
+  el.innerHTML=h;
+}
+
+/* ============================================
+   HOOK INTO showTab
+   ============================================ */
+var _oST=showTab;
+showTab=function(id,el){
+  _oST(id,el);
+  if(id==='qr') renderQuickRef();
+  if(id==='it') { initTodayHighlight(); setTimeout(initCopyable,50); }
+  if(id!=='it'&&id!=='qr') setTimeout(initCopyable,50);
+};
+
+/* ============================================
+   INIT
+   ============================================ */
+document.addEventListener('DOMContentLoaded',function(){
+  renderQuickRef();
+  initTodayHighlight();
+  setTimeout(initCopyable,200);
+});
+
+</script>
+
+<!-- QUICK REF -->
+<div id="tab-qr" class="panel">
+  <div id="qr-content"></div>
+</div>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA_L3t4bPLYe-MTVSmbolMAzGyHcoXN9Gc&callback=initGoogleMap&loading=async"></script>
+</body>
+</html>
