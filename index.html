@@ -87,7 +87,7 @@ p { font-size:13px; line-height:1.7; color:#444; margin-bottom:7px; }
 .hilttip { margin-top:8px; padding:9px 11px; background:#eeedfe; border-radius:8px; border-left:3px solid #7F77DD; font-size:12px; color:#3c3489; line-height:1.6; }
 .logtip { margin-top:8px; padding:9px 11px; background:#e8f7f1; border-radius:8px; border-left:3px solid #1D9E75; font-size:12px; color:#0a5c3e; line-height:1.6; }
 #map-wrap{display:flex;gap:12px;align-items:flex-start;}
-#map-sidebar{width:155px;flex-shrink:0;background:white;border-radius:10px;padding:12px 14px;box-shadow:0 1px 3px rgba(0,0,0,.08);}
+#map-sidebar{width:180px;flex-shrink:0;background:white;border-radius:10px;padding:12px 14px;box-shadow:0 1px 3px rgba(0,0,0,.08);}
 #map-main{flex:1;min-width:0;}
 #map{width:100%;height:540px;border-radius:10px;border:1px solid #ddd;}
 .ml{display:flex;flex-wrap:wrap;gap:10px;margin-top:8px;font-size:11px;color:#666;}
@@ -660,58 +660,58 @@ card.innerHTML=`<div class="dh" onclick="toggleDay(this)"><div class="dn" style=
 itinContainer.appendChild(card);});
 
 const stops=[
-{grp:'Athens Hotel',cat:'hotel-booked',region:'athens',lat:37.9805,lng:23.7237,title:'🏨 Anise Aluma Athens (Tapestry/Hilton)',sub:'Fri Jul 10 · Conf. #3471385009',note:'Evripidou 82. 2 rooms. 100k Hilton pts. Cancel by Jul 9.',photo:'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Athina_collage.jpg/800px-Athina_collage.jpg'},
-{grp:'Acropolis',cat:'tour-booked',region:'athens',lat:37.9714,lng:23.7234,title:'🏛️ Acropolis Tour — Porinou 5',sub:'Sat Jul 11 · 7:50 AM · Tour Guy #1118765',note:'Meet at Porinou 5 (outside gates). $331.84, pay Jun 12.',photo:'https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/The_Parthenon_in_Athens.jpg/800px-The_Parthenon_in_Athens.jpg'},
-{grp:'Theatre',cat:'tour-booked',region:'athens',lat:37.9693,lng:23.7244,title:'🎭 Open Air Ancient Greek Theatre',sub:'Sat Jul 11 · 9 PM · Tripadvisor #1778633837',note:'$143.76 charged Jul 9. No barcode — operator looks up by name.',photo:'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/Odeon_of_Herodes_Atticus.jpg/800px-Odeon_of_Herodes_Atticus.jpg'},
-{grp:'Piraeus',cat:'cruise',region:'athens',lat:37.9381,lng:23.6359,title:'🚢 Piraeus Cruise Terminal',sub:'Sat Jul 11 · Board Viking OST',note:'Limbers: #8663390 Stateroom 4071. Guernsey/Santi: #8663394 Stateroom 4073.',photo:'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Port_of_Piraeus.jpg/800px-Port_of_Piraeus.jpg'},
-{grp:'Santorini',cat:'cruise',region:'cruise',lat:36.3932,lng:25.4615,title:'🚢 Santorini',sub:'Mon Jul 13 · $149/pp',note:'Ancient & Modern Island Life. 4.5 hours.',photo:'https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/Oia_Santorini_Thira_Greece_Cyclades.jpg/800px-Oia_Santorini_Thira_Greece_Cyclades.jpg'},
-{grp:'Olympia',cat:'cruise',region:'cruise',lat:37.6383,lng:21.6317,title:'🏟️ Katakolon / Olympia',sub:'Tue Jul 14 · Included',note:'Ancient Olympia. 4 hours.',photo:'https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/Ancient_Olympia_view3.jpg/800px-Ancient_Olympia_view3.jpg'},
-{grp:'Corfu',cat:'cruise',region:'cruise',lat:39.6243,lng:19.9217,title:'🏰 Corfu',sub:'Wed Jul 15 · Included',note:'Panoramic Corfu & Old Town.',photo:'https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/Corfu_Old_Town_1.jpg/800px-Corfu_Old_Town_1.jpg'},
-{grp:'Kotor',cat:'cruise',region:'cruise',lat:42.4247,lng:18.7712,title:'🏰 Kotor, Montenegro',sub:'Thu Jul 16 · Included',note:'Kotor on Foot. 1.5 hours.',photo:'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Kotor_stari_grad.jpg/800px-Kotor_stari_grad.jpg'},
-{grp:'Dubrovnik',cat:'cruise',region:'cruise',lat:42.6507,lng:18.0944,title:'🏰 Dubrovnik, Croatia',sub:'Fri Jul 17 · Included',note:'Dubrovnik on Foot. 3 hours.',photo:'https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/Dubrovnik_stari_grad.jpg/800px-Dubrovnik_stari_grad.jpg'},
-{grp:'Zadar',cat:'cruise',region:'cruise',lat:44.1172,lng:15.2199,title:'🎵 Zadar — Sea Organ',sub:'Sat Jul 18 · Included',note:'Walking Tour. Sea Organ + Sun Salutation.',photo:'https://upload.wikimedia.org/wikipedia/commons/thumb/2/26/Zadar_forum.jpg/800px-Zadar_forum.jpg'},
-{grp:'Postojna',cat:'cruise',region:'cruise',lat:45.7830,lng:14.2038,title:'🦎 Postojna Cave, Slovenia',sub:'Sun Jul 19 · $199/pp',note:'Postojna Cave & Predjama Castle. 7.5 hours. 50°F inside.',photo:'https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Postojnska_jama_01.JPG/800px-Postojnska_jama_01.JPG'},
-{grp:'Venice Hotel',cat:'hotel-booked',region:'venice',lat:45.4377,lng:12.3218,title:'🏨 B&B Ca\' Bonvicini — Venice',sub:'Mon–Wed Jul 20–22 · Conf. #5062824483',note:'Santa Croce 2160. NON-REFUNDABLE. Check-in 9 AM–noon. Check-out 9–10 AM (very early!). No elevator. Canal view requested. <a href="tel:+390412750106" class="phlink">+39 041 275 0106</a>.',photo:'https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Venice_Grand_Canal.jpg/800px-Venice_Grand_Canal.jpg'},
-{grp:'Transport',cat:'transport',region:'venice',lat:45.5054,lng:12.3519,title:'🚗 Hertz — Venice Marco Polo Airport',sub:'Wed Jul 22 · 9:00 AM · Conf. #L60845394F2',note:'BMW X1 or similar. $855.85. Water taxi or ACTV Bus 5 from Venice (~20 min). Drop-off Rome FCO Aug 1, 7:30 AM.',photo:''},
-{grp:'St Marks',cat:'tour-booked',region:'venice',lat:45.4341,lng:12.3387,title:'⛵ Tour Guy Meeting — San Marco Columns',sub:'Tue Jul 21 · 8:45 AM · Tour Guy #1118847',note:'Between columns of San Marco and San Teodoro. $824.72, pay Jun 29.',photo:'https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Piazza_San_Marco_in_winter.jpg/800px-Piazza_San_Marco_in_winter.jpg'},
-{grp:'Murano',cat:'stop',region:'venice',lat:45.4590,lng:12.3523,title:'🔥 Murano — Glass-blowing',sub:'Tue Jul 21 · Afternoon · On tour',note:'Live glass-blowing demonstration. 1,700°F molten silica.',photo:'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Murano_island.jpg/800px-Murano_island.jpg'},
-{grp:'Burano',cat:'stop',region:'venice',lat:45.4854,lng:12.4167,title:'🌈 Burano — Lacemaking',sub:'Tue Jul 21 · Afternoon · On tour',note:'Colorful fishing village. Lacemaking demonstration + free time.',photo:'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Burano_2011.jpg/800px-Burano_2011.jpg'},
-{grp:'Ferrara',cat:'hotel-tbd',region:'ferrara',lat:44.8381,lng:11.6197,title:'🏨 Ferrara Hotel (TBD)',sub:'Wed Jul 22 · 1 night',note:'Near historic center, outside ZTL. UNESCO city — center of Renaissance mathematics.',photo:'https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Ferrara-Piazza_municipale-2.jpg/800px-Ferrara-Piazza_municipale-2.jpg'},
-{grp:'Florence Hotel',cat:'hotel-booked',region:'florence',lat:43.7736,lng:11.2697,title:'🏨 Loft Il Giobertino — Florence',sub:'Thu Jul 23–Fri Jul 24 · Conf. #5024697136',note:'Via Vincenzo Gioberti 95, 2nd floor. 1 two-bedroom apartment, all 4 guests. Check-in 3–10 PM. Check-out 6–10 AM. Kitchen + balcony. Cancel free until Jul 17.',photo:'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Firenze_piazzale_michelangelo_2.jpg/800px-Firenze_piazzale_michelangelo_2.jpg'},
-{grp:'Galileo',cat:'tour-booked',region:'florence',lat:43.7677,lng:11.2559,title:'🔭 Galileo Museum',sub:'Thu Jul 23 · AM · museogalileo.it',note:'~€10/pp. Galileo\'s actual telescopes (discovered Jupiter\'s moons 1610), compass, orreries. 2 hours.',photo:'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/Museo_Galileo-Firenze.jpg/800px-Museo_Galileo-Firenze.jpg'},
-{grp:'Medici',cat:'tour-booked',region:'florence',lat:43.7751,lng:11.2534,title:'👑 Medici Chapel',sub:'Thu Jul 23 · PM · uffizi.it',note:'~€9/pp. Michelangelo\'s New Sacristy: Night, Day, Dawn, Dusk.',photo:'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Cappelle_medicee_esterno.jpg/800px-Cappelle_medicee_esterno.jpg'},
-{grp:'Da Vinci',cat:'tour-booked',region:'florence',lat:43.7638,lng:11.2463,title:'🔬 Da Vinci National Science Museum',sub:'Fri Jul 24 · 9:30 AM · museoscienza.org',note:'Italy\'s most important science museum. 170 Leonardo models + submarine + Moon fragment + spacecraft. 2+ hours.',photo:'https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Leonardo_da_Vinci_-_Self-Portrait_-_WGA12798.jpg/800px-Leonardo_da_Vinci_-_Self-Portrait_-_WGA12798.jpg'},
-{grp:'Villa San Filippo',cat:'hotel-booked',region:'tuscany',lat:43.5256,lng:11.1673,title:'🏨 Villa San Filippo — Chianti',sub:'Fri Jul 24–Sat Jul 25 · Conf. #72074703683732',note:'Strada delle Ginestre 6, Barberino Tavarnelle. $372.12. Check-in 2 PM. Pool, panoramic views, breakfast. ⚠️ CANCEL DEADLINE: JUL 10!',photo:'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Chianti_hills_Tuscany.jpg/800px-Chianti_hills_Tuscany.jpg'},
-{grp:'Badia',cat:'stop',region:'tuscany',lat:43.5773,lng:11.2471,title:'⛪ Badia a Passignano — Monastery',sub:'Possible stop · Fri Jul 24',note:'11th-century Vallombrosan monastery. CLOSED TUESDAYS. Afternoon 3–5 PM.',photo:''},
-{grp:'Greve',cat:'stop',region:'tuscany',lat:43.5825,lng:11.3169,title:'🍷 Greve in Chianti',sub:'Possible stop · Fri Jul 24',note:'Piazza Matteotti. Cantine Mirabilis walk-in wine tasting ~€1/pour.',photo:'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Greve_in_Chianti_piazza.jpg/800px-Greve_in_Chianti_piazza.jpg'},
-{grp:'Cecchini',cat:'stop',region:'tuscany',lat:43.5445,lng:11.3164,title:'🥩 Antica Macelleria Cecchini — Panzano',sub:'Possible stop',note:'Dario Cecchini\'s legendary butcher. Free salumi tastings. Open daily 9 AM–4 PM.',photo:''},
-{grp:'Radda',cat:'stop',region:'tuscany',lat:43.4872,lng:11.3747,title:'🏘️ Radda in Chianti',sub:'Possible stop · Sat Jul 25',note:'Most "locals" of Chianti villages. Enoteca Bottega del Chianti Classico.',photo:''},
-{grp:'Castellina',cat:'stop',region:'tuscany',lat:43.4691,lng:11.2870,title:'🏰 Castellina in Chianti',sub:'Possible stop',note:'Medieval fortress. Underground Via delle Volte. Good lunch trattorias.',photo:''},
-{grp:'Brolio',cat:'stop',region:'tuscany',lat:43.4133,lng:11.4635,title:'🏰 Castello di Brolio',sub:'Sat Jul 25 · Crown jewel of route',note:'€5 walk-in. Ramparts + gardens + enoteca. Ricasoli family since 1141. Open 10 AM–6 PM. Leave by 4:30 PM.',photo:'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Castello_di_Brolio.jpg/800px-Castello_di_Brolio.jpg'},
-{grp:'Idolina',cat:'hotel-booked',region:'tuscany',lat:43.0602,lng:11.4898,title:'🏨 Idolina Guest House — Montalcino',sub:'Sat Jul 25–Sun Jul 26 · Conf. #72074700792366',note:'Via Mazzini 65/67. €262.62 at property. Check-in 1:30–7:30 PM. NO FRONT DESK — contact 24 hrs before.',photo:'https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Montalcino_Veduta.jpg/800px-Montalcino_Veduta.jpg'},
-{grp:'Fortezza',cat:'stop',region:'tuscany',lat:43.0551,lng:11.4891,title:'🏰 Fortezza di Montalcino',sub:'Sat Jul 25 · Evening arrival ritual',note:'€4 ramparts. Val d\'Orcia views at golden hour. Brunello by the glass inside.',photo:'https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Montalcino_Fortezza.jpg/800px-Montalcino_Fortezza.jpg'},
-{grp:'Pienza',cat:'stop',region:'tuscany',lat:43.0763,lng:11.6784,title:'🏛️ Pienza',sub:'Sun Jul 26 · Optional',note:'30-min detour. Renaissance city. Famous pecorino cheese.',photo:'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Pienza_Piazza_Pio_II.jpg/800px-Pienza_Piazza_Pio_II.jpg'},
-{grp:"Sant'Antimo",cat:'stop',region:'tuscany',lat:42.9892,lng:11.4760,title:"⛪ Sant'Antimo Abbey",sub:'Sun Jul 26 · En route',note:'12th-century Romanesque abbey. Gregorian chants.',photo:'https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/SantAntimo_abbey2.jpg/800px-SantAntimo_abbey2.jpg'},
-{grp:'Hotel Bellavista',cat:'hotel-booked',region:'umbria',lat:43.0650,lng:12.5934,title:'🏨 Hotel Bellavista — Assisi',sub:'Sun–Tue Jul 26–28 · Conf. #6920407207',note:'Viale Patrono d\'Italia 100. PIN 4429. 1st floor, no elevator. Breakfast 8–9:30 AM. Restaurant closed Thursdays. Payment at restaurant. Pool 9 AM–7 PM. €410.24 auto-charged Jul 19.',photo:'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Assisi_Panorama.jpg/800px-Assisi_Panorama.jpg'},
-{grp:'Basilica Assisi',cat:'tour-booked',region:'umbria',lat:43.0750,lng:12.6054,title:'⛪ Basilica of St. Francis — Mass + Vespers',sub:'Sun Jul 26 · 5 PM Italian Mass + Vespers',note:'800th anniversary year. Book "Participation" at sanfrancescoassisi.org.',photo:'https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Assisi_Basilica_di_San_Francesco_BW_2.JPG/800px-Assisi_Basilica_di_San_Francesco_BW_2.JPG'},
-{grp:'Eremo',cat:'stop',region:'umbria',lat:43.0631,lng:12.6519,title:'🌲 Eremo delle Carceri',sub:'Mon Jul 27 · Afternoon',note:'St. Francis\'s hermitage 4 km above Assisi. Free. Deeply quiet.',photo:''},
-{grp:'Spello',cat:'stop',region:'umbria',lat:42.9898,lng:12.6719,title:'🎨 Santa Maria Maggiore — Spello',sub:'Tue Jul 28 · Morning',note:'Pinturicchio frescoes. Almost always empty. 15 min from Assisi.',photo:'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/Spello_Santa_Maria_Maggiore.jpg/800px-Spello_Santa_Maria_Maggiore.jpg'},
-{grp:'Hotel Duomo',cat:'hotel-booked',region:'umbria',lat:42.7176,lng:12.1130,title:'🏨 Hotel Duomo — Orvieto',sub:'Tue–Wed Jul 28–29 · Conf. #72074704255117',note:'Vicolo di Maurizio 7. Steps from Duomo. $407.72. Check-in 2–10 PM. Cancel free until Jul 26.',photo:'https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Orvieto_Duomo_Front.jpg/800px-Orvieto_Duomo_Front.jpg'},
-{grp:'Orvieto',cat:'stop',region:'umbria',lat:42.7171,lng:12.1133,title:'⛪ Orvieto Cathedral + Underground',sub:'Tue Jul 28 · Afternoon',note:'Gothic facade. Signorelli frescoes. Orvieto Underground (~€6/pp, orvietounderground.it).',photo:'https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Orvieto_Duomo_Front.jpg/800px-Orvieto_Duomo_Front.jpg'},
-{grp:'Rome Hotel',cat:'hotel-tbd',region:'rome',lat:41.9028,lng:12.4964,title:'🏨 Rome Hotel (TBD)',sub:'Wed–Fri Jul 29–31 · 3 nights',note:'Must confirm parking ~€25–35/night. Bonvoy: The Regency Rome. Hilton: Aleph Rome Hotel Curio (★4.6) or DoubleTree Rome Monti.',photo:'https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Skyline_roma.jpg/800px-Skyline_roma.jpg'},
-{grp:'Scavi',cat:'tour-booked',region:'rome',lat:41.9016,lng:12.4539,title:'🕯️ Vatican Scavi / Necropolis',sub:'Wed Jul 29 · Afternoon · BOOK NOW',note:'Only 250/day. 90-min small group. St. Peter\'s tomb. Must finish by ~4 PM for cooking class.',photo:'https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/San_Pietro_in_Vaticano.jpg/800px-San_Pietro_in_Vaticano.jpg'},
-{grp:'Pantheon',cat:'stop',region:'rome',lat:41.8986,lng:12.4769,title:'🏛️ Pantheon',sub:'Book pantheonroma.com · ~€5/pp',note:'World\'s largest unreinforced concrete dome. Book in advance.',photo:'https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Pantheon_Rome_2.jpg/800px-Pantheon_Rome_2.jpg'},
-{grp:'Vatican',cat:'tour-booked',region:'rome',lat:41.9065,lng:12.4536,title:'🕍 Vatican Museums — Meeting Point',sub:'Thu Jul 30 · 7:15 AM · Tour Guy #1123725',note:'Under Michelangelo and Raphael statues. $721.16, pay Jul 8. Walks Inside Rome. Max 10.',photo:'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/Saint_Peter%27s_Square%2C_Vatican_City_-_April_2007.jpg/800px-Saint_Peter%27s_Square%2C_Vatican_City_-_April_2007.jpg'},
-{grp:'St Peters',cat:'tour-booked',region:'rome',lat:41.9022,lng:12.4539,title:"⛪ St. Peter's Basilica",sub:'Thu Jul 30 · Via Scala Regia',note:"Scala Regia exclusive to guided groups. Free time: Pietà, baldachin, Vatican Grottoes.",photo:'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/Saint_Peter%27s_Square%2C_Vatican_City_-_April_2007.jpg/800px-Saint_Peter%27s_Square%2C_Vatican_City_-_April_2007.jpg'},
-{grp:'Colosseum',cat:'tour-booked',region:'rome',lat:41.8902,lng:12.4922,title:'🏟️ Colosseum — Metro Stop',sub:'Fri Jul 31 · 8:45 AM · Tour Guy #1117159',note:'$1,018.70, pay Jul 3 (EARLIEST). Private tour with Arena Floor. No large backpacks. ID required.',photo:'https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/Colosseo_2020.jpg/800px-Colosseo_2020.jpg'},
-{grp:'Forum',cat:'stop',region:'rome',lat:41.8921,lng:12.4864,title:'🏛️ Roman Forum + Palatine Hill',sub:'Fri Jul 31 · On Colosseum tour',note:'Included. 2,500 years of history in one walk.',photo:'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Forum_Romanum_Rom.jpg/800px-Forum_Romanum_Rom.jpg'},
-{grp:'San Clemente',cat:'alternate',region:'rome',lat:41.8895,lng:12.4966,title:'⛪ Basilica of San Clemente (Alternate)',sub:'Teresa researched · Near Colosseum',note:'Three underground layers: 12th-century basilica → 4th-century church → 1st-century Mithraic temple. Most extraordinary Catholic site most tourists miss.',photo:''},
-{grp:'Scala Sancta',cat:'alternate',region:'rome',lat:41.8858,lng:12.5089,title:'⛪ Scala Sancta (Alternate)',sub:'Teresa researched',note:'The Holy Stairs. Pilgrims ascend on knees. Next to San Giovanni Laterano.',photo:''},
-{grp:'San Giovanni',cat:'alternate',region:'rome',lat:41.8859,lng:12.5054,title:'⛪ San Giovanni Laterano (Alternate)',sub:'Teresa researched',note:"Rome's actual cathedral — outranks St. Peter's ecclesiastically. Far fewer tourists.",photo:''},
-{grp:'Minerva',cat:'alternate',region:'rome',lat:41.8983,lng:12.4772,title:'⛪ Santa Maria sopra Minerva (Alternate)',sub:'Teresa researched · 2 min from Pantheon',note:"St. Catherine of Siena's tomb. Rome's only Gothic church. Almost no queue.",photo:''},
-{grp:'Catacombs Priscilla',cat:'alternate',region:'rome',lat:41.9302,lng:12.5115,title:'⛪ Catacombs of Priscilla (Alternate)',sub:'Teresa researched · Closed Mondays',note:'"Queen of the Catacombs." 7+ miles of tunnels. Oldest image of the Virgin Mary (~3rd century). Book at catacombepriscilla.com.',photo:''},
-{grp:'Capuchin',cat:'alternate',region:'rome',lat:41.9059,lng:12.4883,title:'⛪ Capuchin Crypt (Alternate)',sub:'Teresa researched',note:'Bones of 4,000 Capuchin friars arranged as art. Powerful memento mori. 45 min.',photo:''},
-{grp:'FCO',cat:'transport',region:'rome',lat:41.8034,lng:12.2519,title:'✈️ Fiumicino Airport (FCO)',sub:'Sat Aug 1 · Hertz drop-off 7:30 AM · Fly home IAD',note:'~35–45 min drive from central Rome. Return Hertz BMW X1 (Conf. #L60845394F2). Allow 3 hours before departure.',photo:''}
+{grp:'Athens Hotel',cat:'hotel-booked',region:'athens',lat:37.9805,lng:23.7237,title:'🏨 Anise Aluma Athens (Tapestry/Hilton)',sub:'Fri Jul 10 · Conf. #3471385009',note:'Evripidou 82. 2 rooms. 100k Hilton pts. Cancel by Jul 9.',wiki:'Athens'},
+{grp:'Acropolis',cat:'tour-booked',region:'athens',lat:37.9714,lng:23.7234,title:'🏛️ Acropolis Tour — Porinou 5',sub:'Sat Jul 11 · 7:50 AM · Tour Guy #1118765',note:'Meet at Porinou 5 (outside gates). $331.84, pay Jun 12.',wiki:'Acropolis of Athens'},
+{grp:'Theatre',cat:'tour-booked',region:'athens',lat:37.9693,lng:23.7244,title:'🎭 Open Air Ancient Greek Theatre',sub:'Sat Jul 11 · 9 PM · Tripadvisor #1778633837',note:'$143.76 charged Jul 9. No barcode — operator looks up by name.',wiki:'Odeon of Herodes Atticus'},
+{grp:'Piraeus',cat:'cruise',region:'athens',lat:37.9381,lng:23.6359,title:'🚢 Piraeus Cruise Terminal',sub:'Sat Jul 11 · Board Viking OST',note:'Limbers: #8663390 Stateroom 4071. Guernsey/Santi: #8663394 Stateroom 4073.',wiki:'Port of Piraeus'},
+{grp:'Santorini',cat:'cruise',region:'cruise',lat:36.3932,lng:25.4615,title:'🚢 Santorini',sub:'Mon Jul 13 · $149/pp',note:'Ancient & Modern Island Life. 4.5 hours.',wiki:'Santorini'},
+{grp:'Olympia',cat:'cruise',region:'cruise',lat:37.6383,lng:21.6317,title:'🏟️ Katakolon / Olympia',sub:'Tue Jul 14 · Included',note:'Ancient Olympia. 4 hours.',wiki:'Ancient Olympia'},
+{grp:'Corfu',cat:'cruise',region:'cruise',lat:39.6243,lng:19.9217,title:'🏰 Corfu',sub:'Wed Jul 15 · Included',note:'Panoramic Corfu & Old Town.',wiki:'Corfu'},
+{grp:'Kotor',cat:'cruise',region:'cruise',lat:42.4247,lng:18.7712,title:'🏰 Kotor, Montenegro',sub:'Thu Jul 16 · Included',note:'Kotor on Foot. 1.5 hours.',wiki:'Kotor'},
+{grp:'Dubrovnik',cat:'cruise',region:'cruise',lat:42.6507,lng:18.0944,title:'🏰 Dubrovnik, Croatia',sub:'Fri Jul 17 · Included',note:'Dubrovnik on Foot. 3 hours.',wiki:'Dubrovnik'},
+{grp:'Zadar',cat:'cruise',region:'cruise',lat:44.1172,lng:15.2199,title:'🎵 Zadar — Sea Organ',sub:'Sat Jul 18 · Included',note:'Walking Tour. Sea Organ + Sun Salutation.',wiki:'Zadar'},
+{grp:'Postojna',cat:'cruise',region:'cruise',lat:45.7830,lng:14.2038,title:'🦎 Postojna Cave, Slovenia',sub:'Sun Jul 19 · $199/pp',note:'Postojna Cave & Predjama Castle. 7.5 hours. 50°F inside.',wiki:'Postojna Cave'},
+{grp:'Venice Hotel',cat:'hotel-booked',region:'venice',lat:45.4392,lng:12.3302,title:'🏨 B&B Ca\' Bonvicini — Venice',sub:'Mon–Wed Jul 20–22 · Conf. #5062824483',note:'Santa Croce 2160. NON-REFUNDABLE. Check-in 9 AM–noon. Check-out 9–10 AM (very early!). No elevator. Canal view requested. <a href="tel:+390412750106" class="phlink">+39 041 275 0106</a>.',wiki:'Venice'},
+{grp:'Transport',cat:'transport',region:'venice',lat:45.5054,lng:12.3519,title:'🚗 Hertz — Venice Marco Polo Airport',sub:'Wed Jul 22 · 9:00 AM · Conf. #L60845394F2',note:'BMW X1 or similar. $855.85. Water taxi or ACTV Bus 5 from Venice (~20 min). Drop-off Rome FCO Aug 1, 7:30 AM.',wiki:''},
+{grp:'St Marks',cat:'tour-booked',region:'venice',lat:45.4341,lng:12.3387,title:'⛵ Tour Guy Meeting — San Marco Columns',sub:'Tue Jul 21 · 8:45 AM · Tour Guy #1118847',note:'Between columns of San Marco and San Teodoro. $824.72, pay Jun 29.',wiki:'Piazza San Marco'},
+{grp:'Murano',cat:'stop',region:'venice',lat:45.4590,lng:12.3523,title:'🔥 Murano — Glass-blowing',sub:'Tue Jul 21 · Afternoon · On tour',note:'Live glass-blowing demonstration. 1,700°F molten silica.',wiki:'Murano'},
+{grp:'Burano',cat:'stop',region:'venice',lat:45.4854,lng:12.4167,title:'🌈 Burano — Lacemaking',sub:'Tue Jul 21 · Afternoon · On tour',note:'Colorful fishing village. Lacemaking demonstration + free time.',wiki:'Burano'},
+{grp:'Ferrara',cat:'hotel-tbd',region:'ferrara',lat:44.8381,lng:11.6197,title:'🏨 Ferrara Hotel (TBD)',sub:'Wed Jul 22 · 1 night',note:'Near historic center, outside ZTL. UNESCO city — center of Renaissance mathematics.',wiki:'Ferrara'},
+{grp:'Florence Hotel',cat:'hotel-booked',region:'florence',lat:43.7736,lng:11.2697,title:'🏨 Loft Il Giobertino — Florence',sub:'Thu Jul 23–Fri Jul 24 · Conf. #5024697136',note:'Via Vincenzo Gioberti 95, 2nd floor. 1 two-bedroom apartment, all 4 guests. Check-in 3–10 PM. Check-out 6–10 AM. Kitchen + balcony. Cancel free until Jul 17.',wiki:'Florence'},
+{grp:'Galileo',cat:'tour-booked',region:'florence',lat:43.7677,lng:11.2559,title:'🔭 Galileo Museum',sub:'Thu Jul 23 · AM · museogalileo.it',note:'~€10/pp. Galileo\'s actual telescopes (discovered Jupiter\'s moons 1610), compass, orreries. 2 hours.',wiki:'Museo Galileo'},
+{grp:'Medici',cat:'tour-booked',region:'florence',lat:43.7751,lng:11.2534,title:'👑 Medici Chapel',sub:'Thu Jul 23 · PM · uffizi.it',note:'~€9/pp. Michelangelo\'s New Sacristy: Night, Day, Dawn, Dusk.',wiki:'Medici Chapel'},
+{grp:'Da Vinci',cat:'tour-booked',region:'florence',lat:43.7638,lng:11.2463,title:'🔬 Da Vinci National Science Museum',sub:'Fri Jul 24 · 9:30 AM · museoscienza.org',note:'Italy\'s most important science museum. 170 Leonardo models + submarine + Moon fragment + spacecraft. 2+ hours.',wiki:'Leonardo da Vinci'},
+{grp:'Villa San Filippo',cat:'hotel-booked',region:'tuscany',lat:43.5256,lng:11.1673,title:'🏨 Villa San Filippo — Chianti',sub:'Fri Jul 24–Sat Jul 25 · Conf. #72074703683732',note:'Strada delle Ginestre 6, Barberino Tavarnelle. $372.12. Check-in 2 PM. Pool, panoramic views, breakfast. ⚠️ CANCEL DEADLINE: JUL 10!',wiki:'Chianti'},
+{grp:'Badia',cat:'stop',region:'tuscany',lat:43.5773,lng:11.2471,title:'⛪ Badia a Passignano — Monastery',sub:'Possible stop · Fri Jul 24',note:'11th-century Vallombrosan monastery. CLOSED TUESDAYS. Afternoon 3–5 PM.',wiki:'Badia a Passignano'},
+{grp:'Greve',cat:'stop',region:'tuscany',lat:43.5825,lng:11.3169,title:'🍷 Greve in Chianti',sub:'Possible stop · Fri Jul 24',note:'Piazza Matteotti. Cantine Mirabilis walk-in wine tasting ~€1/pour.',wiki:'Greve in Chianti'},
+{grp:'Cecchini',cat:'stop',region:'tuscany',lat:43.5445,lng:11.3164,title:'🥩 Antica Macelleria Cecchini — Panzano',sub:'Possible stop',note:'Dario Cecchini\'s legendary butcher. Free salumi tastings. Open daily 9 AM–4 PM.',wiki:''},
+{grp:'Radda',cat:'stop',region:'tuscany',lat:43.4872,lng:11.3747,title:'🏘️ Radda in Chianti',sub:'Possible stop · Sat Jul 25',note:'Most "locals" of Chianti villages. Enoteca Bottega del Chianti Classico.',wiki:'Radda in Chianti'},
+{grp:'Castellina',cat:'stop',region:'tuscany',lat:43.4691,lng:11.2870,title:'🏰 Castellina in Chianti',sub:'Possible stop',note:'Medieval fortress. Underground Via delle Volte. Good lunch trattorias.',wiki:'Castellina in Chianti'},
+{grp:'Brolio',cat:'stop',region:'tuscany',lat:43.4133,lng:11.4635,title:'🏰 Castello di Brolio',sub:'Sat Jul 25 · Crown jewel of route',note:'€5 walk-in. Ramparts + gardens + enoteca. Ricasoli family since 1141. Open 10 AM–6 PM. Leave by 4:30 PM.',wiki:'Castello di Brolio'},
+{grp:'Idolina',cat:'hotel-booked',region:'tuscany',lat:43.0602,lng:11.4898,title:'🏨 Idolina Guest House — Montalcino',sub:'Sat Jul 25–Sun Jul 26 · Conf. #72074700792366',note:'Via Mazzini 65/67. €262.62 at property. Check-in 1:30–7:30 PM. NO FRONT DESK — contact 24 hrs before.',wiki:'Montalcino'},
+{grp:'Fortezza',cat:'stop',region:'tuscany',lat:43.0551,lng:11.4891,title:'🏰 Fortezza di Montalcino',sub:'Sat Jul 25 · Evening arrival ritual',note:'€4 ramparts. Val d\'Orcia views at golden hour. Brunello by the glass inside.',wiki:'Fortezza (Montalcino)'},
+{grp:'Pienza',cat:'stop',region:'tuscany',lat:43.0763,lng:11.6784,title:'🏛️ Pienza',sub:'Sun Jul 26 · Optional',note:'30-min detour. Renaissance city. Famous pecorino cheese.',wiki:'Pienza'},
+{grp:"Sant'Antimo",cat:'stop',region:'tuscany',lat:42.9892,lng:11.4760,title:"⛪ Sant'Antimo Abbey",sub:'Sun Jul 26 · En route',note:'12th-century Romanesque abbey. Gregorian chants.',wiki:'Sant\'Antimo'},
+{grp:'Hotel Bellavista',cat:'hotel-booked',region:'umbria',lat:43.0650,lng:12.5934,title:'🏨 Hotel Bellavista — Assisi',sub:'Sun–Tue Jul 26–28 · Conf. #6920407207',note:'Viale Patrono d\'Italia 100. PIN 4429. 1st floor, no elevator. Breakfast 8–9:30 AM. Restaurant closed Thursdays. Payment at restaurant. Pool 9 AM–7 PM. €410.24 auto-charged Jul 19.',wiki:'Assisi'},
+{grp:'Basilica Assisi',cat:'tour-booked',region:'umbria',lat:43.0750,lng:12.6054,title:'⛪ Basilica of St. Francis — Mass + Vespers',sub:'Sun Jul 26 · 5 PM Italian Mass + Vespers',note:'800th anniversary year. Book "Participation" at sanfrancescoassisi.org.',wiki:'Basilica of Saint Francis of Assisi'},
+{grp:'Eremo',cat:'stop',region:'umbria',lat:43.0631,lng:12.6519,title:'🌲 Eremo delle Carceri',sub:'Mon Jul 27 · Afternoon',note:'St. Francis\'s hermitage 4 km above Assisi. Free. Deeply quiet.',wiki:'Hermitage of the Prisons'},
+{grp:'Spello',cat:'stop',region:'umbria',lat:42.9898,lng:12.6719,title:'🎨 Santa Maria Maggiore — Spello',sub:'Tue Jul 28 · Morning',note:'Pinturicchio frescoes. Almost always empty. 15 min from Assisi.',wiki:'Spello'},
+{grp:'Hotel Duomo',cat:'hotel-booked',region:'umbria',lat:42.7176,lng:12.1130,title:'🏨 Hotel Duomo — Orvieto',sub:'Tue–Wed Jul 28–29 · Conf. #72074704255117',note:'Vicolo di Maurizio 7. Steps from Duomo. $407.72. Check-in 2–10 PM. Cancel free until Jul 26.',wiki:'Orvieto'},
+{grp:'Orvieto',cat:'stop',region:'umbria',lat:42.7171,lng:12.1133,title:'⛪ Orvieto Cathedral + Underground',sub:'Tue Jul 28 · Afternoon',note:'Gothic facade. Signorelli frescoes. Orvieto Underground (~€6/pp, orvietounderground.it).',wiki:'Orvieto Cathedral'},
+{grp:'Rome Hotel',cat:'hotel-tbd',region:'rome',lat:41.9028,lng:12.4964,title:'🏨 Rome Hotel (TBD)',sub:'Wed–Fri Jul 29–31 · 3 nights',note:'Must confirm parking ~€25–35/night. Bonvoy: The Regency Rome. Hilton: Aleph Rome Hotel Curio (★4.6) or DoubleTree Rome Monti.',wiki:'Rome'},
+{grp:'Scavi',cat:'tour-booked',region:'rome',lat:41.9016,lng:12.4539,title:'🕯️ Vatican Scavi / Necropolis',sub:'Wed Jul 29 · Afternoon · BOOK NOW',note:'Only 250/day. 90-min small group. St. Peter\'s tomb. Must finish by ~4 PM for cooking class.',wiki:'Vatican Necropolis'},
+{grp:'Pantheon',cat:'stop',region:'rome',lat:41.8986,lng:12.4769,title:'🏛️ Pantheon',sub:'Book pantheonroma.com · ~€5/pp',note:'World\'s largest unreinforced concrete dome. Book in advance.',wiki:'Pantheon, Rome'},
+{grp:'Vatican',cat:'tour-booked',region:'rome',lat:41.9065,lng:12.4536,title:'🕍 Vatican Museums — Meeting Point',sub:'Thu Jul 30 · 7:15 AM · Tour Guy #1123725',note:'Under Michelangelo and Raphael statues. $721.16, pay Jul 8. Walks Inside Rome. Max 10.',wiki:'Vatican Museums'},
+{grp:'St Peters',cat:'tour-booked',region:'rome',lat:41.9022,lng:12.4539,title:"⛪ St. Peter's Basilica",sub:'Thu Jul 30 · Via Scala Regia',note:"Scala Regia exclusive to guided groups. Free time: Pietà, baldachin, Vatican Grottoes.",wiki:'St. Peter\'s Basilica'},
+{grp:'Colosseum',cat:'tour-booked',region:'rome',lat:41.8902,lng:12.4922,title:'🏟️ Colosseum — Metro Stop',sub:'Fri Jul 31 · 8:45 AM · Tour Guy #1117159',note:'$1,018.70, pay Jul 3 (EARLIEST). Private tour with Arena Floor. No large backpacks. ID required.',wiki:'Colosseum'},
+{grp:'Forum',cat:'stop',region:'rome',lat:41.8921,lng:12.4864,title:'🏛️ Roman Forum + Palatine Hill',sub:'Fri Jul 31 · On Colosseum tour',note:'Included. 2,500 years of history in one walk.',wiki:'Roman Forum'},
+{grp:'San Clemente',cat:'alternate',region:'rome',lat:41.8895,lng:12.4966,title:'⛪ Basilica of San Clemente (Alternate)',sub:'Teresa researched · Near Colosseum',note:'Three underground layers: 12th-century basilica → 4th-century church → 1st-century Mithraic temple. Most extraordinary Catholic site most tourists miss.',wiki:'Basilica of San Clemente, Rome'},
+{grp:'Scala Sancta',cat:'alternate',region:'rome',lat:41.8858,lng:12.5089,title:'⛪ Scala Sancta (Alternate)',sub:'Teresa researched',note:'The Holy Stairs. Pilgrims ascend on knees. Next to San Giovanni Laterano.',wiki:'Scala Sancta'},
+{grp:'San Giovanni',cat:'alternate',region:'rome',lat:41.8859,lng:12.5054,title:'⛪ San Giovanni Laterano (Alternate)',sub:'Teresa researched',note:"Rome's actual cathedral — outranks St. Peter's ecclesiastically. Far fewer tourists.",wiki:'Archbasilica of Saint John Lateran'},
+{grp:'Minerva',cat:'alternate',region:'rome',lat:41.8983,lng:12.4772,title:'⛪ Santa Maria sopra Minerva (Alternate)',sub:'Teresa researched · 2 min from Pantheon',note:"St. Catherine of Siena's tomb. Rome's only Gothic church. Almost no queue.",wiki:'Santa Maria sopra Minerva'},
+{grp:'Catacombs Priscilla',cat:'alternate',region:'rome',lat:41.9302,lng:12.5115,title:'⛪ Catacombs of Priscilla (Alternate)',sub:'Teresa researched · Closed Mondays',note:'"Queen of the Catacombs." 7+ miles of tunnels. Oldest image of the Virgin Mary (~3rd century). Book at catacombepriscilla.com.',wiki:'Catacomb of Priscilla'},
+{grp:'Capuchin',cat:'alternate',region:'rome',lat:41.9059,lng:12.4883,title:'⛪ Capuchin Crypt (Alternate)',sub:'Teresa researched',note:'Bones of 4,000 Capuchin friars arranged as art. Powerful memento mori. 45 min.',wiki:'Capuchin Crypt, Rome'},
+{grp:'FCO',cat:'transport',region:'rome',lat:41.8034,lng:12.2519,title:'✈️ Fiumicino Airport (FCO)',sub:'Sat Aug 1 · Hertz drop-off 7:30 AM · Fly home IAD',note:'~35–45 min drive from central Rome. Return Hertz BMW X1 (Conf. #L60845394F2). Allow 3 hours before departure.',wiki:'Leonardo da Vinci International Airport'}
 ];
 
 const catStyles={'hotel-booked':{color:'#7F77DD',size:14},'hotel-tbd':{color:'#b3afed',size:12},'tour-booked':{color:'#e74c3c',size:14},'stop':{color:'#f5a0a0',size:11},'alternate':{color:'#fca5a5',size:10},'cruise':{color:'#1D9E75',size:11},'transport':{color:'#e67e22',size:12}};
@@ -720,7 +720,6 @@ const cityRoute=[[37.9755,23.7348],[36.3932,25.4615],[37.6383,21.6317],[39.6243,
 let gmap=null,gmInfoWindow=null,_gmLoaded=false,_gmWanted=false;
 const gmMarkers=[];
 
-// Called by Google Maps API script (callback=initGoogleMap)
 function initGoogleMap(){_gmLoaded=true;if(_gmWanted){_gmWanted=false;_doInitMap();}}
 
 function _doInitMap(){
@@ -737,9 +736,13 @@ function _doInitMap(){
     strokeColor:'#888',strokeOpacity:0.55,strokeWeight:2,map:gmap
   });
   gmInfoWindow=new google.maps.InfoWindow({maxWidth:320});
-  stops.forEach(s=>{
+  stops.forEach((s,i)=>{
     const m=new google.maps.Marker({position:{lat:s.lat,lng:s.lng},map:gmap,title:s.title,icon:_gmIcon(s.cat)});
-    m.addListener('click',()=>{gmInfoWindow.setContent(_gmCard(s));gmInfoWindow.open(gmap,m);});
+    m.addListener('click',()=>{
+      gmInfoWindow.setContent(_gmCard(s));
+      gmInfoWindow.open(gmap,m);
+      if(s.wiki)setTimeout(()=>_fetchWikiPhoto(s.wiki),120);
+    });
     gmMarkers.push({marker:m,stop:s});
   });
   _buildFilters();
@@ -753,12 +756,33 @@ function _gmIcon(cat){
 function _gmCard(s){
   const nav='https://www.google.com/maps/dir/?api=1&destination='+encodeURIComponent(s.lat+','+s.lng);
   const ph=(s.note||'').match(/href="(tel:[^"]+)"/);
-  const img=s.photo?'<img src="'+s.photo+'" onerror="this.remove()" style="width:100%;height:130px;object-fit:cover;border-radius:6px 6px 0 0;display:block">':'';
+  const imgHtml=s.wiki?'<img class="pin-photo" onerror="this.remove()" style="width:100%;height:130px;object-fit:cover;border-radius:6px 6px 0 0;display:none">':'';
   const clean=(s.note||'').replace(/<a[^>]*>(.*?)<\/a>/g,'$1').replace(/<[^>]+>/g,'');
   let btns='<a href="'+nav+'" target="_blank" rel="noopener" style="flex:1;text-align:center;background:#4285f4;color:#fff;padding:6px 8px;border-radius:6px;font-size:11px;text-decoration:none;font-weight:600">📍 Navigate</a>';
-  if(ph)btns+='&nbsp;<a href="'+ph[1]+'" style="background:#e8f7f1;color:#0a6b50;padding:6px 10px;border-radius:6px;font-size:11px;text-decoration:none;font-weight:600;border:1px solid #c3e6d8">📞 Call</a>';
-  return '<div style="width:275px;font-family:-apple-system,sans-serif;margin:-10px -12px">'+img+'<div style="padding:10px 12px"><div style="font-size:13px;font-weight:700;color:#222;margin-bottom:2px">'+s.title+'</div><div style="font-size:11px;color:#888;margin-bottom:7px">'+s.sub+'</div><div style="font-size:12px;color:#555;line-height:1.55;border-top:1px solid #eee;padding-top:6px;margin-bottom:9px">'+clean+'</div><div style="display:flex;gap:6px;align-items:center">'+btns+'</div></div></div>';
+  if(ph)btns+=' <a href="'+ph[1]+'" style="background:#e8f7f1;color:#0a6b50;padding:6px 10px;border-radius:6px;font-size:11px;text-decoration:none;font-weight:600;border:1px solid #c3e6d8">📞 Call</a>';
+  return '<div style="width:275px;font-family:-apple-system,sans-serif;margin:-10px -12px">'+imgHtml+'<div style="padding:10px 12px"><div style="font-size:13px;font-weight:700;color:#222;margin-bottom:2px">'+s.title+'</div><div style="font-size:11px;color:#888;margin-bottom:7px">'+s.sub+'</div><div style="font-size:12px;color:#555;line-height:1.55;border-top:1px solid #eee;padding-top:6px;margin-bottom:9px">'+clean+'</div><div style="display:flex;gap:6px;align-items:center">'+btns+'</div></div></div>';
 }
+
+function _fetchWikiPhoto(article){
+  fetch('https://en.wikipedia.org/w/api.php?action=query&prop=pageimages&format=json&titles='+encodeURIComponent(article)+'&pithumbsize=400&origin=*')
+    .then(r=>r.json())
+    .then(data=>{
+      const pages=data.query&&data.query.pages;
+      if(!pages)return;
+      const page=Object.values(pages)[0];
+      if(!page||!page.thumbnail)return;
+      const img=document.querySelector('.gm-style-iw .pin-photo');
+      if(img){img.src=page.thumbnail.source;img.style.display='block';}
+    })
+    .catch(()=>{});
+}
+
+// Build region→stops index for tree
+const _regionStops={};
+stops.forEach((s,i)=>{
+  if(!_regionStops[s.region])_regionStops[s.region]=[];
+  _regionStops[s.region].push({idx:i,stop:s});
+});
 
 const _regions=[
   {key:'athens', label:'Athens',  color:'#378ADD'},
@@ -784,23 +808,118 @@ function _buildFilters(){
   const rc=document.getElementById('region-checks');
   const tc=document.getElementById('type-checks');
   if(!rc||!tc)return;
+
   _regions.forEach(r=>{
-    rc.innerHTML+='<label style="display:flex;align-items:center;gap:5px;padding:2px 0;cursor:pointer;font-size:12px;color:#444"><input type="checkbox" checked data-region="'+r.key+'" onchange="gmFilter()" style="width:13px;height:13px;accent-color:'+r.color+';cursor:pointer"><span style="width:8px;height:8px;border-radius:50%;background:'+r.color+';flex-shrink:0;display:inline-block"></span>'+r.label+'</label>';
+    const stopsInR=_regionStops[r.key]||[];
+    const allIdx=stopsInR.map(x=>x.idx);
+
+    const wrap=document.createElement('div');
+    wrap.style.cssText='margin-bottom:5px';
+
+    // Header row: toggle arrow + region checkbox + dot + label
+    const hdr=document.createElement('div');
+    hdr.style.cssText='display:flex;align-items:center;gap:3px';
+
+    const tog=document.createElement('span');
+    tog.textContent='▶';
+    tog.style.cssText='font-size:8px;color:#bbb;cursor:pointer;transition:transform 0.15s;width:12px;flex-shrink:0;user-select:none;text-align:center;line-height:1';
+
+    const regCb=document.createElement('input');
+    regCb.type='checkbox';regCb.checked=true;
+    regCb.dataset.regionKey=r.key;
+    regCb.style.cssText='width:13px;height:13px;accent-color:'+r.color+';cursor:pointer;flex-shrink:0';
+
+    const dot=document.createElement('span');
+    dot.style.cssText='width:7px;height:7px;border-radius:50%;background:'+r.color+';flex-shrink:0;display:inline-block';
+
+    const lbl=document.createElement('span');
+    lbl.textContent=r.label;
+    lbl.style.cssText='font-size:12px;color:#333;font-weight:600;cursor:pointer;user-select:none;flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis';
+
+    hdr.appendChild(tog);hdr.appendChild(regCb);hdr.appendChild(dot);hdr.appendChild(lbl);
+
+    // Children div — collapsed by default
+    const kids=document.createElement('div');
+    kids.style.cssText='display:none;padding-left:13px;margin-top:2px;border-left:2px solid '+r.color+'55';
+
+    stopsInR.forEach(({idx,stop})=>{
+      const row=document.createElement('label');
+      row.title=stop.title;
+      row.style.cssText='display:flex;align-items:center;gap:3px;padding:1px 0;cursor:pointer;min-width:0';
+
+      const cb=document.createElement('input');
+      cb.type='checkbox';cb.checked=true;
+      cb.dataset.stopIdx=String(idx);
+      cb.style.cssText='width:11px;height:11px;accent-color:'+(catStyles[stop.cat]||{color:'#888'}).color+';cursor:pointer;flex-shrink:0';
+      cb.onchange=()=>{gmTreeFilter();_syncRegionCb(regCb,allIdx);};
+
+      const sdot=document.createElement('span');
+      sdot.style.cssText='width:6px;height:6px;border-radius:50%;background:'+(catStyles[stop.cat]||{color:'#888'}).color+';flex-shrink:0;display:inline-block';
+
+      const slbl=document.createElement('span');
+      slbl.textContent=stop.grp;
+      slbl.style.cssText='font-size:11px;color:#555;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0;flex:1';
+
+      row.appendChild(cb);row.appendChild(sdot);row.appendChild(slbl);
+      kids.appendChild(row);
+    });
+
+    // Toggle expand/collapse on arrow or label click
+    const doToggle=()=>{
+      const open=kids.style.display!=='none';
+      kids.style.display=open?'none':'block';
+      tog.style.transform=open?'':'rotate(90deg)';
+    };
+    tog.onclick=doToggle;lbl.onclick=doToggle;
+
+    // Region checkbox: check/uncheck all stops in this region
+    regCb.onchange=()=>{
+      const on=regCb.checked;regCb.indeterminate=false;
+      allIdx.forEach(i=>{
+        const cb=document.querySelector('[data-stop-idx="'+i+'"]');
+        if(cb)cb.checked=on;
+      });
+      gmTreeFilter();
+    };
+
+    wrap.appendChild(hdr);wrap.appendChild(kids);
+    rc.appendChild(wrap);
   });
+
+  // Type checkboxes — flat, unchanged
   _types.forEach(t=>{
-    tc.innerHTML+='<label style="display:flex;align-items:center;gap:5px;padding:2px 0;cursor:pointer;font-size:12px;color:#444"><input type="checkbox" checked data-type="'+t.key+'" onchange="gmFilter()" style="width:13px;height:13px;accent-color:'+t.color+';cursor:pointer"><span style="width:8px;height:8px;border-radius:50%;background:'+t.color+';flex-shrink:0;display:inline-block"></span>'+t.label+'</label>';
+    const row=document.createElement('label');
+    row.style.cssText='display:flex;align-items:center;gap:4px;padding:2px 0;cursor:pointer';
+    row.innerHTML='<input type="checkbox" checked data-type="'+t.key+'" onchange="gmTreeFilter()" style="width:13px;height:13px;accent-color:'+t.color+';cursor:pointer"><span style="width:8px;height:8px;border-radius:50%;background:'+t.color+';flex-shrink:0;display:inline-block"></span><span style="font-size:11px;color:#444">'+t.label+'</span>';
+    tc.appendChild(row);
   });
 }
 
-function gmFilter(){
-  const ar=new Set([...document.querySelectorAll('[data-region]:checked')].map(e=>e.dataset.region));
-  const at=new Set([...document.querySelectorAll('[data-type]:checked')].map(e=>e.dataset.type));
-  gmMarkers.forEach(({marker,stop})=>marker.setVisible(ar.has(stop.region)&&at.has(stop.cat)));
+function _syncRegionCb(regCb,indices){
+  const n=indices.filter(i=>{
+    const cb=document.querySelector('[data-stop-idx="'+i+'"]');
+    return cb&&cb.checked;
+  }).length;
+  if(n===0){regCb.checked=false;regCb.indeterminate=false;}
+  else if(n===indices.length){regCb.checked=true;regCb.indeterminate=false;}
+  else{regCb.checked=false;regCb.indeterminate=true;}
 }
+
+function gmTreeFilter(){
+  const at=new Set([...document.querySelectorAll('[data-type]:checked')].map(e=>e.dataset.type));
+  gmMarkers.forEach(({marker,stop},i)=>{
+    const cb=document.querySelector('[data-stop-idx="'+i+'"]');
+    marker.setVisible((!cb||cb.checked)&&at.has(stop.cat));
+  });
+}
+
+function gmFilter(){gmTreeFilter();}
 
 function mapSelectAll(on){
-  document.querySelectorAll('[data-region],[data-type]').forEach(cb=>cb.checked=on);
-  gmFilter();
+  document.querySelectorAll('[data-stop-idx]').forEach(cb=>{cb.checked=on;cb.indeterminate=false;});
+  document.querySelectorAll('[data-region-key]').forEach(cb=>{cb.checked=on;cb.indeterminate=false;});
+  document.querySelectorAll('[data-type]').forEach(cb=>{cb.checked=on;});
+  gmTreeFilter();
 }
 
 function showTab(id,el){
