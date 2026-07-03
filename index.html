@@ -166,7 +166,7 @@ p { font-size:13px; line-height:1.7; color:#444; margin-bottom:7px; }
 <div class="section"><div class="sh-static">📅 Full Trip Timeline</div><div class="sb"><table>
 <tr><th>Date</th><th>Day</th><th>Location</th><th>Notes</th></tr>
 <tr><td>Jul 9</td><td>Thu</td><td>Depart IAD</td><td>Fly to Athens overnight</td></tr>
-<tr><td>Jul 10</td><td>Fri</td><td><span class="badge bb">Athens</span></td><td>Arrive. <strong>Anise Aluma Athens</strong> (Tapestry/Hilton). Conf. #3471385009. Check-in 3 PM.</td></tr>
+<tr><td>Jul 10</td><td>Fri</td><td><span class="badge bb">Athens</span></td><td>Arrive. <strong>Anise Aluma Athens</strong> (Tapestry/Hilton). Conf. #3471385009. Check-in 3 PM. Late afternoon: free Areopagus (Mars Hill) walk.</td></tr>
 <tr><td>Jul 11</td><td>Sat</td><td><span class="badge bb">Athens → Cruise</span></td><td>7:50 AM Acropolis (Tour Guy #1118765, meet Porinou 5). 9 PM Open Air Theatre (Tripadvisor #1778633837). Board Viking OST, Piraeus.</td></tr>
 <tr><td>Jul 12</td><td>Sun</td><td><span class="badge bg">Cruise — Athens</span></td><td>Panoramic Athens &amp; Archaeological Museum (incl.) 8:15 AM. Ship departs 6 PM.</td></tr>
 <tr><td>Jul 13</td><td>Mon</td><td><span class="badge bg">Cruise — Mykonos</span></td><td>Viator Mykonos Small Group Tour ($118/pp, tentative) — pending Lorene/Carla, not yet booked</td></tr>
@@ -425,7 +425,7 @@ function toggleSection(id){const el=document.getElementById(id);const chev=docum
 const allDays=[
 {id:'A1',date:'Fri Jul 10',title:'Arrive Athens',region:'athens',color:'#378ADD',bg:'#e8f2fc',tc:'#0c447c',
 sub:'1 night · Anise Aluma Athens, Tapestry/Hilton · Conf. #3471385009',
-blocks:[{t:'Arrive',c:'Anise Aluma Athens, Tapestry/Hilton (Evripidou 82). Joe &amp; Teresa: Queen Room (Honors ID 213729341). Lorene &amp; Carla: Twin Room (Honors ID 213729340). Check-in 3 PM.'},{t:'Evening',c:'Stroll the Plaka. Dinner near the hotel. Early night — 7:50 AM tour tomorrow.'}],
+blocks:[{t:'Arrive',c:'Anise Aluma Athens, Tapestry/Hilton (Evripidou 82). Joe &amp; Teresa: Queen Room (Honors ID 213729341). Lorene &amp; Carla: Twin Room (Honors ID 213729340). Check-in 3 PM.'},{t:'Late Afternoon',c:'🏛️ <strong>Areopagus (Mars Hill) walk</strong> — free, no ticket or reservation. ~15 min walk from the hotel through Psiri/Monastiraki. Climb the rock outcrop overlooking the Ancient Agora, where Socrates held court and the Stoa Poikile (birthplace of the word "Stoic") once stood. Marble steps are worn smooth — go slow. Great sunset views of the Acropolis.'},{t:'Evening',c:'Stroll the Plaka. Dinner near the hotel. Early night — 7:50 AM tour tomorrow.'}],
 log:'Check-out tomorrow 11 AM. Acropolis tour meeting at Porinou 5 (outside gates — NOT the metro station). 100k Hilton pts used. Cancel by Jul 9.'},
 
 {id:'A2',date:'Sat Jul 11',title:'Acropolis → Evening Theatre → Board Viking',region:'athens',color:'#378ADD',bg:'#e8f2fc',tc:'#0c447c',
@@ -663,6 +663,7 @@ itinContainer.appendChild(card);});
 
 const stops=[
 {grp:'Athens Hotel',cat:'hotel-booked',region:'athens',lat:37.9805,lng:23.7237,title:'🏨 Anise Aluma Athens (Tapestry/Hilton)',sub:'Fri Jul 10 · Conf. #3471385009',note:'Evripidou 82. 2 rooms. 100k Hilton pts. Cancel by Jul 9.',wiki:'Athens'},
+{grp:'Areopagus',cat:'stop',region:'athens',lat:37.9719,lng:23.7229,title:'⛰️ Areopagus (Mars Hill)',sub:'Fri Jul 10 · Free',note:'~15 min walk from the hotel. No ticket needed. Overlooks the Ancient Agora — birthplace of Stoicism (Stoa Poikile) and where Socrates held court. Sunset views of the Acropolis. Marble steps worn smooth — go slow.',wiki:'Areopagus'},
 {grp:'Acropolis',cat:'tour-booked',region:'athens',lat:37.9714,lng:23.7234,title:'🏛️ Acropolis Tour — Porinou 5',sub:'Sat Jul 11 · 7:50 AM · Tour Guy #1118765',note:'Meet at Porinou 5 (outside gates). $331.84, pay Jun 12.',wiki:'Acropolis of Athens'},
 {grp:'Theatre',cat:'tour-booked',region:'athens',lat:37.9693,lng:23.7244,title:'🎭 Open Air Ancient Greek Theatre',sub:'Sat Jul 11 · 9 PM · Tripadvisor #1778633837',note:'$143.76 charged Jul 9. No barcode — operator looks up by name.',wiki:'Odeon of Herodes Atticus'},
 {grp:'Piraeus',cat:'cruise',region:'athens',lat:37.9381,lng:23.6359,title:'🚢 Piraeus Cruise Terminal',sub:'Sat Jul 11 · Board Viking OST',note:'Limbers: #8663390 Stateroom 4071. Guernsey/Santi: #8663394 Stateroom 4073.',wiki:'Port of Piraeus'},
@@ -1071,7 +1072,7 @@ var qrDays={
   '2026-07-10':{loc:'Athens',title:'Arrive Athens',
     hotel:'Anise Aluma Athens, Tapestry/Hilton',ph:'+302144091800',phd:'+30 21 4409 1800',
     conf:'3471385009',ci:'3 PM',co:'Jul 11, 11 AM',
-    warn:[],notes:['Stroll Plaka tonight — early night, 7:50 AM tour tomorrow']},
+    warn:[],notes:['Late afternoon: free walk to Areopagus (Mars Hill) — 15 min from hotel, no ticket needed','Stroll Plaka tonight — early night, 7:50 AM tour tomorrow']},
   '2026-07-11':{loc:'Athens → Cruise',title:'Acropolis + Board Viking OST',
     hotel:'Viking OST · Stateroom 4071 (Limbers) / 4073 (Guernsey/Santi)',
     warn:['7:35 AM: Tour Guy at <strong>Porinou 5</strong> — outside Acropolis gates, NOT the metro station',
