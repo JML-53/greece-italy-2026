@@ -50,3 +50,12 @@ Fetched on pin click via the `pageimages` API using each stop's `wiki` field (em
 3. Spot-check the edited content landed (grep for the new text)
 4. Watch JS apostrophe escaping inside single-quoted strings — past bug source
 5. Confirm the page has no obvious truncation: file should end with `</html>`
+
+## ⚠️ Mount-staleness hazard (Cowork sessions) — MANDATORY pre-commit check
+The Cowork bash sandbox reads the repo through a mount that can serve STALE or TRUNCATED file content and stat metadata (observed 2026-07-05: a truncated index.html was committed and briefly broke the live site).
+Before EVERY commit in a Cowork session:
+1. `touch <file>` before `git add` (stat cache lies; without this, edits silently fail to stage)
+2. After `git add`, verify the STAGED content, not the worktree: `git show :index.html | tail -c 20` must end with `</html>`, and `git show :index.html | grep -c "wiki:'"` must equal the expected stop count
+3. If staged content is truncated/stale: STOP — do not commit. Fallback: clone fresh to /tmp with the PAT, apply the change there (or reconstruct), verify, push from /tmp
+4. After any incident, resync local refs: fetch + `git update-ref refs/heads/main FETCH_HEAD` (do NOT `git reset --hard` through the mount)
+Claude Code cloud sessions clone directly from GitHub and are immune to this — the hazard is Cowork-local only.
