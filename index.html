@@ -303,11 +303,19 @@ p { font-size:13px; line-height:1.7; color:#444; margin-bottom:7px; }
 <div id="tab-tr" class="panel">
 <div class="section">
 <div class="sh" onclick="toggleSection('flights')">✈️ Flights <span class="sh-chevron open" id="chev-flights">▾</span></div>
-<div id="flights" class="sc"><div class="sb"><table>
-<tr><th>Direction</th><th>Date</th><th>Route</th><th>Status</th></tr>
-<tr><td>Outbound</td><td>Thu Jul 9</td><td>IAD → Athens (ATH)</td><td><span class="badge bg">Booked</span></td></tr>
-<tr><td>Return</td><td>Sat Aug 1</td><td>Rome FCO → IAD</td><td><span class="badge bg">Booked</span></td></tr>
-</table></div></div></div>
+<div id="flights" class="sc"><div class="sb">
+<div class="al alr"><strong>⚠️ Departure-day conflict:</strong> EI 401 departs FCO at <strong>7:30 AM</strong> on Aug 1 — the same time as the current Hertz drop-off reservation. Either return the car ~4:45 AM (confirm Hertz FCO out-of-hours key drop first) or — simpler — return it Fri Jul 31 evening and taxi to FCO Saturday ~4:30 AM. Adjust the Hertz booking either way.</div>
+<table>
+<tr><th>Date</th><th>Flight</th><th>Route</th><th>Times</th><th>Booking #</th></tr>
+<tr><td>Thu Jul 9</td><td>Delta DL 1444</td><td>IAD → ATL</td><td>12:37 – 2:28 PM</td><td>G3Y4LD</td></tr>
+<tr><td>Thu Jul 9</td><td>Delta DL 222</td><td>ATL → ATH</td><td>5:15 PM → 11:00 AM Jul 10 (2h47m connection in ATL)</td><td>G3Y4LD</td></tr>
+<tr><td>Sat Aug 1</td><td>Aer Lingus EI 401</td><td>FCO → DUB</td><td>7:30 – 9:50 AM</td><td>2YK6MN</td></tr>
+<tr><td>Sat Aug 1</td><td>Aer Lingus EI 117</td><td>DUB → IAD</td><td>12:35 – 3:45 PM (2h45m connection · <strong>US preclearance in Dublin</strong>)</td><td>2YK6MN</td></tr>
+</table>
+<p style="margin-top:8px"><strong>Travelers:</strong> Joe, Teri &amp; Lorene are on the same flights (Lorene has her own booking &amp; seats). <strong>Carla flies separately to/from Los Angeles (LAX)</strong> — her itinerary isn't on file yet.</p>
+<p><strong>Seats (Joe · Teri):</strong> DL 1444: 20C · 20A &nbsp;|&nbsp; DL 222: 46C · 47A &nbsp;|&nbsp; EI 401: <strong style="color:#e74c3c">unassigned — select seats</strong> &nbsp;|&nbsp; EI 117: 30D · 30F</p>
+<p><strong>eTickets:</strong> Joe 0067441087719 (Delta) &amp; 0537441087717 (Aer Lingus) · Teri 0067441087720 &amp; 0537441087718</p>
+</div></div></div>
 
 <div class="section">
 <div class="sh" onclick="toggleSection('cruise-info')">🚢 Viking Cruise — OST <span class="sh-chevron open" id="chev-cruise-info">▾</span></div>
@@ -347,7 +355,7 @@ p { font-size:13px; line-height:1.7; color:#444; margin-bottom:7px; }
 <tr><td>Assisi → Spello</td><td>Jul 28</td><td>Tue</td><td>SS75</td><td>~15 min</td><td>Morning stop before Orvieto.</td></tr>
 <tr><td>Spello → Orvieto</td><td>Jul 28</td><td>Tue</td><td>E45 → A1</td><td>~1 hr</td><td>Park lower town, funicular up.</td></tr>
 <tr><td>Orvieto → Rome</td><td>Jul 29</td><td>Wed</td><td>A1</td><td>~90 min</td><td>Park at hotel — don't move until Aug 1.</td></tr>
-<tr><td>Rome → FCO Airport</td><td>Aug 1</td><td>Sat</td><td>A91/GRA</td><td>~35–45 min</td><td>Drop-off 7:30 AM. Allow extra for traffic.</td></tr>
+<tr><td>Rome → FCO Airport</td><td>Aug 1</td><td>Sat</td><td>A91/GRA</td><td>~35–45 min</td><td>Pre-dawn drive — EI 401 departs 7:30 AM. Or return car Jul 31 evening.</td></tr>
 </table>
 <div class="al alr" style="margin-top:12px"><strong>ZTL Warning:</strong> Never drive into Florence, Rome, Siena, Assisi upper town, or Orvieto upper town. Camera-enforced — fines €80–150 by mail.</div>
 </div></div></div>
@@ -372,8 +380,8 @@ function toggleSection(id){const el=document.getElementById(id);const chev=docum
 
 const allDays=[
 {id:'A1',date:'Fri Jul 10',title:'Arrive Athens',region:'athens',color:'#378ADD',bg:'#e8f2fc',tc:'#0c447c',
-sub:'1 night · Anise Aluma Athens, Tapestry/Hilton · Conf. #3471385009 · 6:30 PM Athens Street Food Walk (booked)',
-blocks:[{t:'Arrive',c:'Anise Aluma Athens, Tapestry/Hilton (Evripidou 82). Joe &amp; Teresa: Queen Room (Honors ID 213729341). Lorene &amp; Carla: Twin Room (Honors ID 213729340). Check-in 3 PM.'},{t:'Late Afternoon',c:'🏛️ <strong>Areopagus (Mars Hill) walk</strong> — free, no ticket or reservation. ~15 min walk from the hotel through Psiri/Monastiraki. Climb the rock outcrop overlooking the Ancient Agora, where Socrates held court and the Stoa Poikile (birthplace of the word "Stoic") once stood. Marble steps are worn smooth — go slow. Great sunset views of the Acropolis.'},{t:'6:15 PM',c:'Head to <strong>Syntagma Square</strong> — meet by the round fountain in the middle of the square. Look for the guide carrying the Greekality sign.'},{t:'6:30 PM',c:'🥙 <strong>Athens Street Food Walk</strong> — Booking ref #1418536313 (Greekality, conf. 360081916). 4 adults. Souvlaki, peinirli, Greek doughnuts, pies, and koulouri at 100% local establishments. Ends at Monastiraki Square (Apollonos 21). Bring a water bottle; tipping optional but appreciated.'},{t:'Evening',c:'Tour ends near Monastiraki — stroll the Plaka on the walk back. Early night — 7:50 AM tour tomorrow.'}],
+sub:'Land ATH 11:00 AM · 1 night · Anise Aluma Athens, Tapestry/Hilton · Conf. #3471385009 · 6:30 PM Athens Street Food Walk (booked)',
+blocks:[{t:'11:00 AM',c:'Land ATH (DL 222 from Atlanta). Anise Aluma Athens, Tapestry/Hilton (Evripidou 82). Joe &amp; Teresa: Queen Room (Honors ID 213729341). Lorene &amp; Carla: Twin Room (Honors ID 213729340). Check-in 3 PM.'},{t:'Late Afternoon',c:'🏛️ <strong>Areopagus (Mars Hill) walk</strong> — free, no ticket or reservation. ~15 min walk from the hotel through Psiri/Monastiraki. Climb the rock outcrop overlooking the Ancient Agora, where Socrates held court and the Stoa Poikile (birthplace of the word "Stoic") once stood. Marble steps are worn smooth — go slow. Great sunset views of the Acropolis.'},{t:'6:15 PM',c:'Head to <strong>Syntagma Square</strong> — meet by the round fountain in the middle of the square. Look for the guide carrying the Greekality sign.'},{t:'6:30 PM',c:'🥙 <strong>Athens Street Food Walk</strong> — Booking ref #1418536313 (Greekality, conf. 360081916). 4 adults. Souvlaki, peinirli, Greek doughnuts, pies, and koulouri at 100% local establishments. Ends at Monastiraki Square (Apollonos 21). Bring a water bottle; tipping optional but appreciated.'},{t:'Evening',c:'Tour ends near Monastiraki — stroll the Plaka on the walk back. Early night — 7:50 AM tour tomorrow.'}],
 log:'Check-out tomorrow 11 AM. Acropolis tour meeting at Porinou 5 (outside gates — NOT the metro station). 100k Hilton pts used. Cancel hotel by Jul 9; Street Food Walk free cancellation before 6:30 PM EEST Jul 9.'},
 
 {id:'A2',date:'Sat Jul 11',title:'Acropolis → Evening Theatre → Board Viking',region:'athens',color:'#378ADD',bg:'#e8f2fc',tc:'#0c447c',
@@ -582,12 +590,16 @@ blocks:[
 log:'⚠️ $1,018.70 due Jul 3 — EARLIEST upcoming payment. Pack tonight.'},
 
 {id:'I13',date:'Sat Aug 1',title:'Rome → FCO → Home',region:'rome',color:'#D85A30',bg:'#faece7',tc:'#4a1b0c',
-sub:'Departure day · Hertz drop-off 7:30 AM · Fly home FCO → IAD',
+sub:'Departure day · EI 401 FCO→DUB 7:30 AM + EI 117 DUB→IAD (Booking 2YK6MN) · Land IAD 3:45 PM',
 blocks:[
-{t:'5–6 AM',c:'Wake, final pack, checkout.'},
-{t:'6–7 AM',c:'Drive rental car to Fiumicino Airport (FCO) — ~35–45 min. Return car at Hertz desk (Conf. #L60845394F2). Drop-off: 7:30 AM.'},
-{t:'7:30 AM+',c:'Check in for IAD flight. Allow 3 hours before departure. Arrivederci!'}
-]}
+{t:'~3:45 AM',c:'Wake, final pack, checkout. Painfully early — EI 401 departs 7:30 AM sharp.'},
+{t:'4:15–5 AM',c:'Drive to Fiumicino (FCO) — ~35 min on empty roads. Return Hertz BMW X1 (Conf. #L60845394F2). ⚠️ Confirm Hertz out-of-hours key drop in advance — or return the car Fri Jul 31 evening and taxi this morning instead.'},
+{t:'5–7:30 AM',c:'Aer Lingus check-in, bag drop, security. ✈️ EI 401 FCO → DUB, 7:30–9:50 AM.'},
+{t:'9:50 AM–12:35 PM',c:'Dublin layover (2h45m): clear <strong>US preclearance</strong> — immigration and customs done in Dublin, so IAD arrival works like a domestic flight.'},
+{t:'12:35 PM',c:'✈️ EI 117 DUB → IAD, 8h10m.'},
+{t:'3:45 PM',c:'Land IAD. Arrivederci — home!'}
+],
+log:'⚠️ Adjust Hertz drop-off time (currently reserved 7:30 AM — flight departs then). Seats on EI 401 unassigned for Joe/Teri — select ahead. Lorene same flights; Carla returns separately to LAX.'}
 ];
 
 const excursionData=[
@@ -635,7 +647,7 @@ const hotels=[
 ];
 
 /* Rental car: one confirmed-booking card. */
-const carRental={ord:80,icon:'🚗',title:'Hertz Rental Car: BMW X1',when:'Wed Jul 22 → Sat Aug 1',body:'Conf. #L60845394F2 · Member: Joseph Limber (#56844202) · $855.85 total<br>⚠️ Pickup: <strong>Hertz Autonoleggio — Venezia Aeroporto</strong> (Marco Polo Airport, Via Broglio 6, Tessera) · Jul 22, 9:00 AM · Hours: 8 AM–midnight<br>Drop-off: Rome Fiumicino Airport · Aug 1, 7:30 AM<br>Allow 30–45 min from Venice to airport by water taxi or ACTV Bus 5'};
+const carRental={ord:80,icon:'🚗',title:'Hertz Rental Car: BMW X1',when:'Wed Jul 22 → Sat Aug 1',body:'Conf. #L60845394F2 · Member: Joseph Limber (#56844202) · $855.85 total<br>⚠️ Pickup: <strong>Hertz Autonoleggio — Venezia Aeroporto</strong> (Marco Polo Airport, Via Broglio 6, Tessera) · Jul 22, 9:00 AM · Hours: 8 AM–midnight<br>Drop-off: Rome Fiumicino Airport · Aug 1, 7:30 AM <strong style="color:#e74c3c">⚠️ flight departs 7:30 AM — move drop-off earlier or return car Jul 31 evening</strong><br>Allow 30–45 min from Venice to airport by water taxi or ACTV Bus 5'};
 
 /* Tours & activities: used by the Overview payment table (payOrd = row order) AND the confirmed-booking cards (ord). noCard = payment-table-only row. */
 const tourBookings=[
@@ -655,8 +667,8 @@ const tourBookings=[
 
 /* Overview trip timeline: one row per day. */
 const tripTimeline=[
-{d:'Jul 9',w:'Thu',loc:'Depart IAD',b:'',note:'Fly to Athens overnight'},
-{d:'Jul 10',w:'Fri',loc:'Athens',b:'bb',note:'Arrive. <strong>Anise Aluma Athens</strong> (Tapestry/Hilton). Conf. #3471385009. Check-in 3 PM. Late afternoon: free Areopagus (Mars Hill) walk.'},
+{d:'Jul 9',w:'Thu',loc:'Depart IAD',b:'',note:'DL 1444 IAD→ATL 12:37 PM · DL 222 ATL→ATH 5:15 PM overnight (Booking G3Y4LD). Joe, Teri &amp; Lorene together; Carla flies separately from LAX.'},
+{d:'Jul 10',w:'Fri',loc:'Athens',b:'bb',note:'Land ATH 11:00 AM (DL 222). <strong>Anise Aluma Athens</strong> (Tapestry/Hilton). Conf. #3471385009. Check-in 3 PM. Late afternoon: free Areopagus (Mars Hill) walk.'},
 {d:'Jul 11',w:'Sat',loc:'Athens → Cruise',b:'bb',note:'7:50 AM Acropolis (Tour Guy #1118765, meet Porinou 5). 9 PM Open Air Theatre (Tripadvisor #1778633837). Board Viking OST, Piraeus.'},
 {d:'Jul 12',w:'Sun',loc:'Cruise — Athens',b:'bg',note:'Panoramic Athens &amp; Archaeological Museum (incl.) 8:15 AM. Ship departs 6 PM.'},
 {d:'Jul 13',w:'Mon',loc:'Cruise — Mykonos',b:'bg',note:'Viator Mykonos Small Group Tour ($118/pp) — <strong>Booked</strong>, ref #1418529839, 9:00 AM pickup'},
@@ -678,7 +690,7 @@ const tripTimeline=[
 {d:'Jul 29',w:'Wed',loc:'→ Rome',b:'by',note:'Drive ~90 min. Park car. 5 PM: Pasta Class (Viator #1395367603). Optional: Vatican Scavi in the afternoon. 3 nights.'},
 {d:'Jul 30',w:'Thu',loc:'Rome — Vatican',b:'by',note:"Tour Guy #1123725 · Arrive 7:15 AM · Vatican Museums + Sistine + St. Peter's via Scala Regia."},
 {d:'Jul 31',w:'Fri',loc:'Rome — Ancient Rome',b:'by',note:'Tour Guy #1117159 · 9 AM Private Colosseum + Arena Floor. Pay Jul 3. Farewell dinner.'},
-{d:'Aug 1',w:'Sat',loc:'Depart FCO',b:'bb',note:'Drive rental car to FCO (7:30 AM drop). Fly home IAD.'}
+{d:'Aug 1',w:'Sat',loc:'Depart FCO',b:'bb',note:'⚠️ EI 401 FCO→DUB departs <strong>7:30 AM</strong> — leave Rome ~4:15 AM (or return car Jul 31 evening). EI 117 DUB→IAD lands 3:45 PM (US preclearance in Dublin). Booking 2YK6MN.'}
 ];
 
 /* Still-needs-booking cards. tag: 'ph' (urgent red) or 'pm' (medium). */
@@ -759,7 +771,7 @@ const stops=[
 {grp:'Minerva',cat:'alternate',region:'rome',lat:41.8983,lng:12.4772,title:'⛪ Santa Maria sopra Minerva (Alternate)',sub:'Teresa researched · 2 min from Pantheon',note:"St. Catherine of Siena's tomb. Rome's only Gothic church. Almost no queue.",wiki:'Santa Maria sopra Minerva'},
 {grp:'Catacombs Priscilla',cat:'alternate',region:'rome',lat:41.9302,lng:12.5115,title:'⛪ Catacombs of Priscilla (Alternate)',sub:'Teresa researched · Closed Mondays',note:'"Queen of the Catacombs." 7+ miles of tunnels. Oldest image of the Virgin Mary (~3rd century). Book at catacombepriscilla.com.',wiki:'Catacomb of Priscilla'},
 {grp:'Capuchin',cat:'alternate',region:'rome',lat:41.9059,lng:12.4883,title:'⛪ Capuchin Crypt (Alternate)',sub:'Teresa researched',note:'Bones of 4,000 Capuchin friars arranged as art. Powerful memento mori. 45 min.',wiki:'Capuchin Crypt, Rome'},
-{grp:'FCO',cat:'transport',region:'rome',lat:41.8034,lng:12.2519,title:'✈️ Fiumicino Airport (FCO)',sub:'Sat Aug 1 · Hertz drop-off 7:30 AM · Fly home IAD',note:'~35–45 min drive from central Rome. Return Hertz BMW X1 (Conf. #L60845394F2). Allow 3 hours before departure.',wiki:'Leonardo da Vinci International Airport'}
+{grp:'FCO',cat:'transport',region:'rome',lat:41.8034,lng:12.2519,title:'✈️ Fiumicino Airport (FCO)',sub:'Sat Aug 1 · EI 401 to Dublin 7:30 AM · then EI 117 to IAD',note:'~35 min drive from Rome at dawn. Return Hertz BMW X1 (Conf. #L60845394F2) — confirm early-hours drop. EI 401 FCO→DUB 7:30 AM, EI 117 DUB→IAD lands 3:45 PM. US preclearance in Dublin. Booking 2YK6MN.',wiki:'Leonardo da Vinci International Airport'}
 ];
 
 const catStyles={'hotel-booked':{color:'#7F77DD',size:14},'hotel-tbd':{color:'#b3afed',size:12},'tour-booked':{color:'#e74c3c',size:14},'stop':{color:'#f5a0a0',size:11},'alternate':{color:'#fca5a5',size:10},'cruise':{color:'#1D9E75',size:11},'transport':{color:'#e67e22',size:12}};
@@ -1298,11 +1310,11 @@ var qrDays={
            'Gladiator\'s Gate → Arena Floor → Roman Forum → Palatine Hill',
            'Farewell dinner tonight — splurge!']},
   '2026-08-01':{loc:'Departure',title:'Rome → FCO → Home',hotel:'—',
-    warn:['5–6 AM: Wake, final pack, checkout',
-          'Drive to FCO ~35–45 min via A91/GRA — leave by 6:15 AM',
-          'Hertz drop-off 7:30 AM · Conf. L60845394F2',
-          'Allow 3 hours before departure for check-in/security'],
-    notes:['Arrivederci! 🇮🇹']}
+    warn:['⚠️ EI 401 departs FCO 7:30 AM — be at the airport by ~5 AM',
+          'Leave Rome by ~4:15 AM (or return car Jul 31 evening and taxi)',
+          'Hertz Conf. L60845394F2 — confirm out-of-hours drop',
+          'US preclearance during the 2h45m Dublin layover'],
+    notes:['EI 401 FCO→DUB 7:30–9:50 AM · EI 117 DUB→IAD 12:35–3:45 PM · Booking 2YK6MN','Arrivederci! 🇮🇹']}
 };
 
 /* ============================================
