@@ -22,6 +22,17 @@ Joe (trip organizer) and his wife **Teri**; their friends **Lorene and Carla, wh
 (Consolidated from 9 on Jul 5: Hotels→Bookings, Cruise Excursions→itinerary day cards via `excEmbedHtml()`, Tips & Packing→Quick Ref. Mobile ≤680px uses a fixed bottom nav `#bottomnav`/`navTab()` instead of top tabs. During Jul 9–Aug 1 `initTripMode()` opens today's itinerary card and shows "Day N of 24" in the header; `[data-expires]` alerts auto-hide after their date.)
 
 **Key JavaScript (single `<script>` block):**
+
+⚠️ **A2 single-source booking data (added Jul 5) — edit the DATA, never the rendered HTML.** Between the `/* ===== A2 DATA ===== */` and `/* ===== A2 END ===== */` markers:
+- `hotels[]` — 9 entries `{ord, city, tbl, when, nights, name, addr, phone?, conf, pin?, bookedBy?, rooms?, checkin, checkout, extras[], price?, cancel?, cancelWarn?, status:'booked'|'tbd'}`. Renders BOTH the Bookings "Hotels At a Glance" table (`#bk-hoteltable`) and the hotel cards in `#bk-cards`. One edit updates both.
+- `carRental` — the Hertz card.
+- `tourBookings[]` — tours/tickets `{ord, payOrd, icon, title, when, body, payDate, payLabel, num, amt}`. Renders BOTH the Overview payment table (`#ov-paytable`, sorted by `payOrd`) and tour cards in `#bk-cards` (sorted by `ord`). The refund row has `noCard:true`.
+- `tripTimeline[]` — 24 rows `{d, w, loc, b:''|'bb'|'bg'|'by', note}` → Overview timeline table (`#ov-timeline`).
+- `needsBooking[]` — still-needed cards `{icon, title, when, tag:'ph'|'pm', tagText, body}` → `#bk-needs`.
+- `ord` values use gaps of 10 — insert new bookings between existing ones without renumbering.
+- When a pending booking lands (e.g. Rome hotel): update `hotels[]` status/details, remove/adjust the `needsBooking[]` entry, and check `tripTimeline[]` notes.
+- **Regression test:** `tests/a2-render-regression.test.js` in the private planning repo — update its expected counts when bookings change, and run it after data edits.
+
 - `const stops=[...]` — 59 stops: `{grp, cat, region, lat, lng, title, sub, note, wiki}`
 - `catStyles`, `_regions`, `_types`, `_regionStops` — map pin styling + filter config
 - `_doInitMap()` / `_gmCard(s)` / `_fetchWikiPhoto(article)` — map init, info cards, Wikipedia photos
@@ -45,7 +56,8 @@ Fetched on pin click via the `pageimages` API using each stop's `wiki` field (em
 - **Post-trip:** interactive Trip Log tab (GPS tracks + photos + journal) — design in private planning repo
 
 ## trip-stops.kml — MUST stay in sync with stops[]
-`trip-stops.kml` in this repo is generated from the `stops[]` array in index.html and is linked from Quick Ref (offline My Maps backup). **Whenever stops are added/removed/edited in index.html, regen
+`trip-stops.kml` in this repo is generated from the `stops[]` array in index.html and is linked from Quick Ref (offline My Maps backup). **Whenever stops are added/removed/edited in index.html, regenerate `trip-stops.kml` to match and commit both files together.**
+
 ## ⚠️ Mount-staleness hazard (Cowork sessions) — MANDATORY pre-commit check
 The Cowork bash sandbox reads the repo through a mount that can serve STALE or TRUNCATED file content and stat metadata (observed 2026-07-05: a truncated index.html was committed and briefly broke the live site; later a stale CLAUDE.md dropped this very section).
 Before EVERY commit in a Cowork session:
