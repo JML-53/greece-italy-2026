@@ -143,6 +143,13 @@ p { font-size:13px; line-height:1.7; color:#444; margin-bottom:7px; }
 .exc-embed{margin-top:10px;padding:9px 11px;background:#f4faf7;border-radius:8px;border-left:3px solid #1D9E75;}
 .exc-embed h5{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.04em;color:#0a6b50;margin:0 0 7px;}
 
+/* === MAP: locate-me / near-me === */
+#near-list{margin-top:10px;max-height:300px;overflow-y:auto;}
+.nm-row{display:flex;gap:8px;align-items:center;padding:6px 4px;border-bottom:1px solid #f0f0f0;font-size:12px;cursor:pointer;}
+.nm-row:hover{background:#f8f8f8;}
+.nm-dist{font-weight:700;color:#0c447c;white-space:nowrap;min-width:64px;font-size:11px;}
+.nm-name{flex:1;color:#333;line-height:1.35;}
+
 /* === PRINT === */
 @media print{
   #header{-webkit-print-color-adjust:exact;print-color-adjust:exact;}
@@ -344,6 +351,11 @@ p { font-size:13px; line-height:1.7; color:#444; margin-bottom:7px; }
       <button class="cb" onclick="mapSelectAll(true)"  style="flex:1;padding:4px 6px">All</button>
       <button class="cb" onclick="mapSelectAll(false)" style="flex:1;padding:4px 6px">None</button>
     </div>
+    <div style="margin-top:10px;display:flex;flex-direction:column;gap:5px">
+      <button class="cb" onclick="locateMe()" style="padding:6px;font-weight:600">📍 Locate me</button>
+      <button class="cb" onclick="nearMe()" style="padding:6px;font-weight:600">🧭 What&#39;s near me?</button>
+    </div>
+    <div id="near-list"></div>
   </div>
   <div id="map-main">
     <div id="map"></div>
@@ -425,6 +437,7 @@ p { font-size:13px; line-height:1.7; color:#444; margin-bottom:7px; }
 <div class="ib"><h4>Church Etiquette</h4><ul><li>Covered shoulders required everywhere</li><li>Knees must be covered (women and men)</li><li>Scarves/shawls in bag at all times</li><li>No flash photography in most churches</li></ul></div>
 <div class="ib"><h4>Assisi Details</h4><ul><li>Hotel Bellavista: payment/check-out at restaurant (not reception)</li><li>Restaurant closed Thursdays — plan meals accordingly</li><li>Swimming pool 9 AM–7 PM, reserved area for guests</li><li>Check-in after 8 PM incurs €30 surcharge</li></ul></div>
 <div class="ib"><h4>Florence Apartment</h4><ul><li>Loft Il Giobertino: one apartment for all 4 (2 bedrooms)</li><li>Kitchen included — good for an early breakfast before Da Vinci Museum</li><li>No dedicated parking — ask property for nearest public lot upon arrival</li><li>Cancel free until Jul 17</li></ul></div>
+<div class="ib"><h4>🗺️ Offline Maps Insurance</h4><ul><li><strong>Before departure:</strong> Google Maps app → profile photo → Offline maps → download Athens, Venice, Florence/Tuscany, and Rome areas.</li><li>GPS works with no cell data — the blue dot and turn-by-turn work inside downloaded areas.</li><li>All 59 trip stops in one file: <a href="trip-stops.kml" download>trip-stops.kml</a> → import at mymaps.google.com → shows in the Maps app under Saved → Maps.</li><li>This site's Map tab needs a data connection — offline areas + My Maps are the backup.</li></ul></div>
 </div></div></div>
 </div>
 
@@ -787,7 +800,7 @@ function _gmCard(s){
   const ph=(s.note||'').match(/href="(tel:[^"]+)"/);
   const imgHtml=s.wiki?'<img class="pin-photo" onerror="this.remove()" style="width:100%;height:130px;object-fit:cover;border-radius:6px 6px 0 0;display:none">':'';
   const clean=(s.note||'').replace(/<a[^>]*>(.*?)<\/a>/g,'$1').replace(/<[^>]+>/g,'');
-  let btns='<a href="'+nav+'" target="_blank" rel="noopener" style="flex:1;text-align:center;background:#4285f4;color:#fff;padding:6px 8px;border-radius:6px;font-size:11px;text-decoration:none;font-weight:600">📍 Navigate</a>';
+  let btns='<a href="'+nav+'&travelmode=walking" target="_blank" rel="noopener" style="flex:1;text-align:center;background:#4285f4;color:#fff;padding:6px 8px;border-radius:6px;font-size:11px;text-decoration:none;font-weight:600">🚶 Walk</a> <a href="'+nav+'&travelmode=driving" target="_blank" rel="noopener" style="flex:1;text-align:center;background:#0a6b50;color:#fff;padding:6px 8px;border-radius:6px;font-size:11px;text-decoration:none;font-weight:600">🚗 Drive</a>';
   if(ph)btns+=' <a href="'+ph[1]+'" style="background:#e8f7f1;color:#0a6b50;padding:6px 10px;border-radius:6px;font-size:11px;text-decoration:none;font-weight:600;border:1px solid #c3e6d8">📞 Call</a>';
   return '<div style="width:275px;font-family:-apple-system,sans-serif;margin:-10px -12px">'+imgHtml+'<div style="padding:10px 12px"><div style="font-size:13px;font-weight:700;color:#222;margin-bottom:2px">'+s.title+'</div><div style="font-size:11px;color:#888;margin-bottom:7px">'+s.sub+'</div><div style="font-size:12px;color:#555;line-height:1.55;border-top:1px solid #eee;padding-top:6px;margin-bottom:9px">'+clean+'</div><div style="display:flex;gap:6px;align-items:center">'+btns+'</div></div></div>';
 }
@@ -949,6 +962,62 @@ function mapSelectAll(on){
   document.querySelectorAll('[data-region-key]').forEach(cb=>{cb.checked=on;cb.indeterminate=false;});
   document.querySelectorAll('[data-type]').forEach(cb=>{cb.checked=on;});
   gmTreeFilter();
+}
+
+/* ============================================
+   GEOLOCATION: locate-me + near-me
+   ============================================ */
+var _meMarker=null,_meCircle=null;
+function _getPos(cb){
+  if(!navigator.geolocation){alert('Geolocation not supported on this device.');return;}
+  navigator.geolocation.getCurrentPosition(function(p){cb(p.coords);},function(e){
+    alert('Location unavailable: '+e.message+'\n\nTip: allow location access for this site in your browser settings.');
+  },{enableHighAccuracy:true,timeout:12000,maximumAge:30000});
+}
+function _showMe(c){
+  if(!gmap)return null;
+  var pos={lat:c.latitude,lng:c.longitude};
+  if(_meMarker){_meMarker.setPosition(pos);}
+  else{_meMarker=new google.maps.Marker({map:gmap,position:pos,zIndex:9999,
+    icon:{path:google.maps.SymbolPath.CIRCLE,scale:8,fillColor:'#4285F4',fillOpacity:1,strokeColor:'#ffffff',strokeWeight:2},
+    title:'You are here'});}
+  if(_meCircle){_meCircle.setCenter(pos);_meCircle.setRadius(c.accuracy||50);}
+  else{_meCircle=new google.maps.Circle({map:gmap,center:pos,radius:c.accuracy||50,
+    fillColor:'#4285F4',fillOpacity:0.12,strokeColor:'#4285F4',strokeOpacity:0.4,strokeWeight:1});}
+  return pos;
+}
+function locateMe(){
+  _getPos(function(c){var pos=_showMe(c);if(pos){gmap.panTo(pos);if(gmap.getZoom()<13)gmap.setZoom(14);}});
+}
+function _havKm(a,b){
+  var R=6371,dLa=(b.lat-a.lat)*Math.PI/180,dLo=(b.lng-a.lng)*Math.PI/180;
+  var s=Math.sin(dLa/2)*Math.sin(dLa/2)+Math.cos(a.lat*Math.PI/180)*Math.cos(b.lat*Math.PI/180)*Math.sin(dLo/2)*Math.sin(dLo/2);
+  return R*2*Math.atan2(Math.sqrt(s),Math.sqrt(1-s));
+}
+function _bearTxt(a,b){
+  var y=Math.sin((b.lng-a.lng)*Math.PI/180)*Math.cos(b.lat*Math.PI/180);
+  var x=Math.cos(a.lat*Math.PI/180)*Math.sin(b.lat*Math.PI/180)-Math.sin(a.lat*Math.PI/180)*Math.cos(b.lat*Math.PI/180)*Math.cos((b.lng-a.lng)*Math.PI/180);
+  var br=(Math.atan2(y,x)*180/Math.PI+360)%360;
+  return ['N','NE','E','SE','S','SW','W','NW'][Math.round(br/45)%8];
+}
+function nearMe(){
+  _getPos(function(c){
+    var me={lat:c.latitude,lng:c.longitude};_showMe(c);
+    var list=stops.map(function(s,i){return {s:s,i:i,d:_havKm(me,{lat:s.lat,lng:s.lng})};})
+      .sort(function(a,b){return a.d-b.d;}).slice(0,12);
+    var el=document.getElementById('near-list');if(!el)return;
+    el.innerHTML='<div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:#888;margin:4px 0 2px">Nearest stops</div>'+
+      list.map(function(r){
+        var dtxt=r.d<1?Math.round(r.d*1000)+' m':r.d.toFixed(1)+' km';
+        return '<div class="nm-row" onclick="openStop('+r.i+')"><span class="nm-dist">'+dtxt+' '+_bearTxt(me,{lat:r.s.lat,lng:r.s.lng})+'</span><span class="nm-name">'+r.s.title+'</span></div>';
+      }).join('');
+  });
+}
+function openStop(i){
+  if(!gmMarkers[i])return;
+  var m=gmMarkers[i].marker;
+  gmap.panTo(m.getPosition());if(gmap.getZoom()<14)gmap.setZoom(15);
+  google.maps.event.trigger(m,'click');
 }
 
 function showTab(id,el){
