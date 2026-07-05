@@ -46,3 +46,12 @@ Fetched on pin click via the `pageimages` API using each stop's `wiki` field (em
 
 ## trip-stops.kml — MUST stay in sync with stops[]
 `trip-stops.kml` in this repo is generated from the `stops[]` array in index.html and is linked from Quick Ref (offline My Maps backup). **Whenever stops are added/removed/edited in index.html, regen
+## ⚠️ Mount-staleness hazard (Cowork sessions) — MANDATORY pre-commit check
+The Cowork bash sandbox reads the repo through a mount that can serve STALE or TRUNCATED file content and stat metadata (observed 2026-07-05: a truncated index.html was committed and briefly broke the live site; later a stale CLAUDE.md dropped this very section).
+Before EVERY commit in a Cowork session:
+1. `touch <file>` before `git add` (stat cache lies; without this, edits silently fail to stage)
+2. After `git add`, verify the STAGED content, not the worktree: `git show :index.html | tail -c 20` must end with `</html>`, and `git show :index.html | grep -c "wiki:'"` must equal the expected stop count. For other files, grep the staged copy for BOTH the newest change AND a known older marker — staleness shows up as the old marker missing.
+3. GATE the commit on those checks — run them as separate commands and abort if wrong; do not chain check+commit with `&&`
+4. If staged content is truncated/stale: STOP — do not commit. Fallback: clone fresh to /tmp with the PAT, apply the change there, verify, push from /tmp, then `cp` the pushed files back over the mount and confirm the host copy matches
+5. After any incident, resync local refs: fetch + `git update-ref refs/heads/main FETCH_HEAD` (do NOT `git reset --hard` through the mount)
+Claude Code cloud sessions clone directly from GitHub and are immune to this — the hazard is Cowork-local only.
