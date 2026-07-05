@@ -127,12 +127,27 @@ p { font-size:13px; line-height:1.7; color:#444; margin-bottom:7px; }
 .qr-call:hover{background:#d0f0e0;}
 .dchip{display:inline-block;font-size:11px;padding:1px 7px;border-radius:10px;font-weight:600;margin-left:5px;vertical-align:middle;}
 
+/* === BOTTOM NAV (mobile) === */
+#bottomnav{display:none;}
+@media(max-width:680px){
+  .tabs{display:none;}
+  #bottomnav{display:flex;position:fixed;bottom:0;left:0;right:0;background:#2c3e50;z-index:1000;padding:4px 2px calc(4px + env(safe-area-inset-bottom));box-shadow:0 -2px 8px rgba(0,0,0,.25);}
+  #bottomnav .bn{flex:1;background:none;border:none;color:rgba(255,255,255,.55);font-size:10px;padding:4px 0 2px;display:flex;flex-direction:column;align-items:center;gap:1px;cursor:pointer;font-family:inherit;}
+  #bottomnav .bn span{font-size:18px;line-height:1.2;}
+  #bottomnav .bn.active{color:#fff;}
+  body{padding-bottom:64px;}
+}
+
+/* === EMBEDDED EXCURSIONS (itinerary cruise days) === */
+.exc-embed{margin-top:10px;padding:9px 11px;background:#f4faf7;border-radius:8px;border-left:3px solid #1D9E75;}
+.exc-embed h5{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.04em;color:#0a6b50;margin:0 0 7px;}
+
 /* === PRINT === */
 @media print{
   #header{-webkit-print-color-adjust:exact;print-color-adjust:exact;}
-  .tabs,#itin-toolbar,.cb,.fb,.sh-chevron,.ch,#mcc{display:none!important;}
+  .tabs,#bottomnav,#itin-toolbar,.cb,.fb,.sh-chevron,.ch,#mcc{display:none!important;}
   .panel{display:block!important;}
-  #tab-it,#tab-mp,#tab-ex,#tab-qr,#tab-pk{display:none!important;}
+  #tab-it,#tab-mp,#tab-qr{display:none!important;}
   .sc,.db{display:block!important;}
   .section{box-shadow:none;border:1px solid #ddd;margin-bottom:8px;page-break-inside:avoid;}
   body{background:white;}
@@ -144,25 +159,31 @@ p { font-size:13px; line-height:1.7; color:#444; margin-bottom:7px; }
 <body>
 <div id="header">
   <h1>✈️ Greece &amp; Italy 2026 — Master Trip Document</h1>
-  <p>Joe &amp; Teresa Limber · Lorene Guernsey &amp; Carla Santi · July 9 – August 1, 2026 · Last updated: June 7, 2026</p>
+  <p>Joe &amp; Teresa Limber · Lorene Guernsey &amp; Carla Santi · July 9 – August 1, 2026 · Last updated: July 5, 2026</p>
 </div>
 <div class="tabs">
   <div class="tab active" onclick="showTab('ov',this)">Overview</div>
-  <div class="tab" onclick="showTab('bk',this)">Must-Book Now</div>
+  <div class="tab" onclick="showTab('bk',this)">Bookings</div>
   <div class="tab" onclick="showTab('it',this)">Full Itinerary</div>
   <div class="tab" onclick="showTab('mp',this)">Interactive Map</div>
-  <div class="tab" onclick="showTab('ht',this)">Hotels</div>
-  <div class="tab" onclick="showTab('ex',this)">Cruise Excursions</div>
   <div class="tab" onclick="showTab('tr',this)">Transportation</div>
-  <div class="tab" onclick="showTab('pk',this)">Tips &amp; Packing</div>
   <div class="tab" onclick="showTab('qr',this)">⚡ Quick Ref</div>
+</div>
+<div id="bottomnav">
+  <button data-tab="ov" class="bn active" onclick="navTab('ov')"><span>🏠</span>Home</button>
+  <button data-tab="bk" class="bn" onclick="navTab('bk')"><span>📋</span>Bookings</button>
+  <button data-tab="it" class="bn" onclick="navTab('it')"><span>📅</span>Days</button>
+  <button data-tab="mp" class="bn" onclick="navTab('mp')"><span>🗺️</span>Map</button>
+  <button data-tab="tr" class="bn" onclick="navTab('tr')"><span>🚗</span>Travel</button>
+  <button data-tab="qr" class="bn" onclick="navTab('qr')"><span>⚡</span>Quick</button>
 </div>
 
 <!-- OVERVIEW -->
 <div id="tab-ov" class="panel active">
-<div class="al alr"><strong>🚨 Still needed:</strong> Vatican Scavi (only 250/day — book today), Pantheon. See Must-Book Now. Also: Villa San Filippo cancel deadline <strong>Jul 10</strong>.</div>
-<div class="al alg"><strong>✅ Itinerary change resolved:</strong> Santorini stop canceled due to weather — Viking substituted <strong>Mykonos</strong> on Mon Jul 13. Booked: Viator Mykonos Small Group Tour, $118/pp, Booking ref #1418529839 (tour operator conf. VIA-96240517).</div>
-<div class="al aly"><strong>⚠️ Car pickup changed:</strong> Hertz is at <strong>Venice Marco Polo Airport</strong> (not Piazzale Roma). Allow 30–45 min to get there from Venice by water taxi or ACTV bus on Wed Jul 22 morning.</div>
+<div class="al alr" data-expires="2026-07-29"><strong>🚨 Still needed:</strong> Vatican Scavi (only 250/day — book ASAP), Pantheon, Rome hotel. See Bookings tab.</div>
+<div class="al aly" data-expires="2026-07-10"><strong>⚠️ Villa San Filippo:</strong> free cancellation ends <strong>Jul 10</strong> — 100% penalty after.</div>
+<div class="al alg" data-expires="2026-07-13"><strong>✅ Itinerary change resolved:</strong> Santorini stop canceled due to weather — Viking substituted <strong>Mykonos</strong> on Mon Jul 13. Booked: Viator Mykonos Small Group Tour, $118/pp, Booking ref #1418529839 (tour operator conf. VIA-96240517).</div>
+<div class="al aly" data-expires="2026-07-22"><strong>⚠️ Car pickup changed:</strong> Hertz is at <strong>Venice Marco Polo Airport</strong> (not Piazzale Roma). Allow 30–45 min to get there from Venice by water taxi or ACTV bus on Wed Jul 22 morning.</div>
 <div class="section"><div class="sh-static">📅 Full Trip Timeline</div><div class="sb"><table>
 <tr><th>Date</th><th>Day</th><th>Location</th><th>Notes</th></tr>
 <tr><td>Jul 9</td><td>Thu</td><td>Depart IAD</td><td>Fly to Athens overnight</td></tr>
@@ -191,19 +212,6 @@ p { font-size:13px; line-height:1.7; color:#444; margin-bottom:7px; }
 <tr><td>Aug 1</td><td>Sat</td><td><span class="badge bb">Depart FCO</span></td><td>Drive rental car to FCO (7:30 AM drop). Fly home IAD.</td></tr>
 </table></div></div>
 
-<div class="section"><div class="sh-static">🏨 Hotels At a Glance</div><div class="sb"><table>
-<tr><th>Location</th><th>Hotel</th><th>Dates</th><th>Conf #</th><th>Cancel By</th><th>Status</th></tr>
-<tr><td>Athens</td><td>Anise Aluma Athens, Tapestry/Hilton</td><td>Jul 10</td><td>3471385009</td><td>Jul 9</td><td><span class="badge bg">✅ Booked</span></td></tr>
-<tr><td>Venice</td><td>B&amp;B Ca' Bonvicini</td><td>Jul 20–22</td><td>5062824483</td><td style="color:#e74c3c;font-weight:600">Non-refundable</td><td><span class="badge bg">✅ Booked</span></td></tr>
-<tr><td>Ferrara</td><td>Casa D'Este - Hotel Ferrara</td><td>Jul 22</td><td>5952657630</td><td>Jul 19</td><td><span class="badge bg">✅ Booked</span></td></tr>
-<tr><td>Florence</td><td>Loft Il Giobertino (apartment)</td><td>Jul 23–24</td><td>5024697136</td><td>Jul 17</td><td><span class="badge bg">✅ Booked</span></td></tr>
-<tr><td>Chianti</td><td>Villa San Filippo</td><td>Jul 24–25</td><td>72074703683732</td><td style="color:#e74c3c;font-weight:600">Jul 10 ⚠️</td><td><span class="badge bg">✅ Booked</span></td></tr>
-<tr><td>Montalcino</td><td>Idolina Guest House</td><td>Jul 25–26</td><td>72074700792366</td><td>Jul 22</td><td><span class="badge bg">✅ Booked</span></td></tr>
-<tr><td>Assisi</td><td>Hotel Bellavista</td><td>Jul 26–28</td><td>6920407207</td><td>Jul 20</td><td><span class="badge bg">✅ Booked</span></td></tr>
-<tr><td>Orvieto</td><td>Hotel Duomo</td><td>Jul 28–29</td><td>72074704255117</td><td>Jul 26</td><td><span class="badge bg">✅ Booked</span></td></tr>
-<tr><td>Rome</td><td>TBD</td><td>Jul 29–31</td><td>—</td><td>—</td><td><span class="badge br">TBD</span></td></tr>
-</table></div></div>
-
 <div class="section"><div class="sh-static">💳 Tour Guy &amp; Other Bookings</div><div class="sb">
 <table>
 <tr><th>Pay Date</th><th>Booking</th><th>#</th><th>Amount</th><th>Status</th></tr>
@@ -228,9 +236,25 @@ p { font-size:13px; line-height:1.7; color:#444; margin-bottom:7px; }
 </div></div></div>
 </div>
 
-<!-- MUST-BOOK NOW -->
+<!-- BOOKINGS (was Must-Book Now + Hotels) -->
 <div id="tab-bk" class="panel">
-<div class="al alr"><strong>⚠️ Villa San Filippo cancel deadline: Jul 10.</strong> B&amp;B Ca' Bonvicini Venice is non-refundable — no changes possible.</div>
+<div class="al alr" data-expires="2026-07-10"><strong>⚠️ Villa San Filippo cancel deadline: Jul 10.</strong> B&amp;B Ca' Bonvicini Venice is non-refundable — no changes possible.</div>
+<div class="section">
+<div class="sh" onclick="toggleSection('hotel-tracker')">🏨 Hotels At a Glance <span class="sh-chevron open" id="chev-hotel-tracker">▾</span></div>
+<div id="hotel-tracker" class="sc"><div class="sb">
+<table>
+<tr><th>Location</th><th>Dates</th><th>Property / Key Details</th><th>Status</th></tr>
+<tr><td><strong>Athens</strong><br>Jul 10</td><td>1 night</td><td><strong>Anise Aluma Athens, Tapestry/Hilton</strong><br>Evripidou 82 · Conf. #3471385009 · 2 rooms · 100k Hilton pts · Cancel by Jul 9 · Check-in 3 PM, out 11 AM</td><td><span class="badge bg">✅ Booked</span></td></tr>
+<tr><td><strong>Venice</strong><br>Jul 20–22</td><td>2 nights</td><td><strong>B&amp;B Ca' Bonvicini</strong><br>Santa Croce 2160 · Conf. #5062824483 (PIN: 0103) · Booked by Joe · 2 Double Rooms · Check-in 9 AM–noon · Check-out 9–10 AM (very early!) · No breakfast · No elevator · No parking · City tax €3/pp/night · <strong style="color:#e74c3c">NON-REFUNDABLE</strong> · Canal view requested · <a href="tel:+390412750106" class="phlink">+39 041 275 0106</a></td><td><span class="badge bg">✅ Booked</span></td></tr>
+<tr><td><strong>Ferrara</strong><br>Jul 22</td><td>1 night</td><td><strong>Casa D'Este - Hotel Ferrara</strong><br>Largo Castello 36, 44100 Ferrara · Booking.com Conf. #5952657630 (PIN: 1176) · Booked by Lorene · 2 rooms · Check-in from 3 PM (early arrival possible, luggage held otherwise) · Check-out 11 AM · Breakfast included · Inside ZTL but check-in/out access permitted · Parking voucher €10/day at reception · <a href="tel:+390532205048" class="phlink">+39 0532 205048</a> · Cancel free until Jul 19</td><td><span class="badge bg">✅ Booked</span></td></tr>
+<tr><td><strong>Florence</strong><br>Jul 23–24</td><td>1 night</td><td><strong>Loft Il Giobertino</strong><br>Via Vincenzo Gioberti 95, 2nd floor · Conf. #5024697136 (PIN: 0746) · Booked by Joe · 1 two-bedroom apartment, all 4 guests · Check-in 3–10 PM · Check-out 6–10 AM (very early!) · No breakfast · Kitchen, balcony, city view · Public parking nearby · €239.95 charged · Cancel free until Jul 17 · <a href="tel:+393338347050" class="phlink">+39 333 834 7050</a></td><td><span class="badge bg">✅ Booked</span></td></tr>
+<tr><td><strong>Chianti</strong><br>Jul 24–25</td><td>1 night</td><td><strong>Villa San Filippo</strong><br>Strada delle Ginestre 6, Barberino Tavarnelle · Hotels.com Conf. #72074703683732 · $372.12 · Check-in 2 PM–midnight · Check-out 11 AM · City tax €3/pp/night · <strong style="color:#e74c3c">⚠️ Cancel free until Jul 10 only — 100% penalty after</strong></td><td><span class="badge bg">✅ Booked</span></td></tr>
+<tr><td><strong>Montalcino</strong><br>Jul 25–26</td><td>1 night</td><td><strong>Idolina Guest House</strong><br>Via Mazzini 65/67 · Hotels.com Conf. #72074700792366 · €262.62 + city tax €4/pp/night at property · Check-in 1:30–7:30 PM · Check-out 11 AM · NO FRONT DESK — contact 24 hrs before · Cancel free until Jul 22</td><td><span class="badge bg">✅ Booked</span></td></tr>
+<tr><td><strong>Assisi</strong><br>Jul 26–28</td><td>2 nights</td><td><strong>Hotel Bellavista</strong><br>Viale Patrono d'Italia 100 · Conf. #6920407207 (PIN: 4429) · 2 Deluxe Double Rooms · 1st floor, no elevator · Breakfast 8–9:30 AM · Lunch 12–2:30 PM · Dinner 7–8 PM · <strong>Closed Thursdays</strong> · Check-in 3–8 PM (€30 after 8 PM) · Check-out 8–11 AM · Payment at restaurant · Swimming pool daily 9 AM–7 PM · €410.24 auto-charged Jul 19 (card ••••6773) · City tax €3/pp/night cash · Cancel free until Jul 20</td><td><span class="badge bg">✅ Booked</span></td></tr>
+<tr><td><strong>Orvieto</strong><br>Jul 28–29</td><td>1 night</td><td><strong>Hotel Duomo</strong><br>Vicolo di Maurizio 7 · Hotels.com Conf. #72074704255117 · $407.72 · Check-in 2–10 PM · Check-out 11 AM · Front desk 8 AM–10 PM · City tax €2.30/pp/night · Steps from Duomo · Cancel free until Jul 26</td><td><span class="badge bg">✅ Booked</span></td></tr>
+<tr><td><strong>Rome</strong><br>Jul 29–31</td><td>3 nights</td><td>TBD — must confirm parking ~€25–35/night. Bonvoy: The Regency Rome (45–65k pts/night) · Hilton: Aleph Rome Hotel Curio (★4.6, ~70k pts) or DoubleTree Rome Monti (★4.6, near Colosseum)</td><td><span class="badge br">TBD</span></td></tr>
+</table>
+</div></div></div>
 <div class="section"><div class="sh-static">✅ All Confirmed Bookings</div><div class="sb">
 <div class="bi"><div class="bic">🏨</div><div class="bid"><h4>Athens: Anise Aluma Athens, Tapestry/Hilton · Fri Jul 10 <span class="pl">✅ BOOKED</span></h4><p>Evripidou 82 · Conf. #3471385009 · Twin (Lorene &amp; Carla) + Queen (Joe &amp; Teresa) · 100k Hilton pts · Cancel by Jul 9</p></div></div>
 <div class="bi"><div class="bic">🏛️</div><div class="bid"><h4>Acropolis Tour · Sat Jul 11, 7:50 AM <span class="pl">✅ BOOKED</span></h4><p>Tour Guy #1118765 · $331.84 (pay Jun 12) · Meet at Porinou 5 (outside Acropolis gates — NOT metro station)</p></div></div>
@@ -261,6 +285,21 @@ p { font-size:13px; line-height:1.7; color:#444; margin-bottom:7px; }
 <div class="bi"><div class="bic">⛏️</div><div class="bid"><h4>Orvieto Underground · Tue Jul 28 <span class="pm">RECOMMENDED</span></h4><p>Book at <a href="https://www.orvietounderground.it" target="_blank">orvietounderground.it</a>. ~€6/pp.</p></div></div>
 <div class="bi"><div class="bic">🏨</div><div class="bid"><h4>Rome Hotel · Jul 29–31 <span class="ph">URGENT</span></h4><p>3 nights. Must confirm parking ~€25–35/night. Bonvoy: The Regency Rome. Hilton: Aleph Rome Hotel Curio (★4.6) or DoubleTree Rome Monti (★4.6).</p></div></div>
 </div></div>
+
+<div class="section">
+<div class="sh" onclick="toggleSection('bonvoy')">⭐ Marriott Bonvoy — Joe &amp; Teresa · Gold Elite · ~270,000 Points <span class="sh-chevron" id="chev-bonvoy">▾</span></div>
+<div id="bonvoy" class="sc" style="display:none"><div class="sb">
+<div class="al alg"><strong>Best use:</strong> W Florence points option is now moot (Loft Il Giobertino booked). Save points for Rome — The Regency Rome (45,000–65,000 pts/night × 3 nights).</div>
+<div class="al aly"><strong>Alternative:</strong> Pay cash for Rome and earn Gold 25% bonus points back for future use.</div>
+</div></div></div>
+
+<div class="section">
+<div class="sh" onclick="toggleSection('hilton')">💜 Hilton Honors — Lorene · Diamond · ~50,156 Points Remaining <span class="sh-chevron" id="chev-hilton">▾</span></div>
+<div id="hilton" class="sc" style="display:none"><div class="sb">
+<div class="al alg"><strong>Athens — ✅ USED:</strong> Anise Aluma Athens (100,000 pts). ~50,156 pts remaining.</div>
+<p><strong>Rome best use:</strong> Aleph Rome Hotel Curio (★4.6, near Trevi, ~70k pts/night) — slightly over remaining balance, may need small cash co-pay. OR DoubleTree Rome Monti (★4.6, near Colosseum, ~50k pts/night) — most achievable with remaining balance.</p>
+<p style="margin-top:8px;font-size:12px;color:#aaa">No Hilton in Ferrara, Montalcino, Assisi, or Orvieto. All Italy hotels now booked except Rome.</p>
+</div></div></div>
 </div>
 
 <!-- FULL ITINERARY -->
@@ -320,46 +359,7 @@ p { font-size:13px; line-height:1.7; color:#444; margin-bottom:7px; }
   </div>
 </div>
 </div>
-<!-- HOTELS -->
-<div id="tab-ht" class="panel">
-<div class="section">
-<div class="sh" onclick="toggleSection('hotel-tracker')">🏨 Hotel Tracker <span class="sh-chevron open" id="chev-hotel-tracker">▾</span></div>
-<div id="hotel-tracker" class="sc"><div class="sb">
-<table>
-<tr><th>Location</th><th>Dates</th><th>Property / Key Details</th><th>Status</th></tr>
-<tr><td><strong>Athens</strong><br>Jul 10</td><td>1 night</td><td><strong>Anise Aluma Athens, Tapestry/Hilton</strong><br>Evripidou 82 · Conf. #3471385009 · 2 rooms · 100k Hilton pts · Cancel by Jul 9 · Check-in 3 PM, out 11 AM</td><td><span class="badge bg">✅ Booked</span></td></tr>
-<tr><td><strong>Venice</strong><br>Jul 20–22</td><td>2 nights</td><td><strong>B&amp;B Ca' Bonvicini</strong><br>Santa Croce 2160 · Conf. #5062824483 (PIN: 0103) · Booked by Joe · 2 Double Rooms · Check-in 9 AM–noon · Check-out 9–10 AM (very early!) · No breakfast · No elevator · No parking · City tax €3/pp/night · <strong style="color:#e74c3c">NON-REFUNDABLE</strong> · Canal view requested · <a href="tel:+390412750106" class="phlink">+39 041 275 0106</a></td><td><span class="badge bg">✅ Booked</span></td></tr>
-<tr><td><strong>Ferrara</strong><br>Jul 22</td><td>1 night</td><td><strong>Casa D'Este - Hotel Ferrara</strong><br>Largo Castello 36, 44100 Ferrara · Booking.com Conf. #5952657630 (PIN: 1176) · Booked by Lorene · 2 rooms · Check-in from 3 PM (early arrival possible, luggage held otherwise) · Check-out 11 AM · Breakfast included · Inside ZTL but check-in/out access permitted · Parking voucher €10/day at reception · <a href="tel:+390532205048" class="phlink">+39 0532 205048</a> · Cancel free until Jul 19</td><td><span class="badge bg">✅ Booked</span></td></tr>
-<tr><td><strong>Florence</strong><br>Jul 23–24</td><td>1 night</td><td><strong>Loft Il Giobertino</strong><br>Via Vincenzo Gioberti 95, 2nd floor · Conf. #5024697136 (PIN: 0746) · Booked by Joe · 1 two-bedroom apartment, all 4 guests · Check-in 3–10 PM · Check-out 6–10 AM (very early!) · No breakfast · Kitchen, balcony, city view · Public parking nearby · €239.95 charged · Cancel free until Jul 17 · <a href="tel:+393338347050" class="phlink">+39 333 834 7050</a></td><td><span class="badge bg">✅ Booked</span></td></tr>
-<tr><td><strong>Chianti</strong><br>Jul 24–25</td><td>1 night</td><td><strong>Villa San Filippo</strong><br>Strada delle Ginestre 6, Barberino Tavarnelle · Hotels.com Conf. #72074703683732 · $372.12 · Check-in 2 PM–midnight · Check-out 11 AM · City tax €3/pp/night · <strong style="color:#e74c3c">⚠️ Cancel free until Jul 10 only — 100% penalty after</strong></td><td><span class="badge bg">✅ Booked</span></td></tr>
-<tr><td><strong>Montalcino</strong><br>Jul 25–26</td><td>1 night</td><td><strong>Idolina Guest House</strong><br>Via Mazzini 65/67 · Hotels.com Conf. #72074700792366 · €262.62 + city tax €4/pp/night at property · Check-in 1:30–7:30 PM · Check-out 11 AM · NO FRONT DESK — contact 24 hrs before · Cancel free until Jul 22</td><td><span class="badge bg">✅ Booked</span></td></tr>
-<tr><td><strong>Assisi</strong><br>Jul 26–28</td><td>2 nights</td><td><strong>Hotel Bellavista</strong><br>Viale Patrono d'Italia 100 · Conf. #6920407207 (PIN: 4429) · 2 Deluxe Double Rooms · 1st floor, no elevator · Breakfast 8–9:30 AM · Lunch 12–2:30 PM · Dinner 7–8 PM · <strong>Closed Thursdays</strong> · Check-in 3–8 PM (€30 after 8 PM) · Check-out 8–11 AM · Payment at restaurant · Swimming pool daily 9 AM–7 PM · €410.24 auto-charged Jul 19 (card ••••6773) · City tax €3/pp/night cash · Cancel free until Jul 20</td><td><span class="badge bg">✅ Booked</span></td></tr>
-<tr><td><strong>Orvieto</strong><br>Jul 28–29</td><td>1 night</td><td><strong>Hotel Duomo</strong><br>Vicolo di Maurizio 7 · Hotels.com Conf. #72074704255117 · $407.72 · Check-in 2–10 PM · Check-out 11 AM · Front desk 8 AM–10 PM · City tax €2.30/pp/night · Steps from Duomo · Cancel free until Jul 26</td><td><span class="badge bg">✅ Booked</span></td></tr>
-<tr><td><strong>Rome</strong><br>Jul 29–31</td><td>3 nights</td><td>TBD — must confirm parking ~€25–35/night. Bonvoy: The Regency Rome (45–65k pts/night) · Hilton: Aleph Rome Hotel Curio (★4.6, ~70k pts) or DoubleTree Rome Monti (★4.6, near Colosseum)</td><td><span class="badge br">TBD</span></td></tr>
-</table>
-</div></div></div>
-
-<div class="section">
-<div class="sh" onclick="toggleSection('bonvoy')">⭐ Marriott Bonvoy — Joe &amp; Teresa · Gold Elite · ~270,000 Points <span class="sh-chevron" id="chev-bonvoy">▾</span></div>
-<div id="bonvoy" class="sc" style="display:none"><div class="sb">
-<div class="al alg"><strong>Best use:</strong> W Florence points option is now moot (Loft Il Giobertino booked). Save points for Rome — The Regency Rome (45,000–65,000 pts/night × 3 nights).</div>
-<div class="al aly"><strong>Alternative:</strong> Pay cash for Rome and earn Gold 25% bonus points back for future use.</div>
-</div></div></div>
-
-<div class="section">
-<div class="sh" onclick="toggleSection('hilton')">💜 Hilton Honors — Lorene · Diamond · ~50,156 Points Remaining <span class="sh-chevron" id="chev-hilton">▾</span></div>
-<div id="hilton" class="sc" style="display:none"><div class="sb">
-<div class="al alg"><strong>Athens — ✅ USED:</strong> Anise Aluma Athens (100,000 pts). ~50,156 pts remaining.</div>
-<p><strong>Rome best use:</strong> Aleph Rome Hotel Curio (★4.6, near Trevi, ~70k pts/night) — slightly over remaining balance, may need small cash co-pay. OR DoubleTree Rome Monti (★4.6, near Colosseum, ~50k pts/night) — most achievable with remaining balance.</p>
-<p style="margin-top:8px;font-size:12px;color:#aaa">No Hilton in Ferrara, Montalcino, Assisi, or Orvieto. All Italy hotels now booked except Rome.</p>
-</div></div></div>
-</div>
-
-<!-- CRUISE EXCURSIONS -->
-<div id="tab-ex" class="panel">
-<div class="al alb"><strong>ℹ️ Reference only.</strong> Selected excursions in green.</div>
-<div id="excursion-list"></div>
-</div>
+<!-- (Hotels tab merged into Bookings · Cruise Excursions merged into Itinerary day cards) -->
 
 <!-- TRANSPORTATION -->
 <div id="tab-tr" class="panel">
@@ -415,8 +415,8 @@ p { font-size:13px; line-height:1.7; color:#444; margin-bottom:7px; }
 </div></div></div>
 </div>
 
-<!-- TIPS & PACKING -->
-<div id="tab-pk" class="panel">
+<!-- TIPS (shown inside Quick Ref tab) -->
+<div id="tips-block" style="display:none">
 <div class="section"><div class="sh-static">☀️ July Travel — Key Tips</div><div class="sb"><div class="ig">
 <div class="ib"><h4>Early Checkouts</h4><ul><li><strong>Venice Ca' Bonvicini:</strong> Check-out 9–10 AM. Need to reach Marco Polo Airport by 9 AM for car. Leave hotel by 8:15 AM latest.</li><li><strong>Florence Loft Il Giobertino:</strong> Check-out 6–10 AM. Da Vinci Museum opens 9:30 AM — leave bags at property or find luggage storage.</li><li>Both are earlier than typical — plan arrivals and morning schedules carefully.</li></ul></div>
 <div class="ib"><h4>Car Pickup Logistics</h4><ul><li>Wed Jul 22: Check out Venice by 9 AM</li><li>Water taxi Venice → Marco Polo: ~20 min, ~€15</li><li>ACTV Bus 5 Venice → Marco Polo: ~20 min, ~€8</li><li>Hertz opens 8 AM — pickup at 9 AM</li><li>Hertz Conf. #L60845394F2</li></ul></div>
@@ -661,8 +661,13 @@ const excursionData=[
 {port:'Koper, Slovenia — Sun Jul 19',items:[{name:'Old Koper Walking Tour',time:'9:15/9:30/10:00/1:00 PM',dur:'2.5 hrs',price:'Included'},{name:'Postojna Cave & Predjama Castle',time:'9:15/10:00 AM',dur:'7.5 hrs',price:'$199/pp',selected:true},{name:'Lake Bled & Bled Castle',time:'8:30/8:45 AM',dur:'8.5 hrs',price:'$259/pp'}]}
 ];
 
-const excList=document.getElementById('excursion-list');
-excursionData.forEach(day=>{const sec=document.createElement('div');sec.className='section';sec.innerHTML=`<div class="sh-static">${day.port}</div><div class="sb"><div class="exc-grid">${day.items.map(i=>`<div class="exc-item${i.selected?' included':''}"><div class="exc-name">${i.selected?'✅ ':''}${i.name}</div><div class="exc-detail">${i.time} · ${i.dur} · ${i.price}</div></div>`).join('')}</div></div>`;excList.appendChild(sec);});
+/* Excursion options are injected into the matching cruise day cards below (old Cruise Excursions tab removed) */
+const excByDay={C1:0,C2:1,C3:2,C4:3,C5:4,C6:5,C7:6,C8:7};
+function excEmbedHtml(dayId){
+  const idx=excByDay[dayId];if(idx===undefined)return '';
+  const ex=excursionData[idx];
+  return `<div class="exc-embed"><h5>🚢 Excursion options at this port <span style="font-weight:400;text-transform:none;color:#888">(✅ = selected)</span></h5><div class="exc-grid">${ex.items.map(i=>`<div class="exc-item${i.selected?' included':''}"><div class="exc-name">${i.selected?'✅ ':''}${i.name}</div><div class="exc-detail">${i.time} · ${i.dur} · ${i.price}</div></div>`).join('')}</div></div>`;
+}
 
 function toggleAllDays(open){document.querySelectorAll('.db').forEach(b=>b.style.display=open?'block':'none');document.querySelectorAll('.dc .ch').forEach(c=>c.classList.toggle('open',open));}
 function filterDays(region,btn){document.querySelectorAll('.fb').forEach(b=>b.classList.remove('active'));btn.classList.add('active');document.querySelectorAll('.dc').forEach(card=>{card.style.display=(region==='all'||card.dataset.region===region)?'':'none';});}
@@ -672,7 +677,7 @@ allDays.forEach(d=>{const card=document.createElement('div');card.className='dc'
 let sciHtml=d.sci?`<div class="scitip"><strong>⚛ Science/History:</strong> ${d.sci}</div>`:'';
 let hiltHtml=d.hilt?`<div class="hilttip"><strong>💜 Hilton Honors (Lorene):</strong> ${d.hilt}</div>`:'';
 let logHtml=d.log?`<div class="logtip"><strong>🟢 Logistics:</strong> ${d.log}</div>`:'';
-card.innerHTML=`<div class="dh" onclick="toggleDay(this)"><div class="dn" style="background:${d.bg};color:${d.tc}">${d.id}</div><div class="dm"><div class="dt">${d.date} — ${d.title}</div><div class="ds">${d.sub}</div></div><span class="ch">▾</span></div><div class="db">${d.blocks.map(b=>`<div class="tb"><span class="tl">${b.t}</span><span class="tc2">${b.c}</span></div>`).join('')}${sciHtml}${hiltHtml}${logHtml}${d.tip?`<div class="tip"><strong>💡 Tip:</strong> ${d.tip}</div>`:''}</div>`;
+card.innerHTML=`<div class="dh" onclick="toggleDay(this)"><div class="dn" style="background:${d.bg};color:${d.tc}">${d.id}</div><div class="dm"><div class="dt">${d.date} — ${d.title}</div><div class="ds">${d.sub}</div></div><span class="ch">▾</span></div><div class="db">${d.blocks.map(b=>`<div class="tb"><span class="tl">${b.t}</span><span class="tc2">${b.c}</span></div>`).join('')}${sciHtml}${hiltHtml}${logHtml}${excEmbedHtml(d.id)}${d.tip?`<div class="tip"><strong>💡 Tip:</strong> ${d.tip}</div>`:''}</div>`;
 itinContainer.appendChild(card);});
 
 const stops=[
@@ -1346,17 +1351,59 @@ function renderQuickRef(){
 var _oST=showTab;
 showTab=function(id,el){
   _oST(id,el);
+  document.querySelectorAll('#bottomnav .bn').forEach(function(b){b.classList.toggle('active',b.dataset.tab===id);});
   if(id==='qr') renderQuickRef();
   if(id==='it') { initTodayHighlight(); setTimeout(initCopyable,50); }
   if(id!=='it'&&id!=='qr') setTimeout(initCopyable,50);
 };
 
 /* ============================================
+   BOTTOM NAV (mobile)
+   ============================================ */
+function navTab(id){
+  var topTab=document.querySelector('.tab[onclick*="\''+id+'\'"]');
+  showTab(id,topTab);
+  window.scrollTo(0,0);
+}
+
+/* ============================================
+   ALERT EXPIRY — hide [data-expires] past their date
+   ============================================ */
+function hideExpiredAlerts(){
+  var today=new Date();today.setHours(0,0,0,0);
+  document.querySelectorAll('[data-expires]').forEach(function(a){
+    var p=a.dataset.expires.split('-');
+    if(today>new Date(+p[0],+p[1]-1,+p[2])) a.style.display='none';
+  });
+}
+
+/* ============================================
+   TRIP MODE — during Jul 9–Aug 1: header count-up + open today
+   ============================================ */
+function initTripMode(){
+  var today=new Date();today.setHours(0,0,0,0);
+  var dep=new Date(2026,6,9),ret=new Date(2026,7,1);
+  if(today<dep||today>ret) return;
+  var n=Math.round((today-dep)/86400000)+1;
+  var iso=today.getFullYear()+'-'+String(today.getMonth()+1).padStart(2,'0')+'-'+String(today.getDate()).padStart(2,'0');
+  var loc=(typeof qrDays!=='undefined'&&qrDays[iso])?qrDays[iso].loc:'';
+  var hp=document.querySelector('#header p');
+  if(hp)hp.innerHTML='<strong style="color:#f1c40f">Day '+n+' of 24'+(loc?' · '+loc:'')+'</strong> · Joe &amp; Teresa · Lorene &amp; Carla · Jul 9 – Aug 1, 2026';
+  navTab('it');
+  setTimeout(function(){
+    var pill=document.querySelector('.today-pill');
+    if(pill&&pill.closest('.dc'))pill.closest('.dc').scrollIntoView({behavior:'smooth',block:'start'});
+  },350);
+}
+
+/* ============================================
    INIT
    ============================================ */
 document.addEventListener('DOMContentLoaded',function(){
+  hideExpiredAlerts();
   renderQuickRef();
   initTodayHighlight();
+  initTripMode();
   setTimeout(initCopyable,200);
 });
 
@@ -1365,7 +1412,12 @@ document.addEventListener('DOMContentLoaded',function(){
 <!-- QUICK REF -->
 <div id="tab-qr" class="panel">
   <div id="qr-content"></div>
+  <div id="qr-tips"></div>
 </div>
+<script>
+/* Move the Tips block into the Quick Ref tab (merged from old Tips & Packing tab) */
+(function(){var t=document.getElementById('tips-block'),d=document.getElementById('qr-tips');if(t&&d){d.appendChild(t);t.style.display='';}})();
+</script>
 <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA_L3t4bPLYe-MTVSmbolMAzGyHcoXN9Gc&callback=initGoogleMap&loading=async"></script>
 </body>
 </html>
