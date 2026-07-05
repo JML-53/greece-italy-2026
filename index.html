@@ -10,7 +10,7 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; b
 #header { background: #2c3e50; color: white; padding: 16px 28px; }
 #header h1 { font-size: 21px; font-weight: 700; margin-bottom: 4px; }
 #header p { font-size: 13px; color: #d5dee8; }
-@media(max-width:680px){ #header{padding:12px 16px;} #header h1{font-size:18px;} #header p{font-size:12px;} }
+@media(max-width:680px){ #header{padding:12px 16px;} #header h1{font-size:18px;} #header p{font-size:12px;} .hdr-sep{display:none;} .hdr-dates{display:block;margin-top:2px;} }
 .tabs { display: flex; background: #34495e; padding: 0 16px; overflow-x: auto; flex-shrink: 0; }
 .tab { padding: 12px 16px; font-size: 13px; color: rgba(255,255,255,0.6); cursor: pointer; border-bottom: 3px solid transparent; white-space: nowrap; }
 .tab:hover { color: white; }
@@ -160,7 +160,7 @@ p { font-size:13px; line-height:1.7; color:#444; margin-bottom:7px; }
 <body>
 <div id="header">
   <h1>✈️ Greece &amp; Italy 2026</h1>
-  <p>Joe · Teri · Lorene · Carla &nbsp;·&nbsp; Jul 9 – Aug 1 &nbsp;·&nbsp; Updated Jul 5</p>
+  <p>Teri · Joe · Lorene · Carla<span class="hdr-sep"> &nbsp;·&nbsp; </span><span class="hdr-dates">Jul 9 – Aug 1 &nbsp;·&nbsp; Updated Jul 5</span></p>
 </div>
 <div class="tabs">
   <div class="tab active" onclick="showTab('ov',this)">Overview</div>
@@ -1389,7 +1389,7 @@ function initTripMode(){
   var iso=today.getFullYear()+'-'+String(today.getMonth()+1).padStart(2,'0')+'-'+String(today.getDate()).padStart(2,'0');
   var loc=(typeof qrDays!=='undefined'&&qrDays[iso])?qrDays[iso].loc:'';
   var hp=document.querySelector('#header p');
-  if(hp)hp.innerHTML='<strong style="color:#f1c40f">Day '+n+' of 24'+(loc?' · '+loc:'')+'</strong> &nbsp;·&nbsp; Jul 9 – Aug 1';
+  if(hp)hp.innerHTML='<strong style="color:#f1c40f">Day '+n+' of 24'+(loc?' · '+loc:'')+'</strong><span class="hdr-sep"> &nbsp;·&nbsp; </span><span class="hdr-dates">Teri · Joe · Lorene · Carla · Jul 9 – Aug 1</span>';
   navTab('it');
   setTimeout(function(){
     var pill=document.querySelector('.today-pill');
@@ -1417,6 +1417,4 @@ document.addEventListener('DOMContentLoaded',function(){
 </div>
 <script>
 /* Move the Tips block into the Quick Ref tab (merged from old Tips & Packing tab) */
-(function(){var t=document.getElementById('tips-block'),d=document.getElementById('qr-tips');if(t&&d){d.appendChild(t);t.style.display='';}})();
-</script>
-<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA_L3t4bPLYe-MTVSmbolMAzGyHcoXN9Gc&callback=initGoogleMap&loading=async"></sc
+(function(){var t=document.getElementById('tips-block'),d=document.getElementById('qr-
