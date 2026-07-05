@@ -18,11 +18,11 @@ Joe (trip organizer) and his wife **Teri**; their friends **Lorene and Carla, wh
 ## File Architecture — `index.html`
 ~133 KB self-contained HTML with inline CSS and JS.
 
-**Tabs:** Overview · Must-Book Now · Full Itinerary · Interactive Map · Hotels · Cruise Excursions · Transportation · Tips & Packing · ⚡ Quick Ref
-(A consolidation to ~6 tabs is planned — see the private planning repo, Site-Evolution-Plan.)
+**Tabs (6):** Overview · Bookings · Full Itinerary · Interactive Map · Transportation · ⚡ Quick Ref
+(Consolidated from 9 on Jul 5: Hotels→Bookings, Cruise Excursions→itinerary day cards via `excEmbedHtml()`, Tips & Packing→Quick Ref. Mobile ≤680px uses a fixed bottom nav `#bottomnav`/`navTab()` instead of top tabs. During Jul 9–Aug 1 `initTripMode()` opens today's itinerary card and shows "Day N of 24" in the header; `[data-expires]` alerts auto-hide after their date.)
 
 **Key JavaScript (single `<script>` block):**
-- `const stops=[...]` — 52 stops: `{grp, cat, region, lat, lng, title, sub, note, wiki}`
+- `const stops=[...]` — 59 stops: `{grp, cat, region, lat, lng, title, sub, note, wiki}`
 - `catStyles`, `_regions`, `_types`, `_regionStops` — map pin styling + filter config
 - `_doInitMap()` / `_gmCard(s)` / `_fetchWikiPhoto(article)` — map init, info cards, Wikipedia photos
 - `_buildFilters()` / `gmTreeFilter()` — sidebar filter tree
@@ -44,18 +44,5 @@ Fetched on pin click via the `pageimages` API using each stop's `wiki` field (em
 - **During trip (Jul 9–Aug 1):** Claude Code cloud sessions handle itinerary updates by phone prompt; keep changes small and V&V'd
 - **Post-trip:** interactive Trip Log tab (GPS tracks + photos + journal) — design in private planning repo
 
-## V&V Protocol — run after ANY edit to index.html
-1. `grep -c "wiki:'" index.html` → must equal 52 (or the updated stop count; update this file if stops are added)
-2. Verify key functions still present: `_fetchWikiPhoto`, `gmTreeFilter`, `showTab`, `_doInitMap`
-3. Spot-check the edited content landed (grep for the new text)
-4. Watch JS apostrophe escaping inside single-quoted strings — past bug source
-5. Confirm the page has no obvious truncation: file should end with `</html>`
-
-## ⚠️ Mount-staleness hazard (Cowork sessions) — MANDATORY pre-commit check
-The Cowork bash sandbox reads the repo through a mount that can serve STALE or TRUNCATED file content and stat metadata (observed 2026-07-05: a truncated index.html was committed and briefly broke the live site).
-Before EVERY commit in a Cowork session:
-1. `touch <file>` before `git add` (stat cache lies; without this, edits silently fail to stage)
-2. After `git add`, verify the STAGED content, not the worktree: `git show :index.html | tail -c 20` must end with `</html>`, and `git show :index.html | grep -c "wiki:'"` must equal the expected stop count
-3. If staged content is truncated/stale: STOP — do not commit. Fallback: clone fresh to /tmp with the PAT, apply the change there (or reconstruct), verify, push from /tmp
-4. After any incident, resync local refs: fetch + `git update-ref refs/heads/main FETCH_HEAD` (do NOT `git reset --hard` through the mount)
-Claude Code cloud sessions clone directly from GitHub and are immune to this — the hazard is Cowork-local only.
+## trip-stops.kml — MUST stay in sync with stops[]
+`trip-stops.kml` in this repo is generated from the `stops[]` array in index.html and is linked from Quick Ref (offline My Maps backup). **Whenever stops are added/removed/edited in index.html, regen
