@@ -175,6 +175,7 @@ p { font-size:13px; line-height:1.7; color:#444; margin-bottom:7px; }
   <div class="tab" onclick="showTab('it',this)">Full Itinerary</div>
   <div class="tab" onclick="showTab('mp',this)">Interactive Map</div>
   <div class="tab" onclick="showTab('tr',this)">Transportation</div>
+  <div class="tab" onclick="showTab('bu',this)">💰 Budget</div>
   <div class="tab" onclick="showTab('qr',this)">⚡ Quick Ref</div>
 </div>
 <div id="bottomnav">
@@ -183,6 +184,7 @@ p { font-size:13px; line-height:1.7; color:#444; margin-bottom:7px; }
   <button data-tab="it" class="bn" onclick="navTab('it')"><span>📅</span>Days</button>
   <button data-tab="mp" class="bn" onclick="navTab('mp')"><span>🗺️</span>Map</button>
   <button data-tab="tr" class="bn" onclick="navTab('tr')"><span>🚗</span>Travel</button>
+  <button data-tab="bu" class="bn" onclick="navTab('bu')"><span>💰</span>Budget</button>
   <button data-tab="qr" class="bn" onclick="navTab('qr')"><span>⚡</span>Quick</button>
 </div>
 
@@ -223,7 +225,7 @@ p { font-size:13px; line-height:1.7; color:#444; margin-bottom:7px; }
 <div class="section">
 <div class="sh" onclick="toggleSection('bonvoy')">⭐ Marriott Bonvoy — Joe &amp; Teresa · Gold Elite <span class="sh-chevron" id="chev-bonvoy">▾</span></div>
 <div id="bonvoy" class="sc" style="display:none"><div class="sb">
-<div class="al alg"><strong>✅ Booked:</strong> Sheraton Rome Parco de&#39; Medici (near FCO), Fri Jul 31–Sat Aug 1. 24,000 points + €15 taxes — well under the Regency Rome estimate that was being considered. Conf. #96267414 (Limber room); balance after booking 265,648 pts. Lorene booked a second room on the same reservation with her own Bonvoy account (Conf. #96274913; balance after booking 241,648 pts).</div>
+<div class="al alg"><strong>✅ Booked:</strong> Sheraton Rome Parco de&#39; Medici (near FCO), Fri Jul 31–Sat Aug 1 — 2 rooms, both booked with Joe's Bonvoy points (well under the Regency Rome estimate that was being considered). 48,000 pts total (24,000 pts + €15 tax per room, per night × 2 rooms): Limber room (Conf. #96267414) and Lorene &amp; Carla's room (Conf. #96274913).</div>
 </div></div></div>
 
 <div class="section">
@@ -362,6 +364,19 @@ p { font-size:13px; line-height:1.7; color:#444; margin-bottom:7px; }
 </table>
 <div class="al alr" style="margin-top:12px"><strong>ZTL Warning:</strong> Never drive into Florence, Rome, Siena, Assisi upper town, or Orvieto upper town. Camera-enforced — fines €80–150 by mail.</div>
 </div></div></div>
+</div>
+
+<!-- BUDGET -->
+<div id="tab-bu" class="panel">
+<div class="al alb"><strong>💰 How this ledger works:</strong> Every paid booking below is tagged with who paid (Joe &amp; Teri share one household total; Lorene and Carla are tracked individually). Shared costs are split evenly 4 ways regardless of who fronted the money, so the settle-up section shows what each party actually owes or is owed. EUR amounts are converted to USD at ~1.14 for the math only — the actual charge was in EUR. Items marked <span style="color:#e67e22">⚠ unconfirmed</span> are my best guess from the receipts on file — flag anything that's wrong.</div>
+
+<div class="section"><div class="sh-static">📊 Settle-Up Summary</div><div class="sb"><div id="bu-summary"></div></div></div>
+
+<div class="section"><div class="sh-static">📋 Itemized Payments (already paid)</div><div class="sb"><table id="bu-table"></table></div></div>
+
+<div class="section"><div class="sh-static">🎁 Loyalty Points Redeemed (not in the cash settle-up)</div><div class="sb"><div id="bu-points"></div></div></div>
+
+<div class="section"><div class="sh-static">⏳ Not Yet Settled / Not Yet Tracked</div><div class="sb"><div id="bu-pending"></div></div></div>
 </div>
 
 <!-- TIPS (shown inside Quick Ref tab) -->
@@ -645,15 +660,15 @@ itinContainer.appendChild(card);});
 /* Hotels: used by the Bookings hotel table AND the confirmed-booking cards. ord = card sort position (gaps of 10 for inserts). */
 const hotels=[
 {ord:10,city:'Athens',tbl:'Jul 10',when:'Fri Jul 10',nights:1,name:'Anise Aluma Athens, Tapestry/Hilton',addr:'Evripidou 82',conf:'Conf. #3471385009',rooms:'2 rooms — Twin (Lorene &amp; Carla) + Queen (Joe &amp; Teresa)',checkin:'3 PM',checkout:'11 AM',extras:['100k Hilton pts'],cancel:'Cancel by Jul 9',status:'booked'},
-{ord:60,city:'Venice',tbl:'Jul 20–22',when:'Mon–Wed Jul 20–22',nights:2,name:"B&amp;B Ca' Bonvicini",addr:"Santa Croce 2160, Calle Ca' Bonvicini",phone:'+39 041 275 0106',conf:'Booking.com Conf. #5062824483',pin:'0103',bookedBy:'Joe',rooms:'2 Double Rooms',checkin:'Mon Jul 20, 9 AM–noon',checkout:'Wed Jul 22, 9–10 AM <strong style="color:#e74c3c">(VERY EARLY — must leave by 10 AM to reach airport for 9 AM car pickup)</strong>',extras:['No breakfast','No elevator — upper floors by stairs only','No parking','City tax €3/pp/night at property','Canal view requested','<strong style="color:#e74c3c">NON-REFUNDABLE — no cancellation or modification possible</strong>'],status:'booked'},
-{ord:90,city:'Ferrara',tbl:'Jul 22',when:'Wed–Thu Jul 22–23',nights:1,name:"Casa D'Este - Hotel Ferrara",addr:'Largo Castello 36, 44100 Ferrara',phone:'+39 0532 205048',conf:'Booking.com Conf. #5952657630',pin:'1176',bookedBy:'Lorene',rooms:'2 rooms (Joe &amp; Teresa; Lorene &amp; Carla)',checkin:'from 3 PM — early arrival possible if room ready, otherwise luggage stored free',checkout:'11 AM',extras:['Breakfast included','Inside ZTL but check-in/out access permitted','Parking voucher €10/day at reception'],cancel:'Cancel free until Jul 19, 2026 11:59 PM (then €111.38/room)',status:'booked'},
+{ord:60,city:'Venice',tbl:'Jul 20–22',when:'Mon–Wed Jul 20–22',nights:2,name:"B&amp;B Ca' Bonvicini",addr:"Santa Croce 2160, Calle Ca' Bonvicini",phone:'+39 041 275 0106',conf:'Booking.com Conf. #5062824483',pin:'0103',bookedBy:'Joe',rooms:'2 Double Rooms',checkin:'Mon Jul 20, 9 AM–noon',checkout:'Wed Jul 22, 9–10 AM <strong style="color:#e74c3c">(VERY EARLY — must leave by 10 AM to reach airport for 9 AM car pickup)</strong>',extras:['No breakfast','No elevator — upper floors by stairs only','No parking','City tax €3/pp/night at property','Canal view requested','<strong style="color:#e74c3c">NON-REFUNDABLE — no cancellation or modification possible</strong>'],price:'€708.00',status:'booked'},
+{ord:90,city:'Ferrara',tbl:'Jul 22',when:'Wed–Thu Jul 22–23',nights:1,name:"Casa D'Este - Hotel Ferrara",addr:'Largo Castello 36, 44100 Ferrara',phone:'+39 0532 205048',conf:'Booking.com Conf. #5952657630',pin:'1176',bookedBy:'Lorene',rooms:'2 rooms (Joe &amp; Teresa; Lorene &amp; Carla)',checkin:'from 3 PM — early arrival possible if room ready, otherwise luggage stored free',checkout:'11 AM',extras:['Breakfast included','Inside ZTL but check-in/out access permitted','Parking voucher €10/day at reception'],price:'€222.76',cancel:'Cancel free until Jul 19, 2026 11:59 PM (then €111.38/room)',status:'booked'},
 {ord:100,city:'Florence',tbl:'Jul 23–24',when:'Thu Jul 23–Fri Jul 24',nights:1,name:'Loft Il Giobertino',addr:'Via Vincenzo Gioberti 95, 2nd floor',phone:'+39 333 834 7050',conf:'Booking.com Conf. #5024697136',pin:'0746',bookedBy:'Joe',rooms:'<strong>1 Two-Bedroom Apartment for all 4 adults</strong>',checkin:'3–10 PM',checkout:'6–10 AM <strong style="color:#e74c3c">(VERY EARLY — must leave for Da Vinci Museum by 9 AM)</strong>',extras:['No breakfast','Kitchen, balcony, city view','Public parking nearby (not reserved — ask property for closest lot)'],price:'€239.95 charged',cancel:'Cancel free until Jul 17; after that €175.95 fee',status:'booked'},
 {ord:140,city:'Chianti',tbl:'Jul 24–25',when:'Fri Jul 24–Sat Jul 25',nights:1,name:'Villa San Filippo',addr:'Strada delle Ginestre 6, Barberino Tavarnelle',conf:'Hotels.com Conf. #72074703683732',checkin:'2 PM–midnight',checkout:'11 AM',extras:['Pool, panoramic views, breakfast','City tax €3/pp/night'],price:'$372.12',cancel:'⚠️ Cancel free until Jul 10 only — 100% penalty after',cancelWarn:true,status:'booked'},
 {ord:150,city:'Montalcino',tbl:'Jul 25–26',when:'Sat Jul 25–Sun Jul 26',nights:1,name:'Idolina Guest House',addr:'Via Mazzini 65/67',conf:'Hotels.com Conf. #72074700792366',checkin:'1:30–7:30 PM',checkout:'11 AM',extras:['NO FRONT DESK — contact property 24 hrs before','City tax €4/pp/night at property'],price:'€262.62 at property',cancel:'Cancel free until Jul 22',status:'booked'},
 {ord:160,city:'Assisi',tbl:'Jul 26–28',when:'Sun–Tue Jul 26–28',nights:2,name:'Hotel Bellavista',addr:"Viale Patrono d'Italia 100",conf:'Conf. #6920407207',pin:'4429',rooms:'2 Deluxe Double Rooms',checkin:'3–8 PM (after 8 PM: €30 supplement)',checkout:'8–11 AM (late check-out €50)',extras:['1st floor, no elevator','Breakfast 8–9:30 AM · Lunch 12–2:30 PM · Dinner 7–8 PM','<strong>Restaurant closed Thursdays</strong>','Payment and check-out at the restaurant','Swimming pool daily 9 AM–7 PM','City tax €3/pp/night cash'],price:'€410.24 auto-charged Jul 19 (card ••••6773)',cancel:'Cancel free until Jul 20',status:'booked'},
 {ord:170,city:'Orvieto',tbl:'Jul 28–29',when:'Tue–Wed Jul 28–29',nights:1,name:'Hotel Duomo',addr:'Vicolo di Maurizio 7',conf:'Hotels.com Conf. #72074704255117',checkin:'2–10 PM',checkout:'11 AM',extras:['Front desk 8 AM–10 PM','City tax €2.30/pp/night','Steps from Duomo'],price:'$407.72',cancel:'Cancel free until Jul 26',status:'booked'},
 {ord:172,city:'Rome',tbl:'Jul 29–31',when:'Wed–Fri Jul 29–31',nights:2,name:'La Residenza',addr:'Via Emilia 22-24, Via Veneto, 00187 Roma',phone:'+39 06 488 0789',conf:'Booking.com Conf. #5182.430.764',pin:'4456',rooms:'2 Superior Double/Twin Rooms (Joe &amp; Teresa; Lorene &amp; Carla)',checkin:'2 PM–midnight',checkout:'7–11 AM',extras:['Breakfast included','<strong style="color:#e74c3c">No parking at property</strong>','City tax €7.50/pp/night (excluded from total)'],price:'≈€972.71 total (4 adults, 2 nights)',status:'booked'},
-{ord:205,city:'Rome (airport)',tbl:'Jul 31–Aug 1',when:'Fri–Sat Jul 31–Aug 1',nights:1,name:"Sheraton Rome Parco de&#39; Medici",addr:'Viale Salvatore Rebecchini 145, Rome (near Fiumicino/FCO)',conf:'Marriott Bonvoy — Room #96267414 (Limber) &amp; Room #96274913 (Guernsey)',rooms:'2 rooms — Superior King (Joe &amp; Teresa) + Superior Twin (Lorene &amp; Carla)',checkin:'from 3 PM (standard)',checkout:'11 AM',extras:['Booked with Bonvoy points — 24,000 pts + €15 taxes per room, per night','Near FCO — convenient for the early Aug 1 departure','Cancel free until Jul 30, 11:59 PM local hotel time'],status:'booked'}
+{ord:205,city:'Rome (airport)',tbl:'Jul 31–Aug 1',when:'Fri–Sat Jul 31–Aug 1',nights:1,name:"Sheraton Rome Parco de&#39; Medici",addr:'Viale Salvatore Rebecchini 145, Rome (near Fiumicino/FCO)',conf:"Marriott Bonvoy (Joe's account) — Room #96267414 (Limber) &amp; Room #96274913 (Guernsey)",rooms:'2 rooms — Superior King (Joe &amp; Teresa) + Superior Twin (Lorene &amp; Carla)',checkin:'from 3 PM (standard)',checkout:'11 AM',extras:['Booked with Bonvoy points — 24,000 pts + €15 taxes per room, per night','Near FCO — convenient for the early Aug 1 departure','Cancel free until Jul 30, 11:59 PM local hotel time'],status:'booked'}
 ];
 
 /* Rental car: one confirmed-booking card. */
@@ -723,6 +738,88 @@ function renderNeeds(){const c=document.getElementById('bk-needs');if(!c)return;
 renderTimeline();renderPayTable();renderHotelTable();renderBookingCards();renderNeeds();
 /* ===== A2 END ===== */
 
+/* ===== A3 BUDGET DATA — single source for the Budget tab (edit HERE, renders everywhere) =====
+   payer: 'joeteri' (Joe & Teri, counted as 2 of the 4 shares) | 'lorene' | 'carla'
+   ccy: 'USD' or 'EUR' — EUR amounts are converted to USD at EUR_USD below for the settle-up math only.
+   conf:false = attribution is a best guess from the receipts on file, not fully confirmed — flag if wrong.
+   Sources: PDF portfolio email metadata (Tour Guy bookings all landed in Lorene's inbox), Viator/booking
+   confirmations naming "Teresa Limber", card-ending-6773 recurrence, and explicit guest/customer names
+   on hotel and museum receipts. Extracted 2026-07-05. */
+const EUR_USD = 1.14; // approximate — update closer to the trip if you want tighter numbers
+const payerLabel = {joeteri:'Joe & Teri', lorene:'Lorene', carla:'Carla'};
+const payerShare = {joeteri:2, lorene:1, carla:1}; // out of 4 even shares
+
+const budgetItems=[
+{cat:'Hotel',item:"B&amp;B Ca' Bonvicini, Venice",amt:708.00,ccy:'EUR',payer:'joeteri',conf:true},
+{cat:'Hotel',item:"Casa D'Este - Hotel Ferrara",amt:222.76,ccy:'EUR',payer:'lorene',conf:true},
+{cat:'Hotel',item:'Loft Il Giobertino, Florence',amt:239.95,ccy:'EUR',payer:'joeteri',conf:true},
+{cat:'Hotel',item:'Villa San Filippo, Chianti',amt:372.12,ccy:'USD',payer:'joeteri',conf:false,note:'Hotels.com confirmation greets "Joseph" — tentative, not a confirmed card charge.'},
+{cat:'Hotel',item:'Hotel Bellavista, Assisi',amt:410.24,ccy:'EUR',payer:'joeteri',conf:true,note:'Auto-charged to card ••••6773 (same card used for the Da Vinci Museum booking below).'},
+{cat:'Hotel',item:'Hotel Duomo, Orvieto',amt:407.72,ccy:'USD',payer:'joeteri',conf:false,note:'Hotels.com confirmation greets "Joseph" — tentative, not a confirmed card charge.'},
+{cat:'Hotel',item:'La Residenza, Rome',amt:972.71,ccy:'EUR',payer:'joeteri',conf:true},
+{cat:'Hotel',item:"Sheraton Rome Parco de&#39; Medici (cash tax portion only — room cost paid in points, see below)",amt:30.00,ccy:'EUR',payer:'joeteri',conf:true},
+{cat:'Car',item:'Hertz BMW X1 rental',amt:855.85,ccy:'USD',payer:'joeteri',conf:true},
+{cat:'Tour',item:'Acropolis Tour (Tour Guy)',amt:331.84,ccy:'USD',payer:'lorene',conf:true},
+{cat:'Tour',item:'Athens Open Air Theatre',amt:143.76,ccy:'USD',payer:'joeteri',conf:false,note:'No traveler name on the Tripadvisor confirmation — confirm who booked this one.'},
+{cat:'Tour',item:'Athens Street Food Walk',amt:275.28,ccy:'USD',payer:'joeteri',conf:true,note:"Teresa's Viator account."},
+{cat:'Tour',item:'Mykonos Small Group Tour (4 adults × $118)',amt:472.00,ccy:'USD',payer:'joeteri',conf:true,note:"Teresa's Viator account."},
+{cat:'Tour',item:'Venice Full Day (Tour Guy)',amt:824.72,ccy:'USD',payer:'lorene',conf:true},
+{cat:'Tour',item:'Galileo Museum (×4 tickets)',amt:60.00,ccy:'EUR',payer:'joeteri',conf:true,note:"Joseph Mark Limber's b-ticket.com account, Visa."},
+{cat:'Tour',item:'Cappelle Medicee (×4 tickets)',amt:56.00,ccy:'EUR',payer:'joeteri',conf:true,note:"Joseph Mark Limber's b-ticket.com account, Visa."},
+{cat:'Tour',item:'Leonardo Da Vinci Museum',amt:48.48,ccy:'USD',payer:'joeteri',conf:true,note:"Teresa's Viator account, card ••••6773."},
+{cat:'Tour',item:'Catacombs of Priscilla',amt:48.00,ccy:'EUR',payer:'lorene',conf:true},
+{cat:'Tour',item:'Gluten-Free Pasta Class, Rome',amt:144.00,ccy:'USD',payer:'joeteri',conf:true,note:'Booked by Teresa.'},
+{cat:'Tour',item:"Vatican Museums + Sistine + St. Peter's (Tour Guy)",amt:721.16,ccy:'USD',payer:'lorene',conf:true},
+{cat:'Tour',item:'Private Colosseum + Arena Floor (Tour Guy)',amt:1018.70,ccy:'USD',payer:'lorene',conf:true},
+{cat:'Refund',item:'Vatican Dome Climb refund (original booking #1117150, replaced by the Vatican tour above)',amt:-249.96,ccy:'USD',payer:'lorene',conf:false,note:'Assumed to net against Lorene\'s Vatican-family bookings — confirm.'}
+];
+
+const budgetPoints=[
+{item:'Anise Aluma Athens (2 rooms, 100,000 Hilton Honors points — 50,000/room)',payer:'lorene',note:"Covers the whole group's first night. Lorene redeemed her own Hilton Honors points."},
+{item:"Sheraton Rome Parco de&#39; Medici (2 rooms, 48,000 Marriott Bonvoy points)",payer:'joeteri',note:"Covers the whole group's last night. Joe redeemed his own Bonvoy points for both rooms; the small cash tax portion is in the itemized table above."}
+];
+
+const budgetPending=[
+{item:'Idolina Guest House, Montalcino — €262.62',note:'Due at the property (cash), not yet paid by anyone. Split 4 ways whenever it\'s settled at check-in.'},
+{item:'Viking OST cruise fare (all 4 travelers)',note:'Booked before this project started — the fare isn\'t on file. Add the actual amount if you want the cruise folded into this settle-up.'},
+{item:'International flights — Delta / Aer Lingus (all 4 travelers)',note:'Booking confirmations are on file (see Transportation tab) but fare amounts weren\'t captured. Add them if you want flights included here.'}
+];
+
+function renderBudget(){
+  const table=document.getElementById('bu-table');
+  if(!table)return;
+  table.innerHTML='<tr><th>Category</th><th>Item</th><th>Amount</th><th>Paid By</th></tr>'+budgetItems.map(x=>{
+    const usd=x.ccy==='EUR'?x.amt*EUR_USD:x.amt;
+    const amtTxt=x.ccy==='EUR'?('€'+x.amt.toFixed(2)+' <span style="color:#999">(~$'+usd.toFixed(2)+')</span>'):('$'+x.amt.toFixed(2));
+    const confBadge=x.conf?'':' <span style="color:#e67e22;font-size:11px">⚠ unconfirmed</span>';
+    const noteTxt=x.note?'<br><span style="color:#999;font-size:11px">'+x.note+'</span>':'';
+    return '<tr><td>'+x.cat+'</td><td>'+x.item+noteTxt+'</td><td>'+amtTxt+'</td><td>'+payerLabel[x.payer]+confBadge+'</td></tr>';
+  }).join('');
+
+  const totalsByPayer={joeteri:0,lorene:0,carla:0};
+  let grandTotal=0;
+  budgetItems.forEach(x=>{const usd=x.ccy==='EUR'?x.amt*EUR_USD:x.amt;totalsByPayer[x.payer]+=usd;grandTotal+=usd;});
+  const fairShare={};
+  Object.keys(payerShare).forEach(k=>{fairShare[k]=grandTotal*payerShare[k]/4;});
+  function fmt(n){return (n<0?'-$':'$')+Math.abs(n).toFixed(2);}
+
+  let html='<table><tr><th>Party</th><th>Paid</th><th>Fair Share</th><th>Net</th></tr>';
+  ['joeteri','lorene','carla'].forEach(k=>{
+    const net=totalsByPayer[k]-fairShare[k];
+    const netTxt=net>0.5?('<strong style="color:#27ae60">Owed '+fmt(net)+'</strong>'):(net<-0.5?('<strong style="color:#c0392b">Owes '+fmt(-net)+'</strong>'):'Settled up');
+    html+='<tr><td>'+payerLabel[k]+'</td><td>'+fmt(totalsByPayer[k])+'</td><td>'+fmt(fairShare[k])+'</td><td>'+netTxt+'</td></tr>';
+  });
+  html+='</table>';
+  html+='<p style="margin-top:10px;font-size:12px;color:#888">Based on '+budgetItems.length+' already-paid items totaling '+fmt(grandTotal)+', split evenly 4 ways ('+fmt(grandTotal/4)+'/person). EUR converted at ~'+EUR_USD+' USD for this math only. Excludes loyalty points redemptions and items not yet paid — see below.</p>';
+  document.getElementById('bu-summary').innerHTML=html;
+
+  document.getElementById('bu-points').innerHTML=budgetPoints.map(p=>'<div class="qr-row" style="margin-bottom:8px"><span class="qr-icon">🎁</span><span class="qr-text"><strong>'+p.item+'</strong> — '+payerLabel[p.payer]+'<br><span style="color:#888;font-size:12px">'+p.note+'</span></span></div>').join('');
+
+  document.getElementById('bu-pending').innerHTML=budgetPending.map(p=>'<div class="qr-row" style="margin-bottom:8px"><span class="qr-icon">⏳</span><span class="qr-text"><strong>'+p.item+'</strong><br><span style="color:#888;font-size:12px">'+p.note+'</span></span></div>').join('');
+}
+renderBudget();
+/* ===== A3 BUDGET END ===== */
+
 const stops=[
 {grp:'Athens Hotel',cat:'hotel-booked',region:'athens',lat:37.9805,lng:23.7237,title:'🏨 Anise Aluma Athens (Tapestry/Hilton)',sub:'Fri Jul 10 · Conf. #3471385009',note:'Evripidou 82. 2 rooms. 100k Hilton pts. Cancel by Jul 9.',wiki:'Athens'},
 {grp:'Areopagus',cat:'stop',region:'athens',lat:37.9719,lng:23.7229,title:'⛰️ Areopagus (Mars Hill)',sub:'Fri Jul 10 · Free',note:'~15 min walk from the hotel. No ticket needed. Overlooks the Ancient Agora — birthplace of Stoicism (Stoa Poikile) and where Socrates held court. Sunset views of the Acropolis. Marble steps worn smooth — go slow.',wiki:'Areopagus'},
@@ -770,7 +867,7 @@ const stops=[
 {grp:'Hotel Duomo',cat:'hotel-booked',region:'umbria',lat:42.7176,lng:12.1130,title:'🏨 Hotel Duomo — Orvieto',sub:'Tue–Wed Jul 28–29 · Conf. #72074704255117',note:'Vicolo di Maurizio 7. Steps from Duomo. $407.72. Check-in 2–10 PM. Cancel free until Jul 26.',wiki:'Orvieto'},
 {grp:'Orvieto',cat:'stop',region:'umbria',lat:42.7171,lng:12.1133,title:'⛪ Orvieto Cathedral + Underground',sub:'Tue Jul 28 · Afternoon',note:'Gothic facade. Signorelli frescoes. Orvieto Underground (~€6/pp, orvietounderground.it).',wiki:'Orvieto Cathedral'},
 {grp:'La Residenza',cat:'hotel-booked',region:'rome',lat:41.9057,lng:12.4884,title:'🏨 La Residenza — Rome',sub:'Wed–Fri Jul 29–31 · Conf. #5182.430.764',note:'Via Emilia 22-24, Via Veneto. PIN 4456. 2 rooms, 4 adults. Breakfast included. No parking at property. <a href="tel:+390648807789" class="phlink">+39 06 488 0789</a>.',wiki:'Via Veneto'},
-{grp:'Sheraton Parco Medici',cat:'hotel-booked',region:'rome',lat:41.7975,lng:12.2680,title:"🏨 Sheraton Rome Parco de' Medici (airport)",sub:'Fri–Sat Jul 31–Aug 1 · Bonvoy points',note:'Viale Salvatore Rebecchini 145. Booked with Bonvoy points (24,000 pts + €15 tax per room, per night). Conf. #96267414 (Limber) &amp; #96274913 (Guernsey). Near FCO — last night before the flight home.',wiki:''},
+{grp:'Sheraton Parco Medici',cat:'hotel-booked',region:'rome',lat:41.7975,lng:12.2680,title:"🏨 Sheraton Rome Parco de' Medici (airport)",sub:'Fri–Sat Jul 31–Aug 1 · Bonvoy points',note:"Viale Salvatore Rebecchini 145. Booked with Joe's Bonvoy points for both rooms (24,000 pts + €15 tax per room, per night). Conf. #96267414 (Limber) &amp; #96274913 (Guernsey). Near FCO — last night before the flight home.",wiki:''},
 {grp:'Scavi',cat:'alternate',region:'rome',lat:41.9016,lng:12.4539,title:'🕯️ Vatican Scavi / Necropolis (Optional)',sub:'Wed Jul 29 afternoon · Optional',note:'Only 250/day — book at visite.basilicasanpietro.va if interested. 90-min small group. St. Peter\'s tomb. If doing it, finish by ~4 PM for the cooking class.',wiki:'Vatican Necropolis'},
 {grp:'Pantheon',cat:'stop',region:'rome',lat:41.8986,lng:12.4769,title:'🏛️ Pantheon',sub:'Book pantheonroma.com · ~€5/pp',note:'World\'s largest unreinforced concrete dome. Book in advance.',wiki:'Pantheon, Rome'},
 {grp:'Vatican',cat:'tour-booked',region:'rome',lat:41.9065,lng:12.4536,title:'🕍 Vatican Museums — Meeting Point',sub:'Thu Jul 30 · 7:15 AM · Tour Guy #1123725',note:'Under Michelangelo and Raphael statues. $721.16, pay Jul 8. Walks Inside Rome. Max 10.',wiki:'Vatican Museums'},
