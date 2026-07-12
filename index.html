@@ -177,6 +177,7 @@ p { font-size:13px; line-height:1.7; color:#444; margin-bottom:7px; }
   <div class="tab" onclick="showTab('tr',this)">Transportation</div>
   <div class="tab" onclick="showTab('bu',this)">💰 Budget</div>
   <div class="tab" onclick="showTab('qr',this)">⚡ Quick Ref</div>
+  <div class="tab" onclick="showTab('su',this)">📱 Setup</div>
 </div>
 <div id="bottomnav">
   <button data-tab="ov" class="bn active" onclick="navTab('ov')"><span>🏠</span>Home</button>
@@ -186,6 +187,7 @@ p { font-size:13px; line-height:1.7; color:#444; margin-bottom:7px; }
   <button data-tab="tr" class="bn" onclick="navTab('tr')"><span>🚗</span>Travel</button>
   <button data-tab="bu" class="bn" onclick="navTab('bu')"><span>💰</span>Budget</button>
   <button data-tab="qr" class="bn" onclick="navTab('qr')"><span>⚡</span>Quick</button>
+  <button data-tab="su" class="bn" onclick="navTab('su')"><span>📱</span>Setup</button>
 </div>
 
 <!-- OVERVIEW -->
@@ -1615,6 +1617,49 @@ document.addEventListener('DOMContentLoaded',function(){
 <div id="tab-qr" class="panel">
   <div id="qr-content"></div>
   <div id="qr-tips"></div>
+</div>
+
+<!-- PHONE SETUP -->
+<div id="tab-su" class="panel">
+<div class="al alb"><strong>📱 Phone Setup (mid-trip):</strong> Joe's phone was left on the plane in Rome (Delta Lost Report #2734861). Until it's recovered or replaced, use <strong>Teri's phone</strong> for Claude, mobile data, and — importantly — GPS tracking. Work through the three checklists below on hotel or ship Wi-Fi.</div>
+
+<div class="section"><div class="sh-static">🤖 1. Reach Claude &amp; this trip on Teri's phone</div><div class="sb">
+<p>Ask trip questions on the go — sign in as Joe, since his phone is gone.</p>
+<ol>
+<li>Install the <strong>Claude</strong> app from the Google Play Store (search "Claude by Anthropic").</li>
+<li>Open it → <strong>Sign in</strong> with Joe's login: <strong>jmlmail53@gmail.com</strong>. <em>If it asks for a verification code, pick the <strong>email</strong> option — not a text or authenticator on the lost phone.</em></li>
+<li>Bottom menu → <strong>Projects</strong> → open <strong>Travel</strong> (the Greece &amp; Italy project).</li>
+<li>Tap <strong>New chat</strong> inside the project and ask away — e.g. "What's on for tomorrow?" or "Where's the Vatican tour meeting spot?" The project already knows the itinerary.</li>
+</ol>
+<p style="color:#888;font-size:12px">⚠️ Editing and publishing this website runs in a desktop session tied to the PC folder, so <strong>site changes must be done from the computer</strong>. From the phone you can still ask questions and note changes you want made.</p>
+</div></div>
+
+<div class="section"><div class="sh-static">📶 2. Airalo eSIM (data abroad)</div><div class="sb">
+<p>Use the <strong>Eurolink</strong> (Europe) plan — it covers every country on this trip: Greece, Italy, Croatia, Slovenia, and Montenegro.</p>
+<ol>
+<li>On Wi-Fi, install <strong>Airalo</strong> from the Play Store; sign in or create an account.</li>
+<li><strong>Store → Regional → Europe (Eurolink)</strong>. Pick a data size (≈5–10 GB is plenty for maps and messaging over the remaining weeks). Before paying, confirm the coverage list includes Greece, Italy, Croatia, Slovenia, and Montenegro. Buy.</li>
+<li><strong>My eSIMs</strong> → tap the new eSIM → <strong>Install or share → Start installation</strong> → follow the prompts. Don't leave the screen until it finishes (can take a few minutes).</li>
+<li>Phone <strong>Settings → Connections → SIM manager</strong>: set the <strong>Airalo</strong> eSIM as <strong>Mobile data</strong> and turn <strong>Data roaming ON</strong> for the Airalo line.</li>
+<li>Keep Teri's <strong>Verizon</strong> line for calls and texts, but turn its <strong>Data roaming OFF</strong> to avoid charges.</li>
+<li>It activates once it grabs a local network (may take a few minutes; toggle Airplane mode to nudge it). Test by loading a page with Wi-Fi off.</li>
+</ol>
+<p style="color:#888;font-size:12px">Data-only — no calls or texts on the Airalo line. If data won't connect, open the eSIM's in-app instructions and check the APN. Running low? Top up in the app.</p>
+</div></div>
+
+<div class="section"><div class="sh-static">📍 3. Polarsteps GPS tracking — make THIS the tracker</div><div class="sb">
+<div class="al aly"><strong>Do this soon:</strong> Polarsteps records the route from only <strong>one phone at a time</strong>, and Joe's phone was the tracker — so tracking likely stopped when it was lost. Turn Teri's phone into the active tracker to capture the rest of the trip.</div>
+<ol>
+<li>Install <strong>Polarsteps</strong> from the Play Store and open it.</li>
+<li><strong>Sign in as Joe</strong> (same login as Claude) — the "Greece &amp; Italy 2026" trip is already there. <em>(Alternative: use Teri's own Polarsteps account if Joe adds her as a Travel Buddy and she accepts the invite.)</em></li>
+<li>Open the <strong>Greece &amp; Italy 2026</strong> trip → <strong>trip settings</strong> → <strong>Travel Tracker</strong> → set <strong>this phone</strong> as the tracking device.</li>
+<li>When prompted for location, choose <strong>Allow all the time</strong> and enable <strong>Precise location</strong>. Then exempt Polarsteps from battery optimization so it keeps logging in your pocket.</li>
+<li>Confirm the tracker toggle is <strong>ON</strong>. It logs offline and syncs on Wi-Fi — no mobile data needed for tracking.</li>
+<li><em>Optional backup:</em> leave <strong>Google Timeline</strong> on (Settings → Location → Location services → Timeline).</li>
+</ol>
+<p style="color:#888;font-size:12px">Tracking uses ~4%/day battery — carry the power bank on long port days. Everyone can still add photos and daily notes to the same trip.</p>
+</div></div>
+
 </div>
 <script>
 /* Move the Tips block into the Quick Ref tab (merged from old Tips & Packing tab) */
