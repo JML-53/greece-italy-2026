@@ -2,6 +2,8 @@
 
 **Why now:** Joe's phone was left on the Delta aircraft in Rome (Lost Report **#2734861**). Until it's recovered or replaced, Teri's phone is the group's device for reaching Claude, getting data abroad, and — most urgently — recording the GPS route.
 
+> **Also:** Call Verizon to **suspend Joe's lost line** — it stops charges on it and protects the number/eSIM while the phone is missing.
+
 Do these on hotel or ship Wi-Fi. Assumes Teri's phone is a Samsung Galaxy (Android); iPhone steps are nearly identical.
 
 ---
@@ -29,10 +31,12 @@ Use the **Eurolink (Europe)** plan — it covers every country on this trip: **G
 - [ ] Before paying, confirm the coverage list includes **Greece, Italy, Croatia, Slovenia, Montenegro**. Buy.
 - [ ] **My eSIMs** → tap the new eSIM → **Install or share → Start installation** → follow the prompts. Don't leave the screen until it finishes (a few minutes).
 - [ ] **Settings → Connections → SIM manager**: set the **Airalo** eSIM as **Mobile data**, and turn **Data roaming ON** for the Airalo line.
-- [ ] Keep Teri's **Verizon** line for calls/texts, but turn its **Data roaming OFF** to avoid charges.
+- [ ] **Turn the Verizon line OFF** — SIM manager → switch the line off (or turn its data roaming off and don't call/text on it). Verizon's overseas pass is **$12/day per line** and triggers on any call, any text (even incoming), or any data — all now covered by Airalo. Use **WhatsApp / iMessage / FaceTime / email** for talk & text. Everyone on Verizon should do this.
 - [ ] It activates once it grabs a local network (toggle Airplane mode to nudge it). **Test:** load a webpage with Wi-Fi off.
 
-**Notes:** Data-only — no calls/texts on the Airalo line. If data won't connect, open the eSIM's in-app instructions and check the APN. Top up in the app if you run low.
+**Notes:** Airalo is data-only — no calls/texts on it. If data won't connect, open the eSIM's in-app instructions and check the APN. Top up in the app if you run low.
+
+**US number & 2FA:** With the Verizon line off you won't receive SMS security codes. If you need one, toggle that line's roaming on for the day (accept the $12), get the code, then turn it off — or switch that login to app/email codes.
 
 ---
 
