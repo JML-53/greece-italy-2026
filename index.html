@@ -1598,4 +1598,29 @@ function initTripMode(){
   },350);
 }
 
-/* =================================
+/* ============================================
+   INIT
+   ============================================ */
+document.addEventListener('DOMContentLoaded',function(){
+  hideExpiredAlerts();
+  renderQuickRef();
+  initTodayHighlight();
+  initTripMode();
+  setTimeout(initCopyable,200);
+});
+
+</script>
+
+<!-- QUICK REF -->
+<div id="tab-qr" class="panel">
+  <div id="qr-content"></div>
+  <div id="qr-tips"></div>
+</div>
+<script>
+/* Move the Tips block into the Quick Ref tab (merged from old Tips & Packing tab) */
+(function(){var t=document.getElementById('tips-block'),d=document.getElementById('qr-tips');if(t&&d){d.appendChild(t);t.style.display='';}})();
+</script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA_L3t4bPLYe-MTVSmbolMAzGyHcoXN9Gc&callback=initGoogleMap&loading=async"></script>
+</body>
+</html>
+
