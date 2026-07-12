@@ -1,1 +1,4 @@
 desktop.ini
+
+# Full-res photo originals stay local, never committed (repo/Pages size)
+Photos/originals/

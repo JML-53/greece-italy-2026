@@ -178,6 +178,7 @@ p { font-size:13px; line-height:1.7; color:#444; margin-bottom:7px; }
   <div class="tab" onclick="showTab('bu',this)">💰 Budget</div>
   <div class="tab" onclick="showTab('qr',this)">⚡ Quick Ref</div>
   <div class="tab" onclick="showTab('su',this)">📱 Setup</div>
+  <div class="tab" onclick="showTab('ph',this)">📷 Photos</div>
 </div>
 <div id="bottomnav">
   <button data-tab="ov" class="bn active" onclick="navTab('ov')"><span>🏠</span>Home</button>
@@ -188,6 +189,7 @@ p { font-size:13px; line-height:1.7; color:#444; margin-bottom:7px; }
   <button data-tab="bu" class="bn" onclick="navTab('bu')"><span>💰</span>Budget</button>
   <button data-tab="qr" class="bn" onclick="navTab('qr')"><span>⚡</span>Quick</button>
   <button data-tab="su" class="bn" onclick="navTab('su')"><span>📱</span>Setup</button>
+  <button data-tab="ph" class="bn" onclick="navTab('ph')"><span>📷</span>Photos</button>
 </div>
 
 <!-- OVERVIEW -->
@@ -920,6 +922,7 @@ function _doInitMap(){
     });
     gmMarkers.push({marker:m,stop:s});
   });
+  if(window._renderPhotoPins){window._renderPhotoPins();}
   _buildFilters();
 }
 
@@ -1667,6 +1670,62 @@ document.addEventListener('DOMContentLoaded',function(){
 (function(){var t=document.getElementById('tips-block'),d=document.getElementById('qr-tips');if(t&&d){d.appendChild(t);t.style.display='';}})();
 </script>
 <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA_L3t4bPLYe-MTVSmbolMAzGyHcoXN9Gc&callback=initGoogleMap&loading=async"></script>
+
+<!-- PHOTOS -->
+<div id="tab-ph" class="panel">
+<div class="al alb"><strong>📷 Trip Photos:</strong> Photos everyone drops into the shared Google Drive folder get sorted by day and place and published here (run the <em>trip-photo-organizer</em> skill to pull in new ones). Tap a photo to enlarge; geotagged shots also drop a pin on the Map tab.</div>
+<div id="ph-gallery"></div>
+</div>
+
+<script src="photos-manifest.js"></script>
+<script>
+(function(){
+  function P(){return window.PHOTOS||[];}
+  function esc(s){return (s||'').replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
+  function renderGallery(){
+    var el=document.getElementById('ph-gallery'); if(!el) return;
+    var ph=P();
+    if(!ph.length){el.innerHTML='<div class="section"><div class="sb"><p style="color:#888">No photos yet. As they are added to the shared Google Drive folder and the photo skill runs, they will appear here grouped by day and place.</p></div></div>'; return;}
+    var groups={}, order=[];
+    ph.forEach(function(p){var k=p.folder||p.date||'Undated'; if(!groups[k]){groups[k]=[];order.push(k);} groups[k].push(p);});
+    order.sort();
+    var html='';
+    order.forEach(function(k){
+      html+='<div class="section"><div class="sh-static">'+esc(k)+' <span style="color:#999;font-weight:normal">('+groups[k].length+')</span></div><div class="sb"><div style="display:flex;flex-wrap:wrap;gap:6px">';
+      groups[k].forEach(function(p){
+        var t=p.thumb||p.web;
+        html+='<img loading="lazy" src="'+esc(t)+'" alt="'+esc(p.location||k)+'" data-full="'+esc(p.web||t)+'" style="width:104px;height:104px;object-fit:cover;border-radius:6px;cursor:pointer" onclick="_phOpen(this)">';
+      });
+      html+='</div></div></div>';
+    });
+    el.innerHTML=html;
+  }
+  window._phOpen=function(img){
+    var ov=document.getElementById('ph-lightbox');
+    if(!ov){ov=document.createElement('div');ov.id='ph-lightbox';ov.style.cssText='position:fixed;inset:0;background:rgba(0,0,0,.9);display:flex;align-items:center;justify-content:center;z-index:99999;cursor:zoom-out';ov.onclick=function(){ov.style.display='none';};document.body.appendChild(ov);}
+    ov.innerHTML='<img src="'+img.getAttribute('data-full')+'" style="max-width:96%;max-height:96%;border-radius:8px">';
+    ov.style.display='flex';
+  };
+  window._renderPhotoPins=function(){
+    try{
+      if(typeof gmap==='undefined'||!gmap||typeof google==='undefined'||!google.maps) return;
+      var iw=new google.maps.InfoWindow({maxWidth:260});
+      P().forEach(function(p){
+        if(typeof p.lat!=='number'||typeof p.lng!=='number') return;
+        var m=new google.maps.Marker({position:{lat:p.lat,lng:p.lng},map:gmap,title:p.location||p.folder||'Photo',
+          icon:{path:google.maps.SymbolPath.CIRCLE,fillColor:'#e84393',fillOpacity:1,strokeColor:'#fff',strokeWeight:2,scale:6}});
+        m.addListener('click',function(){
+          iw.setContent('<div style="max-width:240px"><img src="'+(p.thumb||p.web)+'" style="width:100%;border-radius:6px"><div style="font-size:12px;margin-top:4px"><strong>'+esc(p.location||'')+'</strong><br>'+esc(p.folder||'')+'</div></div>');
+          iw.open(gmap,m);
+        });
+      });
+    }catch(e){}
+  };
+  if(document.readyState!=='loading') renderGallery();
+  else document.addEventListener('DOMContentLoaded', renderGallery);
+})();
+</script>
+
 </body>
 </html>
 
