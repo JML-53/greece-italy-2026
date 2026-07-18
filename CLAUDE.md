@@ -58,12 +58,17 @@ Fetched on pin click via the `pageimages` API using each stop's `wiki` field (em
 ## trip-stops.kml — MUST stay in sync with stops[]
 `trip-stops.kml` in this repo is generated from the `stops[]` array in index.html and is linked from Quick Ref (offline My Maps backup). **Whenever stops are added/removed/edited in index.html, regenerate `trip-stops.kml` to match and commit both files together.**
 
-## ⚠️ Mount-staleness hazard (Cowork sessions) — MANDATORY pre-commit check
-The Cowork bash sandbox reads the repo through a mount that can serve STALE or TRUNCATED file content and stat metadata (observed 2026-07-05: a truncated index.html was committed and briefly broke the live site; later a stale CLAUDE.md dropped this very section).
-Before EVERY commit in a Cowork session:
-1. `touch <file>` before `git add` (stat cache lies; without this, edits silently fail to stage)
-2. After `git add`, verify the STAGED content, not the worktree: `git show :index.html | tail -c 20` must end with `</html>`, and `git show :index.html | grep -c "wiki:'"` must equal the expected stop count. For other files, grep the staged copy for BOTH the newest change AND a known older marker — staleness shows up as the old marker missing.
-3. GATE the commit on those checks — run them as separate commands and abort if wrong; do not chain check+commit with `&&`
-4. If staged content is truncated/stale: STOP — do not commit. Fallback: clone fresh to /tmp with the PAT, apply the change there, verify, push from /tmp, then `cp` the pushed files back over the mount and confirm the host copy matches
-5. After any incident, resync local refs: fetch + `git update-ref refs/heads/main FETCH_HEAD` (do NOT `git reset --hard` through the mount)
-Claude Code cloud sessions clone directly from GitHub and are immune to this — the hazard is Cowork-local only.
+## ⚠️ Mount-staleness hazard (Cowork sessions) — MANDATORY push protocol
+**Incident history:** 2026-07-05 — truncated index.html committed; stale CLAUDE.md dropped this very section. 2026-07-18 — THREE consecutive pushes truncated at exactly 169,160 bytes (the file's size at the last good commit), killing the Google Maps loader and Photos gallery on the live site for a day. All greps and syntax checks passed because the cut was near the end of the file.
+
+**Mechanism:** after files are edited with the host file tools (Read/Write/Edit), the bash sandbox's mounted view of those files can FREEZE at the file's old byte length. Every bash read — `cat`, `cp`, `wc`, `grep`, `git add`, `git commit` — then sees only the first N bytes. The file keeps growing on the host; bash keeps serving the stale prefix. Content checks against early sections pass; the tail is silently gone.
+
+**IRON RULES — no exceptions:**
+1. **The mounted repo is NEVER a source for commit content.** Do not `git add` inside the mounted repo. Do not `cp` or `cat` a mounted file into a /tmp clone. (The 2026-07-18 truncations followed the old "push from /tmp" fallback but sourced the payload with `cp` from the mount — that is the precise mistake this rule exists to prevent.)
+2. **Materialize commit content from git + explicit edits only:** in a fresh /tmp clone, start from `git show origin/main:<file>` and apply the session's changes programmatically (python `str.replace` with `assert content.count(old_string)==1` per edit), or — for small files / new files — write the complete content via heredoc taken from Read-tool output. The host file as seen by Read/Edit is the source of truth; bash cannot be trusted to read it.
+3. **Run the automated gate before EVERY push that includes index.html:** `node tests/verify-site-push.js <candidate-file>` (script lives in the private planning repo's `tests/`). It verifies: file ends with `</html>`, `<script>`/`</script>` tags balanced, Maps-API + photos-manifest tail markers present, byte size sane vs origin/main, and the A2 render regression passes. Run it as its own command and read the output — never chain gate and push with `&&` in one line.
+4. **After pushing, verify what GitHub actually stored:** `git fetch origin && git show origin/main:index.html | tail -c 12` must print `</html>`, and `| wc -c` must match the local staged size.
+5. **Truncation signature:** a new commit whose file size EXACTLY equals any earlier commit's size after content was added. When in doubt: `git log --format='%h' -5 -- index.html | xargs -I{} sh -c 'printf "{} "; git show {}:index.html | wc -c'`.
+6. `touch <file>` does NOT fix this and staged-content greps of early sections do NOT catch it. Only rules 1–4 are protective.
+7. After any incident, resync local refs with fetch + `git update-ref refs/heads/main FETCH_HEAD` (never `git reset --hard` through the mount).
+Claude Code cloud sessions clone directly from GitHub and are immune — the hazard is Cowork-local only.
