@@ -328,7 +328,7 @@ p { font-size:13px; line-height:1.7; color:#444; margin-bottom:7px; }
 <div class="section">
 <div class="sh" onclick="toggleSection('cruise-info')">🚢 Viking Cruise — OST <span class="sh-chevron open" id="chev-cruise-info">▾</span></div>
 <div id="cruise-info" class="sc"><div class="sb">
-<div class="al aly"><strong>⚠️ Verify with Viking:</strong> Some voyages shifted disembarkation from Chioggia to Fusina. Confirm before sailing.</div>
+<div class="al alg"><strong>✅ Confirmed:</strong> Viking Shuttle from Chioggia to Venice Stazione Marittima, departing <strong>Mon Jul 20, 8:00 AM</strong>. From Marittima: People Mover → Piazzale Roma → vaporetto Line 1 (dir. Lido) → San Stae → 5-min walk. Full steps on the Jul 20 itinerary day; waypoints on the map ("Jul 20 Arrival Route" toggle).</div>
 <div class="ig" style="margin-bottom:12px">
 <div class="ib"><h4>Limbers</h4><p>Booking #8663390 · Stateroom 4071</p></div>
 <div class="ib"><h4>Guernsey/Santi</h4><p>Booking #8663394 · Stateroom 4073</p></div>
@@ -344,7 +344,7 @@ p { font-size:13px; line-height:1.7; color:#444; margin-bottom:7px; }
 <tr><td>Jul 17</td><td>Fri</td><td>Dubrovnik</td><td>Dubrovnik on Foot</td><td>8:45 AM · 3 hrs</td><td>Included</td></tr>
 <tr><td>Jul 18</td><td>Sat</td><td>Zadar</td><td>Walking Tour of Zadar</td><td>10:30 AM · 2 hrs</td><td>Included</td></tr>
 <tr><td>Jul 19</td><td>Sun</td><td>Koper, Slovenia</td><td>Postojna Cave &amp; Predjama Castle</td><td>9:15 AM · 7.5 hrs</td><td>$199/pp</td></tr>
-<tr><td>Jul 20</td><td>Mon</td><td>Chioggia</td><td>Disembark. Private van to Venice Piazzale Roma (~50 min), then vaporetto Line 1 to San Stae.</td><td>Morning</td><td>Van TBD</td></tr>
+<tr><td>Jul 20</td><td>Mon</td><td>Chioggia</td><td>Viking Shuttle 8:00 AM → Stazione Marittima → People Mover (€1.50) → Piazzale Roma → Vaporetto L1 dir. Lido, 4 stops → San Stae → 5-min walk.</td><td>8:00 AM</td><td>Shuttle ✅</td></tr>
 </table>
 </div></div></div>
 
@@ -451,9 +451,13 @@ tip:'Cave is 50°F year-round — bring a light layer.'},
 {id:'I1',date:'Mon Jul 20',title:'Disembark → Venice',region:'venice',color:'#1D9E75',bg:'#e8f7f1',tc:'#0a6b50',
 sub:'Arrive from Chioggia · B&B Ca\' Bonvicini, Santa Croce · Conf. #5062824483 · Rest day',
 blocks:[
-{t:'7–9 AM',c:'Leisurely last breakfast onboard.'},
-{t:'9–10 AM',c:'Disembark. <strong>Private van</strong> Chioggia → Piazzale Roma, ~50 min. Then <strong>vaporetto Line 1</strong> from Piazzale Roma to <strong>San Stae</strong> (3 stops, ~10 min, €9.50/pp) + 5-min walk to hotel.'},
-{t:'~11 AM–noon',c:'Arrive <strong>B&amp;B Ca\' Bonvicini</strong>, Santa Croce 2160. Check-in window 11 AM–noon — Giacomo staffs reception until noon. If delayed, call/WhatsApp <a href="tel:+393473389998" class="phlink">+39 347 338 9998</a> for self-entry key instructions. Joe &amp; Teri: double-bed room; Lorene &amp; Carla: twin beds. Canal-view rooms on 2nd &amp; 3rd floors (one small canal balcony, one rooftop terrace) — stairs only, no elevator.'},
+{t:'6:45–7:30 AM',c:'Last breakfast onboard. Big bags out per Viking\'s disembark instructions; keep a daypack with meds, valuables, water, and phones.'},
+{t:'8:00 AM',c:'<strong>STEP 1 — Viking Shuttle (CONFIRMED).</strong> Board the shuttle bus at the Chioggia terminal — departs <strong>8:00 AM sharp</strong>. ~75 min ride to <strong>Venice Stazione Marittima</strong> (the cruise port on Venice proper).'},
+{t:'~9:15 AM',c:'<strong>STEP 2 — People Mover to Piazzale Roma.</strong> Off the bus, follow signs "<em>People Mover / Piazzale Roma</em>" to the elevated tram station inside the port. Machines take contactless cards — 4 × €1.50. Ride to the END of the line: <strong>Piazzale Roma</strong> (1 stop, 3 min, runs every ~4 min). Elevators at both ends — no stair-hauling.'},
+{t:'~9:35 AM',c:'<strong>STEP 3 — Vaporetto Line 1 toward LIDO.</strong> From the People Mover exit, walk ~2 min to the Grand Canal and the ACTV docks. Buy at machine/booth (€9.50/pp single, valid 75 min) and <strong>tap to validate</strong> at the white reader before boarding. Board <strong>LINE 1, direction LIDO</strong>. Ride <strong>4 stops</strong>: Ferrovia → Riva de Biasio → San Marcuola → <strong>SAN STAE</strong> (~13 min). Sit outside up front — this is your first Grand Canal cruise, enjoy it.'},
+{t:'~9:55 AM',c:'<strong>STEP 4 — Walk to the hotel (5 min, ~2 small bridges).</strong> Exit the pontile with the San Stae church on your left. Straight up <strong>Salizada San Stae</strong> → left at <strong>Ramo Ponte de la Rioda</strong>, over the bridge → through <strong>Campo Santa Maria Mater Domini</strong> → right into <strong>Calle Ca\' Bonvicini</strong>. Hotel: Santa Croce 2160. 📍 <a href="images/bonvicini-directions.jpg" target="_blank">Hotel\'s walking map</a>.'},
+{t:'~10 AM',c:'Likely early — check-in opens 11 AM. WhatsApp Sabina (<a href="tel:+393473389998" class="phlink">+39 347 338 9998</a>) to drop bags, then coffee in <strong>Campo San Giacomo dell\'Orio</strong> (3 min away) while you wait.'},
+{t:'11 AM–noon',c:'Check in at <strong>B&amp;B Ca\' Bonvicini</strong> — Giacomo staffs reception until noon; if delayed, call/WhatsApp for self-entry key instructions. Joe &amp; Teri: double-bed room; Lorene &amp; Carla: twin beds. Canal-view rooms on 2nd &amp; 3rd floors (one small canal balcony, one rooftop terrace) — stairs only, no elevator.'},
 {t:'Day',c:'Rest. Dorsoduro walk, Zattere waterfront, long lunch. Early night — 8:45 AM Tour Guy meeting tomorrow.'}
 ],
 log:'⚠️ Ca\' Bonvicini is NON-REFUNDABLE — no cancellation or modification possible. Check-out Wed Jul 22 by 9–10 AM (very early — must reach Marco Polo Airport for 9 AM car pickup). City tax €3/pp/night cash at property. Hosts Sabina, Giacomo &amp; Alberto will send arrival info a few days before — WhatsApp preferred: +39 347 338 9998.',
@@ -708,7 +712,7 @@ const tripTimeline=[
 {d:'Jul 17',w:'Fri',loc:'Cruise — Dubrovnik',b:'bg',note:'Dubrovnik on Foot (incl.) 8:45 AM'},
 {d:'Jul 18',w:'Sat',loc:'Cruise — Zadar',b:'bg',note:'Walking Tour of Zadar (incl.) 10:30 AM'},
 {d:'Jul 19',w:'Sun',loc:'Cruise — Koper',b:'bg',note:'Postojna Cave &amp; Predjama Castle ($199/pp) 9:15 AM'},
-{d:'Jul 20',w:'Mon',loc:'Venice',b:'by',note:"Disembark Chioggia. Private van to Piazzale Roma + vaporetto Line 1 to San Stae. <strong>B&amp;B Ca' Bonvicini</strong>, Santa Croce. Conf. #5062824483. Check-in 11 AM–noon. Rest day."},
+{d:'Jul 20',w:'Mon',loc:'Venice',b:'by',note:"Disembark Chioggia. Viking Shuttle 8 AM → Marittima → People Mover → vaporetto L1 to San Stae. <strong>B&amp;B Ca' Bonvicini</strong>, Santa Croce. Conf. #5062824483. Check-in 11 AM–noon. Rest day."},
 {d:'Jul 21',w:'Tue',loc:'Venice',b:'by',note:"Tour Guy #1118847 · 9 AM St. Mark's + Doge's + Gondola · 1:30 PM Murano &amp; Burano."},
 {d:'Jul 22',w:'Wed',loc:'Ferrara',b:'by',note:"Check out Venice 9–10 AM. ⚠️ Water taxi/ACTV to Marco Polo Airport. Pick up Hertz BMW X1 (#L60845394F2), 9 AM. Drive to Ferrara ~1.5 hrs. <strong>Casa D'Este - Hotel Ferrara</strong>, Conf. #5952657630. Castello Estense, Cathedral, Jewish Ghetto."},
 {d:'Jul 23',w:'Thu',loc:'Florence',b:'by',note:'Drive ~1.5 hrs. Galileo Museum 11:30 AM (booked, order #53553) + Cappelle Medicee 4 PM (booked, order #23524226). <strong>Loft Il Giobertino</strong>, Conf. #5024697136. Check-in 3–4 PM (agreed).'},
@@ -728,7 +732,6 @@ const needsBooking=[
 {icon:'⛪',title:'Mass at Basilica of St. Francis',when:'Sun Jul 26, 5 PM',tag:'ph',tagText:'BOOK NOW',body:'Select "Participation" at <a href="https://sanfrancescoassisi.org/en/reservations/liturgical-celebrations" target="_blank">sanfrancescoassisi.org</a>. Free. Also consider "Moment of Prayer" for Tue Jul 28 AM.'},
 {icon:'🏛️',title:'Pantheon — Rome',when:'Wed Jul 29 evening',tag:'pm',tagText:'HIGH',body:'Book at <a href="https://www.pantheonroma.com" target="_blank">pantheonroma.com</a>. ~€5/pp.'},
 {icon:'⛏️',title:'Orvieto Underground',when:'Tue Jul 28',tag:'pm',tagText:'RECOMMENDED',body:'Book at <a href="https://www.orvietounderground.it" target="_blank">orvietounderground.it</a>. ~€6/pp.'},
-{icon:'🚐',title:'Book private van: Chioggia port → Piazzale Roma',when:'Mon Jul 20, ~9 AM',tag:'ph',tagText:'BOOK NOW',body:'Van for 4 + luggage from the Viking terminal to Piazzale Roma (~50 min, est. €150–200 total). Pantarei Chauffeur Service specializes in Viking/Chioggia pickups: <a href="https://www.pantareichauffeurservice.it/project/viking-cruises-chioggia-port/" target="_blank">pantareichauffeurservice.it</a>. Driver meets at gangway with name sign. Then vaporetto Line 1 to San Stae.'},
 {icon:'🚗',title:'Change Hertz drop-off to Rome (Jul 29)',when:'Before departure',tag:'pm',tagText:'ACTION NEEDED',body:'Reservation #L60845394F2 still has drop-off set for Rome Fiumicino Airport, Aug 1, 7:30 AM. Since La Residenza has no parking, the plan is to return the car in Rome on arrival Jul 29 instead — call Hertz to officially change the drop-off date/location and confirm there\'s no early-return penalty.'}
 ];
 
@@ -843,6 +846,10 @@ const stops=[
 {grp:'Dubrovnik',cat:'cruise',region:'cruise',lat:42.6507,lng:18.0944,title:'🏰 Dubrovnik, Croatia',sub:'Fri Jul 17 · Included',note:'Dubrovnik on Foot. 3 hours.',wiki:'Dubrovnik'},
 {grp:'Zadar',cat:'cruise',region:'cruise',lat:44.1172,lng:15.2199,title:'🎵 Zadar — Sea Organ',sub:'Sat Jul 18 · Included',note:'Walking Tour. Sea Organ + Sun Salutation.',wiki:'Zadar'},
 {grp:'Postojna',cat:'cruise',region:'cruise',lat:45.7830,lng:14.2038,title:'🦎 Postojna Cave, Slovenia',sub:'Sun Jul 19 · $199/pp',note:'Postojna Cave & Predjama Castle. 7.5 hours. 50°F inside.',wiki:'Postojna Cave'},
+{grp:'Arrival Wpt 1',cat:'arrival-route',region:'venice',lat:45.2205,lng:12.2830,title:'🚌 WPT 1 — Viking Shuttle, Chioggia Terminal',sub:'Mon Jul 20 · Departs 8:00 AM sharp',note:'STEP 1: Board the Viking shuttle bus at the Chioggia cruise terminal (luggage out the night before per Viking\'s disembark instructions). Ride ~75 min north to Venice Stazione Marittima. Keep daypacks with meds, valuables, and the hotel info doc with you.',wiki:''},
+{grp:'Arrival Wpt 2',cat:'arrival-route',region:'venice',lat:45.4390,lng:12.3130,title:'🚝 WPT 2 — Stazione Marittima → People Mover',sub:'Mon Jul 20 · ~9:15 AM · €1.50/pp',note:'STEP 2: Off the bus, follow the "People Mover / Piazzale Roma" signs to the elevated People Mover station (short walk within the port area). Buy 4 tickets at the machine (contactless cards OK). Ride ONE stop to the end of the line: Piazzale Roma. 3 minutes, runs every ~4 min. Elevators at both stations — no stairs needed.',wiki:''},
+{grp:'Arrival Wpt 3',cat:'arrival-route',region:'venice',lat:45.4374,lng:12.3193,title:'⛴️ WPT 3 — Piazzale Roma vaporetto pontile',sub:'Mon Jul 20 · ~9:35 AM · €9.50/pp single (75 min)',note:'STEP 3: Exit the People Mover, walk ~2 min toward the Grand Canal to the ACTV vaporetto docks. Buy tickets at the machines or ticket booth — VALIDATE (tap) at the white reader before boarding. Board LINE 1 direction LIDO. Ride 4 stops: Ferrovia → Riva de Biasio → San Marcuola → SAN STAE (~13 min). Grab outdoor seats up front for the Grand Canal show.',wiki:'Grand Canal (Venice)'},
+{grp:'Arrival Wpt 4',cat:'arrival-route',region:'venice',lat:45.4404,lng:12.3303,title:'🚶 WPT 4 — San Stae stop → hotel walk',sub:'Mon Jul 20 · ~9:55 AM · 5 min, ~2 small bridges',note:'STEP 4: Exit the pontile with the San Stae church facade on your left. Walk straight up Salizada San Stae, left at Ramo Ponte de la Rioda, over the bridge, through Campo Santa Maria Mater Domini, then right into Calle Ca\' Bonvicini — hotel is at Santa Croce 2160. Follow the map image: images/bonvicini-directions.jpg. If early (check-in 11 AM), WhatsApp +39 347 338 9998 to drop bags.',wiki:''},
 {grp:'Venice Hotel',cat:'hotel-booked',region:'venice',lat:45.4392,lng:12.3302,title:'🏨 B&B Ca\' Bonvicini — Venice',sub:'Mon–Wed Jul 20–22 · Conf. #5062824483',note:'Santa Croce 2160. NON-REFUNDABLE. Check-in 11 AM–noon. Check-out 9–10 AM (very early!). No elevator — rooms 2nd &amp; 3rd floors. 5-min walk from San Stae vaporetto. <a href="tel:+390412750106" class="phlink">+39 041 275 0106</a> · WhatsApp +39 347 338 9998.',wiki:'Venice'},
 {grp:'Transport',cat:'transport',region:'venice',lat:45.5054,lng:12.3519,title:'🚗 Hertz — Venice Marco Polo Airport',sub:'Wed Jul 22 · 9:00 AM · Conf. #L60845394F2',note:'BMW X1 or similar. $855.85. Water taxi or ACTV Bus 5 from Venice (~20 min). Drop-off Rome FCO Aug 1, 7:30 AM.',wiki:''},
 {grp:'St Marks',cat:'tour-booked',region:'venice',lat:45.4341,lng:12.3387,title:'⛵ Tour Guy Meeting — San Marco Columns',sub:'Tue Jul 21 · 8:45 AM · Tour Guy #1118847',note:'Between columns of San Marco and San Teodoro. $824.72, pay Jun 29.',wiki:'Piazza San Marco'},
@@ -892,7 +899,10 @@ const stops=[
 {grp:'FCO',cat:'transport',region:'rome',lat:41.8034,lng:12.2519,title:'✈️ Fiumicino Airport (FCO)',sub:'Sat Aug 1 · EI 401 to Dublin 7:30 AM · then EI 117 to IAD',note:'Staying at the Sheraton Parco de&#39; Medici nearby the night before — short transfer, no more driving. Hertz car already returned in Rome Jul 29. EI 401 FCO→DUB 7:30 AM (2YK6MN Joe/Teri, 2UGS4F Lorene), EI 117 DUB→IAD lands 3:45 PM (US preclearance in Dublin). Carla: DL 207 FCO→DTW 9:00 AM then DL 369 DTW→SAN (Conf. G3NZ9C), home to San Diego.',wiki:'Leonardo da Vinci International Airport'}
 ];
 
-const catStyles={'hotel-booked':{color:'#7F77DD',size:14},'hotel-tbd':{color:'#b3afed',size:12},'tour-booked':{color:'#e74c3c',size:14},'stop':{color:'#f5a0a0',size:11},'alternate':{color:'#fca5a5',size:10},'cruise':{color:'#1D9E75',size:11},'transport':{color:'#e67e22',size:12}};
+const catStyles={'hotel-booked':{color:'#7F77DD',size:14},'hotel-tbd':{color:'#b3afed',size:12},'tour-booked':{color:'#e74c3c',size:14},'stop':{color:'#f5a0a0',size:11},'alternate':{color:'#fca5a5',size:10},'cruise':{color:'#1D9E75',size:11},'transport':{color:'#e67e22',size:12},'arrival-route':{color:'#2E86DE',size:12}};
+/* Jul 20 arrival route: Chioggia → Marittima → People Mover → P.le Roma → vaporetto L1 → San Stae → hotel */
+const arrivalRoutePath=[[45.2205,12.2830],[45.4380,12.3125],[45.4393,12.3135],[45.4381,12.3187],[45.4374,12.3193],[45.4404,12.3303],[45.4392,12.3302]];
+let _arrivalLine=null;
 const cityRoute=[[37.9755,23.7348],[37.4467,25.3289],[37.6383,21.6317],[39.6243,19.9217],[42.4247,18.7712],[42.6507,18.0944],[44.1194,15.2314],[45.7830,14.2038],[45.4308,12.3254],[44.8381,11.6197],[43.7696,11.2558],[43.5256,11.1673],[43.0551,11.4891],[43.0707,12.6197],[42.7171,12.1133],[41.9028,12.4964],[41.8034,12.2519]];
 // ── Google Maps ────────────────────────────────────────────────────────────
 let gmap=null,gmInfoWindow=null,_gmLoaded=false,_gmWanted=false;
@@ -912,6 +922,11 @@ function _doInitMap(){
   new google.maps.Polyline({
     path:cityRoute.map(([a,b])=>({lat:a,lng:b})),
     strokeColor:'#888',strokeOpacity:0.55,strokeWeight:2,map:gmap
+  });
+  _arrivalLine=new google.maps.Polyline({
+    path:arrivalRoutePath.map(([a,b])=>({lat:a,lng:b})),
+    strokeColor:'#2E86DE',strokeOpacity:0,strokeWeight:3,map:gmap,
+    icons:[{icon:{path:'M 0,-1 0,1',strokeOpacity:0.9,strokeWeight:3,strokeColor:'#2E86DE',scale:3},offset:'0',repeat:'14px'}]
   });
   gmInfoWindow=new google.maps.InfoWindow({maxWidth:320});
   stops.forEach((s,i)=>{
@@ -980,7 +995,8 @@ const _types=[
   {key:'cruise',      label:'Cruise Ports',     color:'#1D9E75'},
   {key:'stop',        label:'Stops & Sights',   color:'#f5a0a0'},
   {key:'alternate',   label:'Alternates',       color:'#fca5a5'},
-  {key:'transport',   label:'Transport',        color:'#e67e22'}
+  {key:'transport',   label:'Transport',        color:'#e67e22'},
+  {key:'arrival-route',label:'Jul 20 Arrival Route',color:'#2E86DE'}
 ];
 
 function _buildFilters(){
@@ -1090,6 +1106,7 @@ function gmTreeFilter(){
     const cb=document.querySelector('[data-stop-idx="'+i+'"]');
     marker.setVisible((!cb||cb.checked)&&at.has(stop.cat));
   });
+  if(_arrivalLine)_arrivalLine.setMap(at.has('arrival-route')?gmap:null);
 }
 
 function gmFilter(){gmTreeFilter();}
@@ -1333,7 +1350,7 @@ var qrDays={
           'No elevator — upper floors via stairs only',
           'City tax €3/pp/night cash at property',
           'Check-out in 2 days: Jul 22, 9–10 AM (must reach Marco Polo Airport)'],
-    notes:['Private van Chioggia → Piazzale Roma ~50 min','Vaporetto Line 1 Piazzale Roma → San Stae (3 stops) + 5-min walk','<a href="images/bonvicini-directions.jpg" target="_blank">Walking map</a> · <a href="images/bonvicini-entry.jpg" target="_blank">Door entry</a> (code in private Drive doc)','Rest day — Dorsoduro, Zattere waterfront']},
+    notes:['8:00 AM Viking Shuttle → Stazione Marittima (~75 min)','People Mover → Piazzale Roma (€1.50/pp, 3 min, elevators)','Vaporetto L1 dir. LIDO, 4 stops → SAN STAE (€9.50/pp, tap to validate)','Walk 5 min: Salizada San Stae → Campo S.M. Mater Domini → Calle Ca\' Bonvicini','<a href="images/bonvicini-directions.jpg" target="_blank">Walking map</a> · <a href="images/bonvicini-entry.jpg" target="_blank">Door entry</a> (code in private Drive doc)','Early? WhatsApp bags ahead; coffee in Campo San Giacomo dell\'Orio','Rest day — Dorsoduro, Zattere waterfront']},
   '2026-07-21':{loc:'Venice',title:'Ultimate Venice Day',
     hotel:"B&B Ca' Bonvicini",ph:'+390412750106',phd:'+39 041 275 0106',
     conf:'5062824483',pin:'0103',ci:'(staying)',co:'TOMORROW Jul 22, 9–10 AM ⚠️',
@@ -1635,39 +1652,4 @@ document.addEventListener('DOMContentLoaded',function(){
 <div class="section"><div class="sh-static">🗂️ Shared Google Drive folders</div><div class="sb">
 <p>Everyone in the group can open these on their phone — bookmark them:</p>
 <div class="qr-row" style="margin-bottom:8px"><span class="qr-icon">📷</span><span class="qr-text"><strong><a href="https://drive.google.com/drive/folders/1X-Q7QqdWo7sdXQKO71XSQNaYjPtGK6H3" target="_blank" rel="noopener">Photos folder →</a></strong><br><span style="color:#888;font-size:12px">Drop your phone &amp; camera photos here. They get sorted by day and place and published to the Photos tab.</span></span></div>
-<div class="qr-row" style="margin-bottom:8px"><span class="qr-icon">🧾</span><span class="qr-text"><strong><a href="https://drive.google.com/drive/folders/1OF9yL7ml9oJ2YM7v5OQTemTF4ZJrzCHW" target="_blank" rel="noopener">Receipts drop box →</a></strong><br><span style="color:#888;font-size:12px">Drop expense receipts here. <strong>Put the payer’s name in the filename</strong> (e.g. “Lorene taxi.jpg”) so it’s credited correctly in the settle-up.</span></span></div>
-</div></div>
-
-<div class="section"><div class="sh-static">🤖 1. Reach Claude &amp; this trip on Teri's phone</div><div class="sb">
-<p>Ask trip questions on the go — sign in as Joe, since his phone is gone.</p>
-<ol>
-<li>Install the <strong>Claude</strong> app from the Google Play Store (search "Claude by Anthropic").</li>
-<li>Open it → <strong>Sign in</strong> with Joe's login: <strong>jmlmail53@gmail.com</strong>. <em>If it asks for a verification code, pick the <strong>email</strong> option — not a text or authenticator on the lost phone.</em></li>
-<li>Bottom menu → <strong>Projects</strong> → open <strong>Travel</strong> (the Greece &amp; Italy project).</li>
-<li>Tap <strong>New chat</strong> inside the project and ask away — e.g. "What's on for tomorrow?" or "Where's the Vatican tour meeting spot?" The project already knows the itinerary.</li>
-</ol>
-<p style="color:#888;font-size:12px">⚠️ Editing and publishing this website runs in a desktop session tied to the PC folder, so <strong>site changes must be done from the computer</strong>. From the phone you can still ask questions and note changes you want made.</p>
-</div></div>
-
-<div class="section"><div class="sh-static">📶 2. Airalo eSIM (data abroad)</div><div class="sb">
-<p>Use the <strong>Eurolink</strong> (Europe) plan — it covers every country on this trip: Greece, Italy, Croatia, Slovenia, and Montenegro.</p>
-<ol>
-<li>On Wi-Fi, install <strong>Airalo</strong> from the Play Store; sign in or create an account.</li>
-<li><strong>Store → Regional → Europe (Eurolink)</strong>. Pick a data size (≈5–10 GB is plenty for maps and messaging over the remaining weeks). Before paying, confirm the coverage list includes Greece, Italy, Croatia, Slovenia, and Montenegro. Buy.</li>
-<li><strong>My eSIMs</strong> → tap the new eSIM → <strong>Install or share → Start installation</strong> → follow the prompts. Don't leave the screen until it finishes (can take a few minutes).</li>
-<li>Phone <strong>Settings → Connections → SIM manager</strong>: set the <strong>Airalo</strong> eSIM as <strong>Mobile data</strong> and turn <strong>Data roaming ON</strong> for the Airalo line.</li>
-<li><strong>Turn the Verizon line OFF</strong> — SIM manager → switch the line off (or turn its data roaming off and don't call or text on it). Verizon's overseas pass is <strong>$12/day per line</strong> and kicks in on any call, any text (even incoming), or any data — all of which Airalo now covers. Do talk &amp; text over <strong>WhatsApp, iMessage/FaceTime, or email</strong> instead. Everyone on Verizon should do this.</li>
-<li>It activates once it grabs a local network (may take a few minutes; toggle Airplane mode to nudge it). Test by loading a page with Wi-Fi off.</li>
-</ol>
-<p style="color:#888;font-size:12px"><strong>US number &amp; 2FA:</strong> with the Verizon line off you won't receive SMS security codes. If you need one, toggle that line's roaming on for the day (accept the $12), grab the code, then turn it off again — or move that login to app/email codes.</p>
-<p style="color:#888;font-size:12px">Airalo is data-only — no calls or texts on it. If data won't connect, open the eSIM's in-app instructions and check the APN. Running low? Top up in the app.</p>
-</div></div>
-
-<div class="section"><div class="sh-static">📍 3. Polarsteps GPS tracking — make THIS the tracker</div><div class="sb">
-<div class="al aly"><strong>Do this soon:</strong> Polarsteps records the route from only <strong>one phone at a time</strong>, and Joe's phone was the tracker — so tracking likely stopped when it was lost. Turn Teri's phone into the active tracker to capture the rest of the trip.</div>
-<ol>
-<li>Install <strong>Polarsteps</strong> from the Play Store and open it.</li>
-<li><strong>Sign in as Joe</strong> (same login as Claude) — the "Greece &amp; Italy 2026" trip is already there. <em>(Alternative: use Teri's own Polarsteps account if Joe adds her as a Travel Buddy and she accepts the invite.)</em></li>
-<li>Open the <strong>Greece &amp; Italy 2026</strong> trip → <strong>trip settings</strong> → <strong>Travel Tracker</strong> → set <strong>this phone</strong> as the tracking device.</li>
-<li>When prompted for location, choose <strong>Allow all the time</strong> and enable <strong>Precise location</strong>. Then exempt Polarsteps from battery optimization so it keeps logging in your pocket.</li>
-<li>Confirm t
+<div class="qr-row" style="margin-bottom:8px"><span class="qr-icon">🧾</span><span class="qr-text"><strong><a href="https://drive.google.com/drive/folders/1OF9yL7ml9oJ2YM7v5OQTemTF4ZJrzCHW" target="_blank" rel="noopener">Receipts drop box →</a></strong><br><span style="color:#888;font-size:12px">Drop expen
