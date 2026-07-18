@@ -1,0 +1,415 @@
+[
+  {
+    "name": "🏨 Anise Aluma Athens (Tapestry/Hilton)",
+    "lat": 37.9805,
+    "lng": 23.7237,
+    "date": "0710",
+    "desc": "Fri Jul 10 · Conf. #3471385009 — Evripidou 82. 2 rooms. 100k Hilton pts. Cancel "
+  },
+  {
+    "name": "⛰️ Areopagus (Mars Hill)",
+    "lat": 37.9719,
+    "lng": 23.7229,
+    "date": "0710",
+    "desc": "Fri Jul 10 · Free — ~15 min walk from the hotel. No ticket needed. Overlooks the"
+  },
+  {
+    "name": "🏛️ Acropolis Tour — Porinou 5",
+    "lat": 37.9714,
+    "lng": 23.7234,
+    "date": "0711",
+    "desc": "Sat Jul 11 · 7:50 AM · Tour Guy #1118765 — Meet at Porinou 5 (outside gates). $3"
+  },
+  {
+    "name": "🎭 Open Air Ancient Greek Theatre",
+    "lat": 37.9693,
+    "lng": 23.7244,
+    "date": "0711",
+    "desc": "Sat Jul 11 · 9 PM · Tripadvisor #1778633837 — $143.76 charged Jul 9. No barcode "
+  },
+  {
+    "name": "🥙 Athens Street Food Walk",
+    "lat": 37.9756,
+    "lng": 23.7348,
+    "date": "0710",
+    "desc": "Fri Jul 10 · 6:30 PM · Booking ref #1418536313 — Greekality (conf. 360081916). 4"
+  },
+  {
+    "name": "🚢 Piraeus Cruise Terminal",
+    "lat": 37.9381,
+    "lng": 23.6359,
+    "date": "0711",
+    "desc": "Sat Jul 11 · Board Viking OST — Limbers: #8663390 Stateroom 4071. Guernsey/Santi"
+  },
+  {
+    "name": "🚢 Mykonos",
+    "lat": 37.4467,
+    "lng": 25.3289,
+    "date": "0713",
+    "desc": "Mon Jul 13 · 9:00 AM · $118/pp · Booked #1418529839 — Viator Mykonos Small Group"
+  },
+  {
+    "name": "🏟️ Katakolon / Olympia",
+    "lat": 37.6383,
+    "lng": 21.6317,
+    "date": "0714",
+    "desc": "Tue Jul 14 · Included — Ancient Olympia. 4 hours."
+  },
+  {
+    "name": "🏰 Corfu",
+    "lat": 39.6243,
+    "lng": 19.9217,
+    "date": "0715",
+    "desc": "Wed Jul 15 · Included — Panoramic Corfu &amp; Old Town."
+  },
+  {
+    "name": "🏰 Kotor, Montenegro",
+    "lat": 42.4247,
+    "lng": 18.7712,
+    "date": "0716",
+    "desc": "Thu Jul 16 · Included — Kotor on Foot. 1.5 hours."
+  },
+  {
+    "name": "🏰 Dubrovnik, Croatia",
+    "lat": 42.6507,
+    "lng": 18.0944,
+    "date": "0717",
+    "desc": "Fri Jul 17 · Included — Dubrovnik on Foot. 3 hours."
+  },
+  {
+    "name": "🎵 Zadar — Sea Organ",
+    "lat": 44.1172,
+    "lng": 15.2199,
+    "date": "0718",
+    "desc": "Sat Jul 18 · Included — Walking Tour. Sea Organ + Sun Salutation."
+  },
+  {
+    "name": "🦎 Postojna Cave, Slovenia",
+    "lat": 45.783,
+    "lng": 14.2038,
+    "date": "0719",
+    "desc": "Sun Jul 19 · $199/pp — Postojna Cave &amp; Predjama Castle. 7.5 hours. 50°F insi"
+  },
+  {
+    "name": "🏨 B&amp;B Ca' Bonvicini — Venice",
+    "lat": 45.4392,
+    "lng": 12.3302,
+    "date": "0720",
+    "desc": "Mon–Wed Jul 20–22 · Conf. #5062824483 — Santa Croce 2160. NON-REFUNDABLE. Check-"
+  },
+  {
+    "name": "🚗 Hertz — Venice Marco Polo Airport",
+    "lat": 45.5054,
+    "lng": 12.3519,
+    "date": "0722",
+    "desc": "Wed Jul 22 · 9:00 AM · Conf. #L60845394F2 — BMW X1 or similar. $855.85. Water ta"
+  },
+  {
+    "name": "⛵ Tour Guy Meeting — San Marco Columns",
+    "lat": 45.4341,
+    "lng": 12.3387,
+    "date": "0721",
+    "desc": "Tue Jul 21 · 8:45 AM · Tour Guy #1118847 — Between columns of San Marco and San "
+  },
+  {
+    "name": "🔥 Murano — Glass-blowing",
+    "lat": 45.459,
+    "lng": 12.3523,
+    "date": "0721",
+    "desc": "Tue Jul 21 · Afternoon · On tour — Live glass-blowing demonstration. 1,700°F mol"
+  },
+  {
+    "name": "🌈 Burano — Lacemaking",
+    "lat": 45.4854,
+    "lng": 12.4167,
+    "date": "0721",
+    "desc": "Tue Jul 21 · Afternoon · On tour — Colorful fishing village. Lacemaking demonstr"
+  },
+  {
+    "name": "🏨 Casa D'Este - Hotel Ferrara",
+    "lat": 44.8386,
+    "lng": 11.6188,
+    "date": "0722",
+    "desc": "Wed–Thu Jul 22–23 · Conf. #5952657630 — Largo Castello 36. PIN 1176. 2 rooms (Jo"
+  },
+  {
+    "name": "🏰 Castello Estense",
+    "lat": 44.8378,
+    "lng": 11.6198,
+    "date": "0722",
+    "desc": "Wed Jul 22 · €12/pp (reduced €10) — Moated Renaissance castle in the city center"
+  },
+  {
+    "name": "⛪ Ferrara Cathedral (San Giorgio)",
+    "lat": 44.8364,
+    "lng": 11.6187,
+    "date": "0722",
+    "desc": "Wed Jul 22 · Free — Basilica Cattedrale di San Giorgio, Piazza Duomo / Corso Mar"
+  },
+  {
+    "name": "🕍 Jewish Ghetto — Via Mazzini",
+    "lat": 44.8355,
+    "lng": 11.6213,
+    "date": "0722",
+    "desc": "Wed Jul 22 · Free — Historic Jewish quarter since the 1600s: Via Mazzini, Via Vi"
+  },
+  {
+    "name": "🏨 Loft Il Giobertino — Florence",
+    "lat": 43.7736,
+    "lng": 11.2697,
+    "date": "0723",
+    "desc": "Thu Jul 23–Fri Jul 24 · Conf. #5024697136 — Via Vincenzo Gioberti 95, 2nd floor."
+  },
+  {
+    "name": "🔭 Galileo Museum",
+    "lat": 43.7677,
+    "lng": 11.2559,
+    "date": "0723",
+    "desc": "Thu Jul 23 · 11:30 AM · Booked, Order #53553 — Piazza dei Giudici 1. 4 tickets ("
+  },
+  {
+    "name": "👑 Cappelle Medicee (Medici Chapel)",
+    "lat": 43.7751,
+    "lng": 11.2534,
+    "date": "0723",
+    "desc": "Thu Jul 23 · 4:00 PM · Booked, Order #23524226 — Piazza di Madonna degli Aldobra"
+  },
+  {
+    "name": "🔬 Da Vinci National Science Museum",
+    "lat": 43.7638,
+    "lng": 11.2463,
+    "date": "0724",
+    "desc": "Fri Jul 24 · Booked, Viator #1418564703 — Via Del Castellaccio 1R. Exchange vouc"
+  },
+  {
+    "name": "🏨 Villa San Filippo — Chianti",
+    "lat": 43.5256,
+    "lng": 11.1673,
+    "date": "0724",
+    "desc": "Fri Jul 24–Sat Jul 25 · Conf. #72074703683732 — Strada delle Ginestre 6, Barberi"
+  },
+  {
+    "name": "⛪ Badia a Passignano — Monastery",
+    "lat": 43.5773,
+    "lng": 11.2471,
+    "date": "0724",
+    "desc": "Possible stop · Fri Jul 24 — 11th-century Vallombrosan monastery. CLOSED TUESDAY"
+  },
+  {
+    "name": "🍷 Greve in Chianti",
+    "lat": 43.5825,
+    "lng": 11.3169,
+    "date": "0724",
+    "desc": "Possible stop · Fri Jul 24 — Piazza Matteotti. Cantine Mirabilis walk-in wine ta"
+  },
+  {
+    "name": "🏘️ Barberino Tavarnelle",
+    "lat": 43.5388,
+    "lng": 11.1794,
+    "date": "0724",
+    "desc": "Fri Jul 24 · Afternoon — A charming comune in the Tuscan countryside, ~25 km sou"
+  },
+  {
+    "name": "🥩 Antica Macelleria Cecchini — Panzano",
+    "lat": 43.5447,
+    "lng": 11.3163,
+    "date": "0724",
+    "desc": "Dinner option A · Fri Jul 24 evening — Via XX Luglio 11, 50022 Panzano in Chiant"
+  },
+  {
+    "name": "🍷 Tenuta Torciano Cantina &amp; Ristorante",
+    "lat": 43.463,
+    "lng": 11.1315,
+    "date": "0724",
+    "desc": "Dinner option B · Fri Jul 24 evening — Via Crocetta 18, Località Ulignano, San G"
+  },
+  {
+    "name": "🏘️ Radda in Chianti",
+    "lat": 43.4872,
+    "lng": 11.3747,
+    "date": "0725",
+    "desc": "Possible stop · Sat Jul 25 — Most \"locals\" of Chianti villages. Enoteca Bottega "
+  },
+  {
+    "name": "🏰 Castellina in Chianti",
+    "lat": 43.4691,
+    "lng": 11.287,
+    "date": null,
+    "desc": "Possible stop — Medieval fortress. Underground Via delle Volte. Good lunch tratt"
+  },
+  {
+    "name": "🏰 Castello di Brolio",
+    "lat": 43.4133,
+    "lng": 11.4635,
+    "date": "0725",
+    "desc": "Sat Jul 25 · Crown jewel of route — €5 walk-in. Ramparts + gardens + enoteca. Ri"
+  },
+  {
+    "name": "🏨 Idolina Guest House — Montalcino",
+    "lat": 43.0602,
+    "lng": 11.4898,
+    "date": "0725",
+    "desc": "Sat Jul 25–Sun Jul 26 · Conf. #72074700792366 — Via Mazzini 65/67. €262.62 at pr"
+  },
+  {
+    "name": "🏰 Fortezza di Montalcino",
+    "lat": 43.0551,
+    "lng": 11.4891,
+    "date": "0725",
+    "desc": "Sat Jul 25 · Evening arrival ritual — €4 ramparts. Val d'Orcia views at golden h"
+  },
+  {
+    "name": "🏛️ Pienza",
+    "lat": 43.0763,
+    "lng": 11.6784,
+    "date": "0726",
+    "desc": "Sun Jul 26 · Optional — 30-min detour. Renaissance city. Famous pecorino cheese."
+  },
+  {
+    "name": "⛪ Sant'Antimo Abbey",
+    "lat": 42.9892,
+    "lng": 11.476,
+    "date": "0726",
+    "desc": "Sun Jul 26 · En route — 12th-century Romanesque abbey. Gregorian chants."
+  },
+  {
+    "name": "🏨 Hotel Bellavista — Assisi",
+    "lat": 43.065,
+    "lng": 12.5934,
+    "date": "0726",
+    "desc": "Sun–Tue Jul 26–28 · Conf. #6920407207 — Viale Patrono d'Italia 100. PIN 4429. 1s"
+  },
+  {
+    "name": "⛪ Basilica of St. Francis — Mass + Vespers",
+    "lat": 43.075,
+    "lng": 12.6054,
+    "date": "0726",
+    "desc": "Sun Jul 26 · 5 PM Italian Mass + Vespers — 800th anniversary year. Book \"Partici"
+  },
+  {
+    "name": "🌲 Eremo delle Carceri",
+    "lat": 43.0631,
+    "lng": 12.6519,
+    "date": "0727",
+    "desc": "Mon Jul 27 · Afternoon — St. Francis's hermitage 4 km above Assisi. Free. Deeply"
+  },
+  {
+    "name": "🎨 Santa Maria Maggiore — Spello",
+    "lat": 42.9898,
+    "lng": 12.6719,
+    "date": "0728",
+    "desc": "Tue Jul 28 · Morning — Pinturicchio frescoes. Almost always empty. 15 min from A"
+  },
+  {
+    "name": "🏨 Hotel Duomo — Orvieto",
+    "lat": 42.7176,
+    "lng": 12.113,
+    "date": "0728",
+    "desc": "Tue–Wed Jul 28–29 · Conf. #72074704255117 — Vicolo di Maurizio 7. Steps from Duo"
+  },
+  {
+    "name": "⛪ Orvieto Cathedral + Underground",
+    "lat": 42.7171,
+    "lng": 12.1133,
+    "date": "0728",
+    "desc": "Tue Jul 28 · Afternoon — Gothic facade. Signorelli frescoes. Orvieto Underground"
+  },
+  {
+    "name": "🏨 Rome Hotel (TBD)",
+    "lat": 41.9028,
+    "lng": 12.4964,
+    "date": "0729",
+    "desc": "Wed–Fri Jul 29–31 · 3 nights — Must confirm parking ~€25–35/night. Bonvoy: The R"
+  },
+  {
+    "name": "🕯️ Vatican Scavi / Necropolis (Optional)",
+    "lat": 41.9016,
+    "lng": 12.4539,
+    "date": "0729",
+    "desc": "Wed Jul 29 afternoon · Optional — Only 250/day — book at visite.basilicasanpietr"
+  },
+  {
+    "name": "🏛️ Pantheon",
+    "lat": 41.8986,
+    "lng": 12.4769,
+    "date": null,
+    "desc": "Book pantheonroma.com · ~€5/pp — World's largest unreinforced concrete dome. Boo"
+  },
+  {
+    "name": "🕍 Vatican Museums — Meeting Point",
+    "lat": 41.9065,
+    "lng": 12.4536,
+    "date": "0730",
+    "desc": "Thu Jul 30 · 7:15 AM · Tour Guy #1123725 — Under Michelangelo and Raphael statue"
+  },
+  {
+    "name": "⛪ St. Peter's Basilica",
+    "lat": 41.9022,
+    "lng": 12.4539,
+    "date": "0730",
+    "desc": "Thu Jul 30 · Via Scala Regia — Scala Regia exclusive to guided groups. Free time"
+  },
+  {
+    "name": "🏟️ Colosseum — Metro Stop",
+    "lat": 41.8902,
+    "lng": 12.4922,
+    "date": "0731",
+    "desc": "Fri Jul 31 · 8:45 AM · Tour Guy #1117159 — $1,018.70, pay Jul 3 (EARLIEST). Priv"
+  },
+  {
+    "name": "🏛️ Roman Forum + Palatine Hill",
+    "lat": 41.8921,
+    "lng": 12.4864,
+    "date": "0731",
+    "desc": "Fri Jul 31 · On Colosseum tour — Included. 2,500 years of history in one walk."
+  },
+  {
+    "name": "⛪ Basilica of San Clemente (Alternate)",
+    "lat": 41.8895,
+    "lng": 12.4966,
+    "date": null,
+    "desc": "Teresa researched · Near Colosseum — Three underground layers: 12th-century basi"
+  },
+  {
+    "name": "⛪ Scala Sancta (Alternate)",
+    "lat": 41.8858,
+    "lng": 12.5089,
+    "date": null,
+    "desc": "Teresa researched — The Holy Stairs. Pilgrims ascend on knees. Next to San Giova"
+  },
+  {
+    "name": "⛪ San Giovanni Laterano (Alternate)",
+    "lat": 41.8859,
+    "lng": 12.5054,
+    "date": null,
+    "desc": "Teresa researched — Rome's actual cathedral — outranks St. Peter's ecclesiastica"
+  },
+  {
+    "name": "⛪ Santa Maria sopra Minerva (Alternate)",
+    "lat": 41.8983,
+    "lng": 12.4772,
+    "date": null,
+    "desc": "Teresa researched · 2 min from Pantheon — St. Catherine of Siena's tomb. Rome's "
+  },
+  {
+    "name": "⛪ Catacombs of Priscilla",
+    "lat": 41.9302,
+    "lng": 12.5115,
+    "date": "0729",
+    "desc": "Wed Jul 29 · 11:30 AM · Booked ZVAB2142840J — \"Queen of the Catacombs.\" 7+ miles"
+  },
+  {
+    "name": "⛪ Capuchin Crypt (Alternate)",
+    "lat": 41.9059,
+    "lng": 12.4883,
+    "date": null,
+    "desc": "Teresa researched — Bones of 4,000 Capuchin friars arranged as art. Powerful mem"
+  },
+  {
+    "name": "✈️ Fiumicino Airport (FCO)",
+    "lat": 41.8034,
+    "lng": 12.2519,
+    "date": "0801",
+    "desc": "Sat Aug 1 · EI 401 to Dublin 7:30 AM · then EI 117 to IAD — ~35 min drive from R"
+  }
+]
