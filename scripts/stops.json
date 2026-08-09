@@ -411,5 +411,96 @@
     "lng": 12.2519,
     "date": "0801",
     "desc": "Sat Aug 1 · EI 401 to Dublin 7:30 AM · then EI 117 to IAD — ~35 min drive from R"
+  },
+  {
+    "name": "San Gimignano",
+    "lat": 43.4677,
+    "lng": 11.0431,
+    "date": "0724",
+    "desc": "Tuscan hill town of medieval towers, near the Chianti/San Gimignano wine route."
+  },
+  {
+    "name": "Predjama Castle",
+    "lat": 45.8158,
+    "lng": 14.1272,
+    "date": "0719",
+    "desc": "Castle built into a cave mouth, paired with Postojna Cave on the Jul 19 excursion."
+  },
+  {
+    "name": "Pienza",
+    "lat": 43.0776,
+    "lng": 11.679,
+    "date": "0726",
+    "desc": "Renaissance hill town, famous pecorino cheese, en route Montalcino to Assisi."
+  },
+  {
+    "name": "Deruta",
+    "lat": 42.982,
+    "lng": 12.42,
+    "date": "0728",
+    "desc": "Umbrian ceramics town on the Assisi-to-Orvieto route."
+  },
+  {
+    "name": "Tenuta Torciano Winery",
+    "lat": 43.51,
+    "lng": 11.081,
+    "date": "0724",
+    "desc": "Chianti dinner option B — winery/vineyard grounds near San Gimignano."
+  },
+  {
+    "name": "Burano",
+    "lat": 45.485,
+    "lng": 12.417,
+    "date": "0721",
+    "desc": "Colorful lacemaking island near Venice, visited on the Venice tour day."
+  },
+  {
+    "name": "Eremo delle Carceri",
+    "lat": 43.064,
+    "lng": 12.646,
+    "date": "0727",
+    "desc": "St. Francis's hermitage above Assisi."
+  },
+  {
+    "name": "Santa Maria degli Angeli",
+    "lat": 43.058,
+    "lng": 12.578,
+    "date": "0727",
+    "desc": "Basilica in the lower town below Assisi."
+  },
+  {
+    "name": "Dubrovnik - Gruz Port",
+    "lat": 42.658,
+    "lng": 18.086,
+    "date": "0717",
+    "desc": "Cruise port for the Dubrovnik, Croatia shore day."
+  },
+  {
+    "name": "Koper, Slovenia",
+    "lat": 45.548,
+    "lng": 13.73,
+    "date": "0719",
+    "desc": "Cruise port for the Postojna Cave / Predjama Castle shore excursion."
+  },
+  {
+    "name": "Postojna",
+    "lat": 45.7667,
+    "lng": 14.2167,
+    "date": "0719",
+    "desc": "Town/cave complex, Jul 19 shore excursion."
+  },
+  {
+    "name": "Fiumicino / FCO",
+    "lat": 41.799,
+    "lng": 12.25,
+    "date": "0801",
+    "desc": "Rome Fiumicino Airport — departure day."
+  },
+  {
+    "name": "Dublin Airport",
+    "lat": 53.4264,
+    "lng": -6.2499,
+    "date": "0801",
+    "desc": "US preclearance connection, EI 401 FCO-DUB / EI 117 DUB-IAD, Aug 1 return."
   }
 ]
